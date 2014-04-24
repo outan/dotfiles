@@ -48,10 +48,9 @@ alias de="cd ~/web/rails/demo"
 alias blog="cd ~/web/rails/blog"
 
 #git関連
-alias g="noglob git"
+alias g=" git"
 alias bs="java -cp bsh-2.0b4.jar bsh.Interpreter"
 alias gt="gitk"
-alias git="noglob git"
 
 alias lb="ssh develop_lb01"
 
