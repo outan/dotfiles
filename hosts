@@ -1,0 +1,51 @@
+# Copyright (c) 1993-2009 Microsoft Corp.
+#
+# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
+#
+# This file contains the mappings of IP addresses to host names. Each
+# entry should be kept on an individual line. The IP address should
+# be placed in the first column followed by the corresponding host name.
+# The IP address and the host name should be separated by at least one
+# space.
+#
+# Additionally, comments (such as these) may be inserted on individual
+# lines or following the machine name denoted by a '#' symbol.
+#
+# For example:
+#
+#      102.54.94.97     rhino.acme.com          # source server
+#       38.25.63.10     x.acme.com              # x client host
+
+# localhost name resolution is handled within DNS itself.
+#	127.0.0.1       localhost
+#	::1             localhost
+
+#ローカル開発環境
+192.168.37.128	api-a api-a.vm.asiw.jp
+192.168.37.128	api-b api-b.vm.asiw.jp
+192.168.37.128	menu-a menu-a.vm.asiw.jp
+192.168.37.128	menu-b menu-b.vm.asiw.jp
+192.168.37.128	dev12.vm.asiw.jp
+192.168.37.128	dev12-stg.vm.asiw.jp
+192.168.37.128	dev13.vm.asiw.jp
+192.168.37.128	dev13-stg.vm.asiw.jp
+202.222.94.190	kt-test-stage.nlk.jp
+
+# NEXLINK 検証環境
+10.250.187.131    PIECE901
+10.250.188.141    OBCTR901
+10.250.188.151    SQLDB901
+10.250.188.161    ORADB901
+10.250.188.171    MCCTR901
+10.250.188.201    OPECT901
+10.250.188.211    CONSW901
+
+# 本番リリース待ち環境
+54.248.97.123	SQLDB801	
+175.41.238.90	OBCTR801	
+175.41.238.251	ORADB801	
+54.249.29.12	PIECE801-1		# navi画面
+54.249.29.12	w-menu.nexlink.jp	# navi画面
+54.249.36.125	PIECE801-2		# web掲示
+176.34.57.165	FREEDOM		# 起動停止用
+54.248.235.113	FREEDOM02		# 起動停止、回帰テスト
