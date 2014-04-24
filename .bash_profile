@@ -1,13 +1,14 @@
- if [ -f ~/.bashrc ] ; then
+if [ -f ~/.bashrc ] ; then
     . ~/.bashrc
-    fi
- if [ -f ~/.aliases ]; then
+fi
+
+if [ -f ~/.aliases ]; then
     . ~/.aliases
-	fi
+fi
 
 export PATH="/usr/local/bin:$PATH:/usr/local/sbin"
 export PATH=$PATH:/Users/outan/bin
-source ~/.aliases
+#source ~/.aliases
 
 eval "$(rbenv init -)"
 
