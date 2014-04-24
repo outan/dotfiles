@@ -156,7 +156,10 @@ setopt correct
 setopt auto_pushd
 
 # alias
-source ~/.aliases
+#source ~/.aliases
+if [ -f ~/.aliases ]; then
+	. ~/.aliases
+fi
 
 # do brew install rbenv
 eval "$(rbenv init - zsh)"
