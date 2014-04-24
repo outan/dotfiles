@@ -1,14 +1,13 @@
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
+fi
+#.bashrc中で.aliasesの設定と重複の場合に、.bashrcを優先するために、設定を.aliasesの下に移動
 if [ -f ~/.bashrc ] ; then
     . ~/.bashrc
 fi
 
-if [ -f ~/.aliases ]; then
-    . ~/.aliases
-fi
-
 export PATH="/usr/local/bin:$PATH:/usr/local/sbin"
 export PATH=$PATH:/Users/outan/bin
-#source ~/.aliases
 
 eval "$(rbenv init -)"
 
