@@ -193,4 +193,5 @@ alias less='/usr/share/vim/vim73/macros/less.sh'
 # less のステータス行にファイル名と行数、いま何%かを表示
 export LESS='-X -i -P ?f%f:(stdin). ?lb%lb?L/%L.. [?eEOF:?pb%pb\%..]'
 
-
+#git command it conflicts with the zsh globbing問題を解決するため　https://blog.afoolishmanifesto.com/posts/git-aliases-for-your-life/
+alias git='noglob git'
