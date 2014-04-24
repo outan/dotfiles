@@ -1,0 +1,98 @@
+[core]
+	excludesfile = ~/.gitignore
+	quotepath    = false
+	whitespace   =fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	pager        = "lv -c -Au8"
+	attributesfile = ~/dotfiles/.gitattributes_global
+
+[user]
+	name         = outan
+	email        = outannexway@gmail.com
+
+[color]
+	interactive  = auto
+	grep         = auto
+	ui           = true
+	diff         = auto
+	status       = auto
+	branch       = auto
+
+[color "branch"]
+	current      = yellow reverse
+	local        = yellow
+	remote       = green
+
+[color "diff"]
+    meta         = yellow bold
+    frag         = magenta bold
+  	old          = red reverse
+	new          = green reverse
+    whitespace   = white reverse
+
+[color "status"]
+  	added        = yellow
+    changed      = green
+	untracked    = cyan reverse
+	branch       = magenta
+
+[alias]
+	lp    = log -p # diffも一緒に出す
+	ls    = log --stat # logに変更されたファイルも一緒に出す
+	lg2   = log --graph --decorate  --tags  --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn %Creset%s'
+	lg    = log --graph --branches  --decorate --date=short  --color --pretty='%x09%h %cn%x09%s %Cred%d%Creset'
+	lga   = log --graph --all  --decorate --date=short  --color --pretty='%x09%h %cn%x09%s %Cred%d%Creset'
+	lga2   = log --oneline --decorate --graph --date=short --branches --tags --remotes
+	df    = diff
+	d    = diff
+	dc    = diff --cached
+	ds    = diff --staged
+	dwd   = diff --word-diff
+	
+	co    = checkout
+	ci    = commit
+	br    = branch
+	ba    = branch -a
+	st    = status --ignore-submodules=dirty
+	url   = config --get remote.origin.url
+	pr    = pull --rebase
+	rbm   = rebase master
+	bm    = branch --merged
+	bn = branch --no-merged  # mergeしてないbranchを表示
+	fo    = fetch origin
+	ro    = rebase origin
+	pp    = pull --prune  #削除されたリモートブランチはfetchするときにremote tracking branchを削除するために
+	see   = browse
+	s	  = stash
+	ss	  = stash save
+	cl	  = config --local -l
+	ce	  = config --edit
+	fix	  = commit --amend
+
+[push]
+	#default = upstream
+    #カレントブランチとリモートブランチの間に「追跡関係」がある場合、なおかつカレントブランチのみはpushの対象になるように設定(default = trackingとは同じ効果)
+    default  = simple
+#simple - like upstream, but refuses to push if the upstream branch's name is different from the local one. This is the safest option and is well-suited for beginners. It will become the default in Git 2.0.
+
+[branch]
+    autosetuprebase = always
+	#autosetupmerge  = false   #git checkout やgit branchでtracking branchからローカルブランチを作成する時に、勝手に追跡しないようにする(.git/configに追跡情報を追記しない)ことにより、git pushでマッチがって他のブランチにpushしてしまうことを防ぐ
+
+[merge]
+    # from 1.7.6
+    ff = false
+    keepBackup = false
+	tool = p4merge
+
+[mergetool "p4merge"]
+    cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+	keepTemporaries = false
+    trustExitCode = false
+    keepBackup = false
+
+#[diff]
+#     external = p4diff
+
+[pull]
+    # from 1.7.9
+    rebase = true

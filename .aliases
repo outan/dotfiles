@@ -1,0 +1,60 @@
+#システムの基本コマンド
+alias ls='ls -Fh'
+alias ll='ls  -Fl'
+alias lsal='ls -FAl'
+alias la='ls -FA'
+alias lsdl="ls -AFdl .*" #.で始まるすべてのもの（隠しファイルとディレクトリのみを表示）
+alias lsll="lsal *(@D)" #シンボリックリンク(.で始まるシンボリックも含む)のみを表示
+alias cp='cp -iv'
+#rmを実施する時に、Trashに移動する
+alias rm='rmtrash'
+alias mv='mv -iv'
+alias cl='clear'
+alias vi='vim'
+#alias sl= "ls -al | grep -- '->'"
+#grepの色設定は.bashrcで設定
+alias grep='grep -E --color=auto'
+#alias egrep='egrep --color=auto'
+alias coteditor='open -a Coteditor'
+alias javac="javac -J-Dfile.encoding=UTF8"
+alias 'ps?'='pgrep -l -f'
+alias so="source"
+
+#ruby,rails関連コマンド
+alias be='bundle exec'
+alias rc='rails c'
+alias berc='bundle exec rails c'
+alias bi='bundle install'
+alias bl='bundle list'
+alias rs='rails server'
+alias bersp='bundle exec rails server Puma'
+alias b='bundle'
+alias puma='bundle exec rails server Puma'
+alias foreman='bundle exec foreman start'
+
+#cdに関するショートカット
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias dropbox="cd ~/Dropbox"
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+alias pj="cd ~/projects"
+alias df="cd ~/dotfiles"
+alias n2="cd ~/projects/nexlink2"
+alias we="cd ~/web"
+alias de="cd ~/web/rails/demo"
+alias blog="cd ~/web/rails/blog"
+
+#git関連
+alias g="noglob git"
+alias bs="java -cp bsh-2.0b4.jar bsh.Interpreter"
+alias gt="gitk"
+alias git="noglob git"
+
+alias lb="ssh develop_lb01"
+
+#ag関連
+alias ag='ag -S --stats'
+alias agh='ag --hidden'

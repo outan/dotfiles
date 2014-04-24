@@ -1,0 +1,12 @@
+.DS_Store
+.*.swp
+*.[oa]
+*~
+*.swo
+.project
+.idea/
+nul
+known_hosts
+app/models/pdf/
+.rbenv-version
+mysql-connector*
