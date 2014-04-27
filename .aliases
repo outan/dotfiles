@@ -20,6 +20,7 @@ alias h='history'
 alias a='alias'
 alias disk='du -h -x -d 1'
 alias hosts='vi /etc/hosts'
+alias log='cd ~/system/nexlink-b/var/log/'
 
 #rmを実施する時に、Trashに移動する
 if [ -f /usr/local/bin/rmtrash ]
