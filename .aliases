@@ -11,7 +11,13 @@ alias h='history'
 alias rm='rmtrash'
 alias mv='mv -iv'
 alias cl='clear'
+if [ -f /Applications/MacVim.app/Contents/MacOS/Vim ]
+then
+  alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+  alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+else
 alias vi='vim'
+fi
 #alias sl= "ls -al | grep -- '->'"
 #grepの色設定は.bashrcで設定
 alias grep='grep -E --color=auto'
