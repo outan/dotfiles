@@ -7,7 +7,7 @@ if [ -f ~/.bashrc ] ; then
 fi
 
 export PATH="/usr/local/bin:$PATH:/usr/local/sbin"
-export PATH=$PATH:/Users/outan/bin
+export PATH=$PATH:~/bin
 
 eval "$(rbenv init -)"
 
