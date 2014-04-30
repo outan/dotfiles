@@ -1,4 +1,6 @@
-PS1='[\u \w]\$'
+#promt設定
+PS1="\[\e[1;32m\][\u@\h:\w]\$\[\e[00m\] "
+
 # カラー設定
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
