@@ -1,8 +1,15 @@
 #システムの基本コマンド
-alias ls='ls -Fh'
-alias ll='ls  -Fl'
-alias lsal='ls -FAl'
-alias la='ls -FA'
+# Detect which `ls` flavor is in use
+if ls --color > /dev/null 2>&1; then # GNU `ls`
+    colorflag="--color"
+else # OS X `ls`
+    colorflag="-G"
+fi
+
+alias ls='ls -Fh ${colorflag}'
+alias ll='ls  -Fl ${colorflag}'
+alias lsal='ls -FAl ${colorflag}'
+alias la='ls -FA ${colorflag}'
 alias lsdl="ls -AFdl .*" #.で始まるすべてのもの（隠しファイルとディレクトリのみを表示）
 alias lsll="lsal *(@D)" #シンボリックリンク(.で始まるシンボリックも含む)のみを表示
 alias cp='cp -iv'
@@ -54,10 +61,10 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-alias dropbox="cd ~/Dropbox"
+alias d="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias pj="cd ~/projects"
+alias j="cd ~/projects"
 alias df="cd ~/dotfiles"
 alias n1="cd ~/projects/nexlink_cms"
 alias n2="cd ~/projects/nexlink2"
