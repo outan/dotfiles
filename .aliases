@@ -17,6 +17,7 @@ alias lsdl="ls -AFdl .*" #.で始まるすべてのもの（隠しファイル�
 alias lsll="lsal *(@D)" #シンボリックリンク(.で始まるシンボリックも含む)のみを表示
 alias cp='cp -iv'
 alias h='history'
+alias a='alias'
 
 #rmを実施する時に、Trashに移動する
 if [ -f /usr/local/bin/rmtrash ]
