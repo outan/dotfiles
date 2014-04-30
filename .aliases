@@ -7,10 +7,19 @@ alias lsdl="ls -AFdl .*" #.で始まるすべてのもの（隠しファイル�
 alias lsll="lsal *(@D)" #シンボリックリンク(.で始まるシンボリックも含む)のみを表示
 alias cp='cp -iv'
 alias h='history'
+
 #rmを実施する時に、Trashに移動する
-alias rm='rmtrash'
+if [ -f /usr/local/bin/rmtrash ]
+then
+    alias rm='rmtrash'
+else
+    alias rm='rm -i'
+fi
+
 alias mv='mv -iv'
 alias cl='clear'
+
+#macvimがある場合に、viはmacvimを起動
 if [ -f /Applications/MacVim.app/Contents/MacOS/Vim ]
 then
   alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
@@ -18,6 +27,7 @@ then
 else
 alias vi='vim'
 fi
+
 #alias sl= "ls -al | grep -- '->'"
 #grepの色設定は.bashrcで設定
 alias grep='grep -E --color=auto'
