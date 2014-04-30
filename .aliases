@@ -8,6 +8,9 @@ fi
 
 alias ls='ls -Fh ${colorflag}'
 alias ll='ls  -Fl ${colorflag}'
+# List only directories
+alias lsd='ls -l ${colorflag} | grep "^d"'
+
 alias lsal='ls -FAl ${colorflag}'
 alias la='ls -FA ${colorflag}'
 alias lsdl="ls -AFdl .*" #.で始まるすべてのもの（隠しファイルとディレクトリのみを表示）
