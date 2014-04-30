@@ -60,9 +60,9 @@
 
 	co      = checkout
     cb      = checkout -b # branch切ってcheckoutする
-    cm      = checkout master
     cd      = checkout develop
     ci      = commit
+    cm      = commit -m
 
     #branch関連
 	br      = branch
