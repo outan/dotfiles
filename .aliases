@@ -18,6 +18,7 @@ alias lsll="lsal *(@D)" #シンボリックリンク(.で始まるシンボリ�
 alias cp='cp -iv'
 alias h='history'
 alias a='alias'
+alias disk='du -h -x -d 1'
 
 #rmを実施する時に、Trashに移動する
 if [ -f /usr/local/bin/rmtrash ]
