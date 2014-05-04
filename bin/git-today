@@ -1,0 +1,1 @@
+echo "$(PROJECT=$(url=$(git config remote.origin.url) && url=${url#*github.com?} && echo ${url%.git}) && echo "hash | title" && echo "-----|------" && git log --oneline --since='midnight' --author=$(git config user.email) --pretty="format:[%h](https://github.com/$PROJECT/commit/%h) | %s" | perl -nle "\$_ =~ s|#(\\d+)|[#\\1](https://github.com/${PROJECT}/pull/\\1)|g; print \$_")"
