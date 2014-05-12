@@ -6,7 +6,7 @@ vendor
 .vim/dict
 .git
 .svn
-lib
+#lib
 libs
 jquery-*.js
 *.swp
