@@ -22,6 +22,10 @@ set expandtab
 "新しい行のインデントを現在行と同じにする
 set autoindent
 
+" ペーストするときにインデントさせない
+imap <F5> <nop>
+set pastetoggle=<F5>
+
 "検索
 set incsearch
 set ignorecase
