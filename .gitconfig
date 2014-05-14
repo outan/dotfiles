@@ -85,7 +85,7 @@
 	cl	    = config --local -l
     ce	    = config --edit
 	fix	    = commit --amend
-
+    rso     = remote show origin
 [push]
 	#default = upstream
     #カレントブランチとリモートブランチの間に「追跡関係」がある場合、なおかつカレントブランチのみはpushの対象になるように設定(default = trackingとは同じ効果)
