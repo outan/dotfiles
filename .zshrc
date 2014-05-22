@@ -198,3 +198,7 @@ export LESS='-X -i -P ?f%f:(stdin). ?lb%lb?L/%L.. [?eEOF:?pb%pb\%..]'
 
 #git command it conflicts with the zsh globbing問題を解決するため　https://blog.afoolishmanifesto.com/posts/git-aliases-for-your-life/
 alias git='noglob git'
+
+# REGRESSION_NEXLINK
+    export REGRESSION_NEXLINK_HOME=$HOME/projects/regression_nexlink
+    export REGRESSION_NEXLINK_DOWNLOAD_DIR=$HOME/Downloads
