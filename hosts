@@ -21,14 +21,16 @@
 #	::1             localhost
 
 #ローカル開発環境
-192.168.37.128	api-a api-a.vm.asiw.jp
-192.168.37.128	api-b api-b.vm.asiw.jp
-192.168.37.128	menu-a menu-a.vm.asiw.jp
-192.168.37.128	menu-b menu-b.vm.asiw.jp
-192.168.37.128	dev12.vm.asiw.jp
-192.168.37.128	dev12-stg.vm.asiw.jp
-192.168.37.128	dev13.vm.asiw.jp
-192.168.37.128	dev13-stg.vm.asiw.jp
+192.168.143.3	api-a api-a.vm.asiw.jp
+192.168.143.3	api-b api-b.vm.asiw.jp
+192.168.143.3	menu-a menu-a.vm.asiw.jp
+192.168.143.3	menu-b menu-b.vm.asiw.jp
+192.168.143.3	dev12.vm.asiw.jp
+192.168.143.3	dev12-stg.vm.asiw.jp
+192.168.143.3	dev13.vm.asiw.jp
+192.168.143.3	dev13-stg.vm.asiw.jp
+
+
 202.222.94.190	kt-test-stage.nlk.jp
 
 # NEXLINK 検証環境
@@ -49,3 +51,9 @@
 54.249.36.125	PIECE801-2		# web掲示
 176.34.57.165	FREEDOM		# 起動停止用
 54.248.235.113	FREEDOM02		# 起動停止、回帰テスト
+
+192.168.0.111 kos.outan.local
+202.222.94.190  test-ope-chk2.nlk.jp
+202.222.94.190  test-ope-chk2-stage.nlk.jp
+
+
