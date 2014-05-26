@@ -202,3 +202,7 @@ alias git='noglob git'
 # REGRESSION_NEXLINK
     export REGRESSION_NEXLINK_HOME=$HOME/projects/regression_nexlink
     export REGRESSION_NEXLINK_DOWNLOAD_DIR=$HOME/Downloads
+
+#perlの設定
+PATH="$HOME/.plenv/bin:$PATH"
+eval "$(plenv init -)"
