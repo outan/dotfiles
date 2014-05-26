@@ -204,5 +204,8 @@ alias git='noglob git'
     export REGRESSION_NEXLINK_DOWNLOAD_DIR=$HOME/Downloads
 
 #perlの設定
-PATH="$HOME/.plenv/bin:$PATH"
-eval "$(plenv init -)"
+if which plenv > /dev/null; then
+    export PLENV_ROOT="\${HOME}/.plenv"
+    export PATH=\${PLENV_ROOT}/shims:\${PATH}
+    eval "\$(plenv init -)";
+fi
