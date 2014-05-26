@@ -25,11 +25,13 @@
 192.168.143.3	api-b api-b.vm.asiw.jp
 192.168.143.3	menu-a menu-a.vm.asiw.jp
 192.168.143.3	menu-b menu-b.vm.asiw.jp
-192.168.143.3	dev12.vm.asiw.jp
-192.168.143.3	dev12-stg.vm.asiw.jp
+192.168.143.3	dev12.vm.asiw.jp #test03用本番サイト
+192.168.143.3	dev12-stg.vm.asiw.jp #test03用確認用サイト
 192.168.143.3	dev13.vm.asiw.jp
 192.168.143.3	dev13-stg.vm.asiw.jp
 
+192.168.143.3  dev20.vm.asiw.jp #test05本番用サイト
+192.168.143.3  dev20-stg.vm.asiw.jp #test05確認用サイト
 
 202.222.94.190	kt-test-stage.nlk.jp
 
