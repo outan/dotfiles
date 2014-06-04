@@ -43,9 +43,10 @@ alias vi='vim'
 fi
 
 #alias sl= "ls -al | grep -- '->'"
-#grepの色設定は.bashrcで設定
+#grepの色設定
 alias grep='grep -E --color=auto'
-#alias egrep='egrep --color=auto'
+alias zgrep='zgrep --color=auto'
+alias egrep='egrep --color=auto'
 alias coteditor='open -a Coteditor'
 alias javac="javac -J-Dfile.encoding=UTF8"
 alias 'ps?'='pgrep -l -f'
