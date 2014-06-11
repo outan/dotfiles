@@ -8,6 +8,7 @@ fi
 
 export PATH="/usr/local/bin:$PATH:/usr/local/sbin"
 export PATH=$PATH:~/bin
+export PATH=$PATH:/sbin
 
 #eval "$(rbenv init -)"
 
@@ -18,3 +19,4 @@ alias java='java -Dfile.encoding=UTF-8'
 # REGRESSION_NEXLINK
 export REGRESSION_NEXLINK_HOME=$HOME/projects/regression_nexlink
 export REGRESSION_NEXLINK_DOWNLOAD_DIR=$HOME/Downloads
+
