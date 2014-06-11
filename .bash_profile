@@ -9,6 +9,7 @@ fi
 export PATH="/usr/local/bin:$PATH:/usr/local/sbin"
 export PATH=$PATH:~/bin
 export PATH=$PATH:/sbin
+export PATH=$PATH:/usr/sbin
 
 #eval "$(rbenv init -)"
 
