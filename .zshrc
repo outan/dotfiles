@@ -34,11 +34,14 @@ zstyle ':vcs_info:git:*' formats '[%b]%c%u'
 zstyle ':vcs_info:git:*' actionformats '[%b|%a]%c%u'
 
 function ruby_prompt {
-    result=`rbenv version | sed -e 's/ .*//'`
-	    if [ "$result" ] ; then
-		      echo "[$result]"
-		fi
-		}
+    if [ -f /usr/local/bin/rbenv ] 
+    then
+        result=`rbenv version | sed -e 's/ .*//'`
+            if [ "$result" ] ; then
+                echo "[$result]"
+		    fi
+    fi
+    }
 
 function git_stash_count {
 	result=`git stash list 2>/dev/null | wc -l | tr -d ' '`
