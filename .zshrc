@@ -165,7 +165,9 @@ if [ -f ~/.aliases ]; then
 fi
 
 # do brew install rbenv
-eval "$(rbenv init - zsh)"
+if which rbenv > /dev/null; then
+    eval "$(rbenv init - zsh)";
+fi
 
 ## http://d.hatena.ne.jp/hiboma/20120315/1331821642
 ## Ctrl + X Crtl + Pでコマンドラインをクリップボードに登録
