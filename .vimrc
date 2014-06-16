@@ -1,6 +1,5 @@
 " 文字コードとかの設定
 set encoding=utf-8
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
 
 "改行コード
 set fileformats=unix,dos,mac
