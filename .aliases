@@ -91,7 +91,7 @@ alias gt="gitk"
 alias lb="ssh develop_lb01"
 
 #ag関連
-alias ag='ag -S --stats'
+alias ag='ag -S --stats --hidden'
 alias agh='ag --hidden'
 
 # extract http://d.hatena.ne.jp/jeneshicc/20110215/1297778049
