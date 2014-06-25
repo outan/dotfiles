@@ -11,7 +11,10 @@ export PATH=$PATH:~/bin
 export PATH=$PATH:/sbin
 export PATH=$PATH:/usr/sbin
 
-#eval "$(rbenv init -)"
+# do brew install rbenv
+if which rbenv > /dev/null; then
+        eval "$(rbenv init -)";
+fi
 
 alias javac='javac -J-Dfile.encoding=UTF-8'
 alias java='java -Dfile.encoding=UTF-8'
