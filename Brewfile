@@ -1,8 +1,14 @@
-# makke sure we’re using the latest Homebrew
+# make sure we’re using the latest Homebrew
 #brew update
 
 # Upgrade any already-installed formulae
 #brew upgrade
+
+# Add repositories
+tap homebrew/versions || true
+tap caskroom/cask || true
+tap caskroom/versions || true
+
 
 # Install GNU core utilities (those that come with OS X are outdated)
 brew  'coreutils'
@@ -23,8 +29,6 @@ brew  'tmux'
 
 brew  'zsh'
 
-brew  'git'
-
 brew  'rbenv'
 
 brew  'mysql'
@@ -34,6 +38,8 @@ brew  'tree'
 #make less command show color
 brew  'source-highlight'
 
+brew  'git'
+
 #.gitconfig設定後、git log -pでは文字化けという現象の対処
 brew  'lv'
 
@@ -42,13 +48,23 @@ brew  'tig'
 
 #git branch管理用のツール
 brew  'git-flow'
+
 brew  'openssl'
 brew  'curl-ca-bundle'
 brew 'ack'
 brew 'ag'
 brew 'hub'
 
-
 brew 'terminal-notifier'
+
+brew install lsyncd || true
+
+brew install redis || true
+
+brew install rmtrash || true
+
+#perl,pythonインストール
+brew install pyenv plenv perl-build
+
 # Remove outdated versions from the cellar
 #brew cleanup
