@@ -121,6 +121,33 @@ extract () {
     fi
     }
 alias ex='extract'
+
 #日本語、英語のmanページを切り替えて表示させる
 alias man='env LANG=C man'
 alias jman='env LANG=ja_JP.UTF-8 man'
+
+#suffix alias alias -sを利用することで拡張子に応じたコマンドを実行してくれるようになる。
+alias -s txt='cat'
+alias -s html='google-chrome'
+alias -s rb='ruby'
+alias -s py='python'
+alias -s hs='runhaskell'
+alias -s php='php -f'
+alias -s {gz,tar,zip,rar,7z}='unarchive' # preztoのarchiveモジュールのコマンド(https://github.com/sorin-ionescu/prezto/tree/master/modules)
+alias -s {gif,jpg,jpeg,png,bmp}='display'
+
+function runcpp () {
+    g++ -O2 $1
+    shift
+    ./a.out $@ 
+}
+alias -s {c,cpp}='runcpp'
+
+function runjava () { 
+    className=$1
+    className=${className%.java}
+    javac $1
+    shift
+    java $className $@
+}
+alias -s java='runjava'
