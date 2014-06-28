@@ -39,8 +39,8 @@
     #log関連
 	lp      = log -p # diffも一緒に出す
 	ls      = log --stat # logに変更されたファイルも一緒に出す
-	lg2     = log --graph --decorate  --tags  --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn %Creset%s'
 	lg      = log --graph --branches  --decorate --date=short  --color --pretty='%x09%h %cn%x09%s %Cred%d%Creset'
+	lg2     = log --graph --decorate  --tags  --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn %Creset%s'
 	lga     = log --graph --all  --decorate --date=short  --color --pretty='%x09%h %cn%x09%s %Cred%d%Creset'
 	lga2    = log --oneline --decorate --graph --date=short --branches --tags --remotes
     
@@ -58,7 +58,8 @@
     d5      = diff HEAD~~~~~ # HEADから5つ前とdiff
     d10     = diff HEAD~~~~~~~~~~ # HEADから10前とdiff
 
-	co      = checkout
+    unstage  = reset HEAD
+    co      = checkout
     cb      = checkout -b # branch切ってcheckoutする
     cd      = checkout develop
     ci      = commit
