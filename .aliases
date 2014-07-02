@@ -78,7 +78,15 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/projects"
 alias df="cd ~/dotfiles"
-alias n1="cd ~/projects/nexlink_cms"
+
+if [ -d /Users/outannexway/projects/nexlink_cms ]
+then
+    alias n1="cd ~/projects/nexlink_cms"
+elif [ -d /home/nexlink/tmp.nexlink-b ]
+then
+    alias n1="cd ~/tmp.nexlink-b"
+fi
+
 alias n2="cd ~/projects/nexlink2"
 alias we="cd ~/web"
 alias de="cd ~/web/rails/demo"
