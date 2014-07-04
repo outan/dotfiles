@@ -10,3 +10,4 @@ known_hosts
 app/models/pdf/
 .rbenv-version
 mysql-connector*
+dotfiles_back/
