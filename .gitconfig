@@ -37,7 +37,8 @@
 
 [alias]
     #log関連
-	lp      = log -p # diffも一緒に出す
+    lgg     = log -g
+	lp      = log -p -g # diffも一緒に出す
 	ls      = log --stat # logに変更されたファイルも一緒に出す
 	lg      = log --graph --branches  --decorate --date=short  --color --pretty='%x09%h %cn%x09%s %Cred%d%Creset'
 	lg2     = log --graph --decorate  --tags  --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn %Creset%s'
