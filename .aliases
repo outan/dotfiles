@@ -13,7 +13,7 @@ alias ll='ls  -Fl ${colorflag}'
 # List only directories
 alias lsd='ls -l ${colorflag} | grep "^d"'
 
-alias lsal='ls -FAl ${colorflag} ${fileflag}'
+alias lsal='ls -FAlT ${colorflag} ${fileflag}'
 alias lsa='ls -FA ${colorflag}'
 alias lsdl="ls -AFdl .*" #.で始まるすべてのもの（隠しファイルとディレクトリのみを表示）
 alias lsll="lsal *(@D)" #シンボリックリンク(.で始まるシンボリックも含む)のみを表示
