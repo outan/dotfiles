@@ -93,7 +93,10 @@ alias de="cd ~/web/rails/demo"
 alias blog="cd ~/web/rails/blog"
 
 #git関連
-alias g=" git"
+alias g="git"
+alias st="git status --ignore-submodules=dirty"
+alias pull='git pull'
+alias push='git push'
 alias bs="java -cp bsh-2.0b4.jar bsh.Interpreter"
 alias gt="gitk"
 
