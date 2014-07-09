@@ -1,9 +1,9 @@
 " 文字コードとかの設定
 set encoding=utf-8
 
-"改行可視化(行末が$、TABが^Iで表示される)"
+"タブ、空白、改行の可視化"
 set list
-
+set listchars=tab:>-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 "改行コード
 set fileformats=unix,dos,mac
 
