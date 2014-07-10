@@ -26,11 +26,14 @@ alias log='cd ~/system/nexlink-b/var/log/'
 alias jobs='jobs -l'
 
 #rmを実施する時に、Trashに移動する
-if [ -f /usr/local/bin/rmtrash ]
+if [ -f /usr/local/bin/trash ]
+then
+    alias rm='trash -v'
+elif [ -f /usr/local/bin/rmtrash ]
 then
     alias rm='rmtrash'
 else
-    alias rm='rm -i'
+    alias rm='rm -iv'
 fi
 
 alias mv='mv -iv'
@@ -39,10 +42,10 @@ alias cl='clear'
 #macvimがある場合に、viはmacvimを起動
 if [ -f /Applications/MacVim.app/Contents/MacOS/Vim ]
 then
-  alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-  alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+    alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+    alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 else
-alias vi='vim'
+    alias vi='vim'
 fi
 
 #alias sl= "ls -al | grep -- '->'"
