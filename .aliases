@@ -14,7 +14,7 @@ alias ll='ls  -Fl ${colorflag}'
 alias lsd='ls -l ${colorflag} | grep "^d"'
 
 if ls --color > /dev/null 2>&1; then #GNU 'ls'
-    alias lsal='ls -FAli ${colorflag} ${fileflag}'
+    alias lsal='ls -FAli --time-style=+%Y-%m-%d\ %H:%M:%S  ${colorflag} ${fileflag}'
 else # OS X(BSD) ls
     alias lsal='ls -FAlTi ${colorflag} ${fileflag}'
 fi
