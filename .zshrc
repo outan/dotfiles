@@ -223,3 +223,45 @@ if which pyenv > /dev/null; then
 fi
 
 
+#~で終わる一時ファイルを削除する関数
+rm~() {
+if [ -f /usr/local/bin/trash ]
+then
+    case "$1" in
+    "--dry-run")
+        find . -name "*~" -type f
+        ;;
+    "")
+        find . -name "*~" -type f -exec  /usr/local/bin/trash -fv -- {} +
+        ;;
+    *)
+        echo "Unsupported option \`$1'. Did you mean --dry-run?(using command trash)"
+        ;;
+    esac
+elif [ -f /usr/local/bin/rmtrash ]
+then
+    case "$1" in
+    "--dry-run")
+        find . -name "*~" -type f
+        ;;
+    "")
+        find . -name "*~" -type f -exec  /usr/local/bin/rmtrash  -- {} +
+        ;;
+    *)
+        echo "Unsupported option \`$1'. Did you mean --dry-run? (using command rmtrash)"
+        ;;
+    esac
+else
+    case "$1" in
+    "--dry-run")
+        find . -name "*~" -type f
+        ;;
+    "")
+        find . -name "*~" -type f -exec  /bin/rm -fv -- {} +
+        ;;
+    *)
+        echo "Unsupported option \`$1'. Did you mean --dry-run? (using OS default command rm)"
+        ;;
+    esac
+fi
+}
