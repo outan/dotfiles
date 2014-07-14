@@ -146,7 +146,8 @@ alias ex='extract'
 alias man='env LANG=C man'
 alias jman='env LANG=ja_JP.UTF-8 man'
 
-#suffix alias alias -sを利用することで拡張子に応じたコマンドを実行してくれるようになる。
+#suffix alias  -sを利用することで拡張子に応じたコマンドを実行してくれるようになる。
+if alias -s > /dev/null 2>&1; then
 alias -s txt='cat'
 alias -s html='google-chrome'
 alias -s rb='ruby'
@@ -171,3 +172,4 @@ function runjava () {
     java $className $@
 }
 alias -s java='runjava'
+fi
