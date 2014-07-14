@@ -33,7 +33,7 @@ alias jobs='jobs -l'
 #rmを実施する時に、Trashに移動する
 if [ -f /usr/local/bin/trash ]
 then
-    alias rm='trash -v'
+    alias rm='trash -r'
 elif [ -f /usr/local/bin/rmtrash ]
 then
     alias rm='rmtrash'
