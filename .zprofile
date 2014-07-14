@@ -3,3 +3,5 @@ export LANG=ja_JP.UTF-8
 export PATH="/usr/local/bin:$PATH:/usr/local/sbin"
 export PATH=$PATH:~/bin
 export PATH=$PATH:~/dotfiles/bin
+export PATH=$PATH:/sbin
+export PATH=$PATH:/usr/sbin
