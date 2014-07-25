@@ -37,14 +37,12 @@
 
 [alias]
     #log関連
-    lgg     = log -g
-	lp      = log -p -g # diffも一緒に出す
-	ls      = log --stat # logに変更されたファイルも一緒に出す
-	lg      = log --graph --branches  --decorate --date=short  --color --pretty='%x09%h %cn%x09%s %Cred%d%Creset'
-	lg2     = log --graph --decorate  --tags  --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn %Creset%s'
-	lga     = log --graph --all  --decorate --date=short  --color --pretty='%x09%h %cn%x09%s %Cred%d%Creset'
-	lga2    = log --oneline --decorate --graph --date=short --branches --tags --remotes
-    
+    lgr     = log -g #--walk-reflogsと同じ結果(reflogの情報も表示)
+    lgp      = log -p -g # Generate patch(diffも一緒に出す)
+    lgs      = log --stat # 変更されたファイル名も一緒に出す
+    lgg     = log --graph --all --decorate --date=short --pretty=format:'%Cgreen%h %C(yellow)%cd %C(Magenta)%ar %Cblue%cn %Creset%s %C(Red)%d'
+    lgg2    = log --graph --all --format=format:'%C(bold blue)%h%C(reset) %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset)  %C(bold white)--%an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+
     #diff関連
 	d       = diff
 	df      = diff
