@@ -87,7 +87,7 @@ alias dt="cd ~/Desktop"
 alias p="cd ~/projects"
 alias df="cd ~/dotfiles"
 
-if [ -d /Users/outannexway/projects/nexlink_cms ]
+if [ -d ~/projects/nexlink_cms ]
 then
     alias n1="cd ~/projects/nexlink_cms"
 elif [ -d /home/nexlink/tmp.nexlink-b ]
