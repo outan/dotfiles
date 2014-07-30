@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>rsync_apimock_douki</string>
+	<key>OnDemand</key>
+	<false/>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/usr/bin/rsync</string>
+		<string>-a</string>
+		<string>-e</string>
+		<string>/usr/bin/ssh</string>
+		<string>/Users/outannexway/projects/outbound_api_mockup</string>
+		<string>nexlink@192.168.143.3:</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>StartInterval</key>
+	<integer>2</integer>
+</dict>
+</plist>
