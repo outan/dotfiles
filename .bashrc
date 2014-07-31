@@ -18,7 +18,7 @@ fi
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWCOLORHINTS=true
 GIT_PS1_UNTRACKEDFILES=true
-PROMPT_COMMAND="__git_ps1 '\u@\h:\w' '\\$ '"
+#PROMPT_COMMAND="__git_ps1 '\u@\h:\w' '\\$ '"
 #PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 
 export LESS='-R'
