@@ -109,6 +109,7 @@ alias bs="java -cp bsh-2.0b4.jar bsh.Interpreter"
 alias gt="gitk"
 
 alias lb="ssh develop_lb01"
+alias sshn1="ssh n1"
 
 #ag関連
 alias ag='ag  --stats --hidden -i'
