@@ -267,3 +267,46 @@ else
     esac
 fi
 }
+
+#子ディレクトリも削除しに行く。
+rma~() {
+if [ -f /usr/local/bin/trash ]
+then
+    case "$1" in
+    "--dry-run")
+        find . -name "*~" \( -type f -or -type l \)
+        ;;
+    "")
+        find . -name "*~" \( -type f -or -type l \) -exec  /usr/local/bin/trash -fv -- {} +
+        ;;
+    *)
+        echo "Unsupported option \`$1'.\nDid you mean --dry-run?(using command trash)"
+        ;;
+    esac
+elif [ -f /usr/local/bin/rmtrash ]
+then
+    case "$1" in
+    "--dry-run")
+        find . -name "*~" \( -type f -or -type l \)
+        ;;
+    "")
+        find . -name "*~" \( -type f -or -type l \) -exec  /usr/local/bin/rmtrash -fv -- {} +
+        ;;
+    *)
+        echo "Unsupported option \`$1'.\nDid you mean --dry-run? (using command rmtrash)"
+        ;;
+    esac
+else
+    case "$1" in
+    "--dry-run")
+        find . -name "*~" \( -type f -or -type l \)
+        ;;
+    "")
+        find . -name "*~" \( -type f -or -type l \) -exec /bin/rm  -fv -- {} +
+        ;;
+    *)
+        echo "Unsupported option \`$1'.\nDid you mean --dry-run? (using OS default command rm)"
+        ;;
+    esac
+fi
+}
