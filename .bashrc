@@ -7,8 +7,14 @@ export LSCOLORS=DxGxcxdxCxegedabagacad
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;37;41'
 
-source $HOME/.git-completion.bash
-source $HOME/.git-prompt.sh
+if [ -f $HOME/.git-completion.bash ];then
+	source $HOME/.git-completion.bash
+fi
+
+if [ -f $HOME/.git-prompt.sh ];then
+	source $HOME/.git-prompt.sh
+fi
+
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWCOLORHINTS=true
 GIT_PS1_UNTRACKEDFILES=true
