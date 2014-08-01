@@ -82,12 +82,12 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-alias d="cd ~/Dropbox"
+alias dp="cd ~/Dropbox"
 alias c="cd /c/Users/034180_427007"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/projects"
-alias df="cd ~/dotfiles"
+alias d="cd ~/dotfiles"
 
 if [ -d ~/projects/nexlink_cms ]
 then
@@ -98,18 +98,57 @@ then
 fi
 
 alias n2="cd ~/projects/nexlink2"
-alias wb="cd ~/web"
+alias web="cd ~/Dropbox/web"
 alias de="cd ~/web/rails/demo"
 alias blog="cd ~/web/rails/blog"
 
 #git関連
 alias g="git"
-alias st="git status --ignore-submodules=dirty"
 alias pull='git pull'
 alias push='git push'
-alias bs="java -cp bsh-2.0b4.jar bsh.Interpreter"
+alias pushn='git push -n' #git push --dry-runと同様
+alias add='git add'
+alias unstage='git reset HEAD'
+alias status='git status'
+alias branch='git branch -vv'
+alias ls-remote='git ls-remote'
+alias checkout='git checkout'
+alias merge='git merge'
+alias commmit='git commit'
+alias reflog='git reflog'
+alias stash='git stash'
+
+alias fix='git commit --amend'
+alias tag='git tag'
+
+
+alias pl='git pull'
+alias ph='git push'
+alias pn='git push -n'
+alias ad='git add'
+alias us='git reset HEAD'
+alias st="git status --ignore-submodules=dirty"
+alias br='git branch -vv'
+alias ba='git branch -vva'
+alias lr='git ls-remote'
+alias co='git checkout'
+alias mg='git merge'
+alias cm='git commit -m'
+alias rf='git reflog'
+alias ss='git stash'
+alias df='git diff'
+alias dc='git diff --cached'
+alias lg='git log'
+alias lgg="git log --graph --all --decorate --date=short --pretty=format:'%Cgreen%h %C(yellow)%cd %C(Magenta)%ar %Cblue%cn %Creset%s %C(Red)%d'"
+alias lgg2="git log --graph --all --format=format:'%C(bold blue)%h%C(reset) %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset)  %C(bold white)--%an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative"
+alias lgs='git log --stat' #変更されたファイル名も一緒に出す。
+alias lgp='git log -p -g' # Generate patch(diffも一緒に出す)
+alias lgr='git log -g' #--walk-reflogsと同じ結果(reflogの情報も表示)
 alias gk="gitk"
 
+alias bs="java -cp bsh-2.0b4.jar bsh.Interpreter"
+
+#ssh接続関連
 alias lb="ssh develop_lb01"
 alias sshn1="ssh n1"
 
