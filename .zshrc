@@ -230,7 +230,7 @@ rm~() {
 if [ -f /usr/local/bin/trash ]
 then
     case "$1" in
-    "--dry-run")
+        "--dry-run" | "-n")
         find . -name "*~" \( -type f -or -type l \) -maxdepth 1
         ;;
     "")
@@ -243,7 +243,7 @@ then
 elif [ -f /usr/local/bin/rmtrash ]
 then
     case "$1" in
-    "--dry-run")
+    "--dry-run" | "-n")
         find . -name "*~" \( -type f -or -type l \) -maxdepth 1
         ;;
     "")
@@ -255,7 +255,7 @@ then
     esac
 else
     case "$1" in
-    "--dry-run")
+    "--dry-run" | "-n")
         find . -name "*~" \( -type f -or -type l \) -maxdepth 1
         ;;
     "")
@@ -273,7 +273,7 @@ rma~() {
 if [ -f /usr/local/bin/trash ]
 then
     case "$1" in
-    "--dry-run")
+    "--dry-run" | "-n")
         find . -name "*~" \( -type f -or -type l \)
         ;;
     "")
@@ -286,7 +286,7 @@ then
 elif [ -f /usr/local/bin/rmtrash ]
 then
     case "$1" in
-    "--dry-run")
+    "--dry-run" | "-n")
         find . -name "*~" \( -type f -or -type l \)
         ;;
     "")
@@ -298,7 +298,7 @@ then
     esac
 else
     case "$1" in
-    "--dry-run")
+    "--dry-run" | "-n")
         find . -name "*~" \( -type f -or -type l \)
         ;;
     "")
