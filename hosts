@@ -20,20 +20,26 @@
 #	127.0.0.1       localhost
 #	::1             localhost
 
-#ローカル開発環境
-192.168.143.3	api-a api-a.vm.asiw.jp
-192.168.143.3	api-b api-b.vm.asiw.jp
+#nexlink BASIC premiumユーザー画面用
+192.168.0.111 kos.outan.local
+
+#nexlink1.0 ローカル開発環境(VM上のCentOS)
+#ナビ画面(クライアントスタッフ、ネクスウェイ側スタッフ、管理者)用
 192.168.143.3	menu-a menu-a.vm.asiw.jp
 192.168.143.3	menu-b menu-b.vm.asiw.jp
-192.168.143.3	dev12.vm.asiw.jp #test03用本番サイト
-192.168.143.3	dev12-stg.vm.asiw.jp #test03用確認用サイト
-192.168.143.3	dev13.vm.asiw.jp
-192.168.143.3	dev13-stg.vm.asiw.jp
 
-192.168.143.3  dev20.vm.asiw.jp #test05本番用サイト
-192.168.143.3  dev20-stg.vm.asiw.jp #test05確認用サイト
+#OB側api mock用
+192.168.143.3	api-a api-a.vm.asiw.jp
+192.168.143.3	api-b api-b.vm.asiw.jp
 
-202.222.94.190	kt-test-stage.nlk.jp
+#enduser サイト用(CentOS htdocs配下に使われていないものをサイトの「基本情報」と「詳細設定」に設定)
+192.168.143.3	dev13.vm.asiw.jp #test03用本番サイト
+192.168.143.3	dev13-stg.vm.asiw.jp #test03用確認用サイト
+
+192.168.143.3  dev15.vm.asiw.jp #test05本番用サイト
+192.168.143.3  dev15-stg.vm.asiw.jp #test05確認用サイト
+
+202.222.94.190	kt-test-stage.nlk.jp #不明？
 
 # NEXLINK 検証環境
 10.250.187.131    PIECE901
@@ -44,6 +50,10 @@
 10.250.188.201    OPECT901
 10.250.188.211    CONSW901
 
+#検証環境(回帰テスト用)
+202.222.94.190  test-ope-chk2.nlk.jp
+202.222.94.190  test-ope-chk2-stage.nlk.jp
+
 # 本番リリース待ち環境
 54.248.97.123	SQLDB801	
 175.41.238.90	OBCTR801	
@@ -53,9 +63,3 @@
 54.249.36.125	PIECE801-2		# web掲示
 176.34.57.165	FREEDOM		# 起動停止用
 54.248.235.113	FREEDOM02		# 起動停止、回帰テスト
-
-192.168.0.111 kos.outan.local
-202.222.94.190  test-ope-chk2.nlk.jp
-202.222.94.190  test-ope-chk2-stage.nlk.jp
-
-
