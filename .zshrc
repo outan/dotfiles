@@ -142,10 +142,6 @@ zstyle ':completion:*:default' menu select=1
 ## 補完候補の色づけ
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
-## ディレクトリ名だけで cd,移動後自動でlsする
-setopt auto_cd
-function chpwd() { ls -al}
-
 ## カッコの対応などを自動的に補完
 setopt auto_param_keys
 
@@ -163,6 +159,11 @@ setopt auto_pushd
 if [ -f ~/.aliases ]; then
 	. ~/.aliases
 fi
+
+## ディレクトリ名だけでcurennt directory移動、移動後自動でlsalする
+#(先に.aliasesファイルをロードする必要がある)
+setopt auto_cd
+function chpwd() { lsal }
 
 ## rbenv
 export RBENV_ROOT="/usr/local/bin/rbenv"
