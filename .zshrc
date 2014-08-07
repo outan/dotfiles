@@ -234,8 +234,8 @@ then
         "--dry-run" | "-n")
         find . -name "*~" \( -type f -or -type l \) -maxdepth 1
         ;;
-    "")
-        find . -name "*~" \( -type f -or -type l \) -maxdepth 1 -exec  /usr/local/bin/trash -fv -- {} +
+    "~" | "DS_Store" | "swp")
+        find . -name "*$1" \( -type f -or -type l \) -maxdepth 1 -exec  /usr/local/bin/trash -fv -- {} +
         ;;
     *)
         echo "Unsupported option \`$1'.\nDid you mean --dry-run?(using command trash)"
@@ -247,8 +247,8 @@ then
     "--dry-run" | "-n")
         find . -name "*~" \( -type f -or -type l \) -maxdepth 1
         ;;
-    "")
-        find . -name "*~" \( -type f -or -type l \) -maxdepth 1 -exec  /usr/local/bin/rmtrash -fv -- {} +
+    "~" | "DS_Store" | "swp")
+        find . -name "*$1" \( -type f -or -type l \) -maxdepth 1 -exec  /usr/local/bin/rmtrash -fv -- {} +
         ;;
     *)
         echo "Unsupported option \`$1'.\nDid you mean --dry-run? (using command rmtrash)"
@@ -259,8 +259,8 @@ else
     "--dry-run" | "-n")
         find . -name "*~" \( -type f -or -type l \) -maxdepth 1
         ;;
-    "")
-        find . -name "*~" \( -type f -or -type l \) -maxdepth 1 -exec /bin/rm  -fv -- {} +
+    "~" | "DS_Store" | "swp")
+        find . -name "*$1" \( -type f -or -type l \) -maxdepth 1 -exec /bin/rm  -fv -- {} +
         ;;
     *)
         echo "Unsupported option \`$1'.\nDid you mean --dry-run? (using OS default command rm)"
@@ -277,8 +277,8 @@ then
     "--dry-run" | "-n")
         find . -name "*~" \( -type f -or -type l \)
         ;;
-    "")
-        find . -name "*~" \( -type f -or -type l \) -exec  /usr/local/bin/trash -fv -- {} +
+    "~" | "DS_Store" | "swp")
+        find . -name "*$1" \( -type f -or -type l \) -exec  /usr/local/bin/trash -fv -- {} +
         ;;
     *)
         echo "Unsupported option \`$1'.\nDid you mean --dry-run?(using command trash)"
@@ -290,8 +290,8 @@ then
     "--dry-run" | "-n")
         find . -name "*~" \( -type f -or -type l \)
         ;;
-    "")
-        find . -name "*~" \( -type f -or -type l \) -exec  /usr/local/bin/rmtrash -fv -- {} +
+    "~" | "DS_Store" | "swp")
+        find . -name "*$1" \( -type f -or -type l \) -exec  /usr/local/bin/rmtrash -fv -- {} +
         ;;
     *)
         echo "Unsupported option \`$1'.\nDid you mean --dry-run? (using command rmtrash)"
@@ -302,8 +302,8 @@ else
     "--dry-run" | "-n")
         find . -name "*~" \( -type f -or -type l \)
         ;;
-    "")
-        find . -name "*~" \( -type f -or -type l \) -exec /bin/rm  -fv -- {} +
+    "~" | "DS_Store" | "swp")
+        find . -name "*$1" \( -type f -or -type l \) -exec /bin/rm  -fv -- {} +
         ;;
     *)
         echo "Unsupported option \`$1'.\nDid you mean --dry-run? (using OS default command rm)"
