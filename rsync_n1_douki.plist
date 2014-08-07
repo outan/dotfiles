@@ -9,6 +9,7 @@
 		<string>/usr/bin/rsync</string>
 		<string>-a</string>
 		<string>-e</string>
+        <string>--delete</string>
 		<string>/usr/bin/ssh</string>
 		<string>/Users/outannexway/projects/nexlink_cms/</string>
 		<string>nexlink@192.168.143.3:tmp.nexlink-b</string>

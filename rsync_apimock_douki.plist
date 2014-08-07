@@ -10,6 +10,7 @@
 	<array>
 		<string>/usr/bin/rsync</string>
 		<string>-a</string>
+        <string>--delete</string>
 		<string>-e</string>
 		<string>/usr/bin/ssh</string>
 		<string>/Users/outannexway/projects/outbound_api_mockup</string>
