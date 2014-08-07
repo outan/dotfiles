@@ -8,6 +8,7 @@
 	<array>
 		<string>/usr/bin/rsync</string>
 		<string>-a</string>
+        <string>--delete</string>
 		<string>-e</string>
         <string>--delete</string>
 		<string>/usr/bin/ssh</string>
