@@ -151,7 +151,7 @@ setopt auto_param_slash
 ## スペルチェック
 setopt correct
 
-# ディレクトリ移動履歴保存,cd -でひとつ前にいたディレクトリに戻ることが可能
+# ディレクトリ移動履歴保存,"cd -[タブ]"で、これまでに移動したディレクトリ一覧が表示
 setopt auto_pushd
 
 # alias
