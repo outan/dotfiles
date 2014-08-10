@@ -1,8 +1,14 @@
 LANG=ja_JP.UTF-8
 export EDITOR=vim
+
+#historyに関する設定
 HISTFILE=$HOME/.zsh-history
-HISTSIZE=100000
-SAVEHIST=100000
+HISTSIZE=1,000,000
+SAVEHIST=1,000,000
+## 直前と同じコマンドをヒストリに追加しない
+setopt hist_ignore_dups
+## ヒストリを共有
+setopt share_history
 
 #ls色付け
 export LSCOLORS=exfxcxdxbxegedabagacad
@@ -100,9 +106,6 @@ setopt auto_resume
 ## 補完候補を一覧表示
 setopt auto_list
 
-## 直前と同じコマンドをヒストリに追加しない
-setopt hist_ignore_dups
-
 ## cd 時に自動で push
 setopt autopushd
 
@@ -132,9 +135,6 @@ setopt numeric_glob_sort
 
 ## 出力時8ビットを通す
 setopt print_eight_bit
-
-## ヒストリを共有
-setopt share_history
 
 ## 補完候補のカーソル選択を有効に
 zstyle ':completion:*:default' menu select=1
