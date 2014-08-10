@@ -48,6 +48,10 @@ zstyle ':completion:*:manuals' separate-sections true
 # オブジェクトファイルとか中間ファイルとかはfileとして補完させない
 zstyle ':completion:*:*files' ignored-patterns '*?.o' '*?~' '*\#' '*?.swp'
 
+#先方予測機能を有効に設定
+autoload predict-on
+predict-on
+
 ### prompt
 unsetopt promptcr
 setopt prompt_subst
