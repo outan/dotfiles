@@ -9,14 +9,44 @@ SAVEHIST=1,000,000
 setopt hist_ignore_dups
 ## ヒストリを共有
 setopt share_history
+## zsh の開始, 終了時刻をヒストリファイルに書き込む
+setopt extended_history
 
 #ls色付け
 export LSCOLORS=exfxcxdxbxegedabagacad
 export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 export ZLS_COLORS=$LS_COLORS
 export CLICOLOR=true
+
 # 補完結果の表示の色設定
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+## 補完機能の強化
+autoload -U compinit
+compinit
+## 補完候補一覧でファイルの種別をマーク表示
+setopt list_types
+## 補完候補を一覧表示
+setopt auto_list
+## TAB で順に補完候補を切り替える
+setopt auto_menu
+## 補完候補のカーソル選択を有効に
+zstyle ':completion:*:default' menu select=1
+## 補完候補の色づけ
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+## カッコの対応などを自動的に補完
+setopt auto_param_keys
+## ディレクトリ名の補完で末尾の / を自動的に付加し、次の補完に備える
+setopt auto_param_slash
+## --prefix=/usr などの = 以降も補完
+setopt magic_equal_subst
+# ディレクトリ移動履歴保存,"cd -[タブ]"で、これまでに移動したディレクトリ一覧が表示
+setopt auto_pushd
+#補完候補を詰めて表示する設定
+setopt list_packed
+# manの補完をセクション番号別に表示させる
+zstyle ':completion:*:manuals' separate-sections true
+# オブジェクトファイルとか中間ファイルとかはfileとして補完させない
+zstyle ':completion:*:*files' ignored-patterns '*?.o' '*?~' '*\#' '*?.swp'
 
 ### prompt
 unsetopt promptcr
@@ -97,14 +127,8 @@ setopt nobeep
 ## 内部コマンド jobs の出力をデフォルトで jobs -l にする
 setopt long_list_jobs
 
-## 補完候補一覧でファイルの種別をマーク表示
-setopt list_types
-
 ## サスペンド中のプロセスと同じコマンド名を実行した場合はリジューム
 setopt auto_resume
-
-## 補完候補を一覧表示
-setopt auto_list
 
 ## cd 時に自動で push
 setopt autopushd
@@ -115,17 +139,10 @@ setopt pushd_ignore_dups
 ## ファイル名で #, ~, ^ の 3 文字を正規表現として扱う
 setopt extended_glob
 
-## TAB で順に補完候補を切り替える
-setopt auto_menu
-
-## zsh の開始, 終了時刻をヒストリファイルに書き込む
-setopt extended_history
-
 ## =command を command のパス名に展開する
 setopt equals
 
-## --prefix=/usr などの = 以降も補完
-setopt magic_equal_subst
+
 
 ## ヒストリを呼び出してから実行する間に一旦編集
 setopt hist_verify
@@ -136,23 +153,8 @@ setopt numeric_glob_sort
 ## 出力時8ビットを通す
 setopt print_eight_bit
 
-## 補完候補のカーソル選択を有効に
-zstyle ':completion:*:default' menu select=1
-
-## 補完候補の色づけ
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-
-## カッコの対応などを自動的に補完
-setopt auto_param_keys
-
-## ディレクトリ名の補完で末尾の / を自動的に付加し、次の補完に備える
-setopt auto_param_slash
-
 ## スペルチェック
 setopt correct
-
-# ディレクトリ移動履歴保存,"cd -[タブ]"で、これまでに移動したディレクトリ一覧が表示
-setopt auto_pushd
 
 # alias
 #source ~/.aliases
