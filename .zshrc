@@ -322,3 +322,8 @@ fi
  alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
  alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
+# iTerm2のタブ名を変更する関数を追加
+function title {
+    echo -ne "\033]0;"$*"\007"
+}
+
