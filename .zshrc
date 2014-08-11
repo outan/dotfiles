@@ -208,11 +208,6 @@ bindkey '^X^B' backward-word
 bindkey '^R' history-incremental-pattern-search-backward
 bindkey '^S' history-incremental-pattern-search-forward
 
-# do brew install autojump
-if [ -f /usr/local/bin/brew ] && [ -f `brew --prefix`/etc/autojump ]; then
- . `brew --prefix`/etc/autojump
-fi
-
 # 3秒以上かかった処理は詳細表示
 REPORTTIME=3
  [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
@@ -368,3 +363,12 @@ fi
 ## URLをコピペしたときに自動でエスケープ
 #autoload -Uz url-quote-magic
 #zle -N self-insert url-quote-magic
+
+#z.sh：最近移動したディレクトリの補完ができる(cdコマンド履歴のjump)
+_Z_CMD=j
+if [ -f `brew --prefix`/etc/profile.d/z.sh ]; then
+    . `brew --prefix`/etc/profile.d/z.sh
+    function precmd () {
+        _z --add "$(pwd -P)"
+    }
+fi
