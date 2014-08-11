@@ -171,6 +171,18 @@ fi
 setopt auto_cd
 function chpwd() { lsal }
 
+# cdとmkdirを一緒にする
+# <a href="http://d.hatena.ne.jp/yarb/20110126/p1" target="_blank" rel="noreferrer" style="cursor: wait;display:inline !important;">http://d.hatena.ne.jp/yarb/20110126/p1</a>
+function mkcd() {
+if [[ -d $1 ]]; then
+echo "It already exsits! Cd to the directory."
+cd $1
+else
+echo "Created the directory and cd to it."
+mkdir -p $1 && cd $1
+fi
+}
+
 ## rbenv
 export RBENV_ROOT="/usr/local/bin/rbenv"
 if [ -d $RBENV_ROOT ]; then
