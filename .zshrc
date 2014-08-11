@@ -3,8 +3,8 @@ export EDITOR=vim
 
 #historyに関する設定
 HISTFILE=$HOME/.zsh-history
-HISTSIZE=1,000,000
-SAVEHIST=1,000,000
+HISTSIZE=1000000
+SAVEHIST=1000000
 ## 直前と同じコマンドをヒストリに追加しない
 setopt hist_ignore_dups
 ## ヒストリを共有
