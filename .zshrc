@@ -335,16 +335,16 @@ function title {
 }
 
 #ログイン時に自動的にtmuxを起動、セッションがある場合はアタッチするようになります。
-if [ -z "$PS1" ]; then return ; fi
+#if [ -z "$ps1" ]; then return ; fi
 
-if [ -z $TMUX ] ; then
-    if [ -z `tmux ls` ] ; then
-        tmux
-    else
-        tmux attach
-    fi
-fi
-
+#if [ -z $tmux ] ; then
+#    if [ -z `tmux ls` ] ; then
+#        tmux
+#    else
+#        tmux attach
+#    fi
+#fi
+#
 #auto-fu.zsh
 # <a href="http://blog.glidenote.com/blog/2012/04/07/auto-fu.zsh/" target="_blank" rel="noreferrer" style="cursor: wait;display:inline !important;">http://blog.glidenote.com/blog/2012/04/07/auto-fu.zsh/</a>
 if [ -f ~/dotfiles/auto-fu.zsh ]; then
