@@ -37,18 +37,17 @@
 
 [alias]
     #log関連
-    lgr     = log -g #--walk-reflogsと同じ結果(reflogの情報も表示)
-    lgp      = log -p -g # Generate patch(diffも一緒に出す)
+    lgr     = log --walk-reflogs #-gと同様、reflogのすべての履歴の一覧を表示
+    lgp      = log -p #パッチ形式のコミットログを表示する 
     lgs      = log --stat # 変更されたファイル名も一緒に出す
     lgg     = log --graph --all --decorate --date=short --pretty=format:'%Cgreen%h %C(yellow)%cd %C(Magenta)%ar %Cblue%cn %Creset%s %C(Red)%d'
     lgg2    = log --graph --all --format=format:'%C(bold blue)%h%C(reset) %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset)  %C(bold white)--%an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
 
     #diff関連
-	d       = diff
 	df      = diff
 	dc      = diff --cached
 	ds      = diff --staged
-    dw      = diff --color-words    # 単語単位でいろつけてdiff
+    dw      = diff --color-words #単語単位で色付けてdiff
     dwd     = diff --word-diff
 	d1      = diff HEAD~ # HEADから1つ前とdiff
     d2      = diff HEAD~~ # HEADから2つ前とdiff
