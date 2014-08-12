@@ -368,10 +368,12 @@ fi
 _Z_CMD=j
 if [ -f /usr/local/bin/brew ] && [ -L`brew --prefix`/etc/profile.d/z.sh ]
 then
+ echo "in first then"
     . `brew --prefix`/etc/profile.d/z.sh
-elif [ -f z.sh ]
+elif [ -f ~/dotfiles/z.sh ]
 then
-    source z.sh
+echo "in then"
+    source ~/dotfiles/z.sh
 fi
 
 function precmd () {
