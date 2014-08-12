@@ -348,14 +348,14 @@ function title {
 #auto-fu.zsh
 # <a href="http://blog.glidenote.com/blog/2012/04/07/auto-fu.zsh/" target="_blank" rel="noreferrer" style="cursor: wait;display:inline !important;">http://blog.glidenote.com/blog/2012/04/07/auto-fu.zsh/</a>
 if [ -f ~/dotfiles/auto-fu.zsh ]; then
-source ~/dotfiles/auto-fu.zsh
-function zle-line-init () {
-auto-fu-init
-}
-zle -N zle-line-init
-zstyle ':completion:*' completer _oldlist _complete
+    source ~/dotfiles/auto-fu.zsh
+    function zle-line-init () {
+    auto-fu-init
+    }
+    zle -N zle-line-init
+    zstyle ':completion:*' completer _oldlist _complete
 #auto-fu.zshを使っていると「-azhu-」と表示されるのだが，邪魔なので表示しないようにした。
-zstyle ':auto-fu:var' postdisplay $''
+    zstyle ':auto-fu:var' postdisplay $''
 fi
  
 ## ^PとかのHistory検索と相性が悪い
@@ -366,9 +366,14 @@ fi
 
 #z.sh：最近移動したディレクトリの補完ができる(cdコマンド履歴のjump)
 _Z_CMD=j
-if [ -f `brew --prefix`/etc/profile.d/z.sh ]; then
+if [ -f /usr/local/bin/brew ] && [ -L`brew --prefix`/etc/profile.d/z.sh ]
+then
     . `brew --prefix`/etc/profile.d/z.sh
-    function precmd () {
-        _z --add "$(pwd -P)"
-    }
+elif [ -f z.sh ]
+then
+    source z.sh
 fi
+
+function precmd () {
+        _z --add "$(pwd -P)"
+}
