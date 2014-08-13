@@ -109,13 +109,6 @@ PROMPT=$'%{$fg[yellow]%}%n%{$fg[red]%}@$fg[green]%}%m %{$fg[cyan]%}%~ %1(v|%F{gr
 #RPROMPT=$GREEN'[%~]'$DEFAULT
 #setopt PROMPT_SUBST
 
-## 補完機能の強化
-autoload -U compinit
-compinit
-
-# 第1引数がディレクトリだと自動的に cd を補完
-setopt auto_cd
-
 ## コアダンプサイズを制限
 limit coredumpsize 102400
 
@@ -344,7 +337,7 @@ function title {
 #        tmux attach
 #    fi
 #fi
-#
+
 #auto-fu.zsh
 # <a href="http://blog.glidenote.com/blog/2012/04/07/auto-fu.zsh/" target="_blank" rel="noreferrer" style="cursor: wait;display:inline !important;">http://blog.glidenote.com/blog/2012/04/07/auto-fu.zsh/</a>
 if [ -f ~/dotfiles/auto-fu.zsh ]; then
