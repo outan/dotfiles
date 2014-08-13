@@ -22,7 +22,7 @@ export CLICOLOR=true
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 ## 補完機能の強化
 autoload -U compinit
-compinit
+compinit -u
 ## 補完候補一覧でファイルの種別をマーク表示
 setopt list_types
 ## 補完候補を一覧表示
