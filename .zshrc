@@ -366,16 +366,14 @@ fi
 
 #z.sh：最近移動したディレクトリの補完ができる(cdコマンド履歴のjump)
 _Z_CMD=j
-if [ -f /usr/local/bin/brew ] && [ -L`brew --prefix`/etc/profile.d/z.sh ]
+if [ -f /usr/local/bin/brew ] && [ -f `brew --prefix`/etc/profile.d/z.sh ]
 then
- echo "in first then"
     . `brew --prefix`/etc/profile.d/z.sh
 elif [ -f ~/dotfiles/z.sh ]
 then
-echo "in then"
     source ~/dotfiles/z.sh
 fi
 
 function precmd () {
-        _z --add "$(pwd -P)"
+     _z --add "$(pwd -P)"
 }
