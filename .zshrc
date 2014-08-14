@@ -90,11 +90,6 @@ function git_stash_count {
 	fi
 }
 
-precmd () {
-	psvar=()
-	vcs_info
-	[[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
-}
 
 RUBY_INFO=$'%{$RUBY_COLOR%}$(ruby_prompt)%{${reset_color}%}'
 RPROMPT="${RUBY_INFO}%{${reset_color}%}"
@@ -375,5 +370,9 @@ then
 fi
 
 function precmd () {
-     _z --add "$(pwd -P)"
+    psvar=()
+    vcs_info
+    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+    _z --add "$(pwd -P)"
+    echo -n "\e]2;$(pwd)\a"
 }
