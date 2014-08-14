@@ -169,15 +169,17 @@ lsal
 echo -n "\e]2;$(pwd)\a"
 }
 
-# cdとmkdirを一緒にする
-# <a href="http://d.hatena.ne.jp/yarb/20110126/p1" target="_blank" rel="noreferrer" style="cursor: wait;display:inline !important;">http://d.hatena.ne.jp/yarb/20110126/p1</a>
-function mkcd() {
+# cdとmkdirを一緒にする(defaultのmkdirコマンドを再定義する)
+# http://d.hatena.ne.jp/yarb/20110126/p1
+function mkdir() {
 if [[ -d $1 ]]; then
-echo "It already exsits! Cd to the directory."
-cd $1
-else
-echo "Created the directory and cd to it."
-mkdir -p $1 && cd $1
+    echo "It already exsits! Cd to the directory."
+    cd $1
+elif [ -f /bin/mkdir ]; then
+    echo "Created the directory and cd to it."
+    /bin/mkdir -p $1 && cd $1
+else 
+    echo "There's no mkdir in this systerm."
 fi
 }
 
