@@ -343,7 +343,7 @@ function title {
 #fi
 
 #auto-fu.zsh
-# <a href="http://blog.glidenote.com/blog/2012/04/07/auto-fu.zsh/" target="_blank" rel="noreferrer" style="cursor: wait;display:inline !important;">http://blog.glidenote.com/blog/2012/04/07/auto-fu.zsh/</a>
+#http://blog.glidenote.com/blog/2012/04/07/auto-fu.zsh/
 if [ -f ~/dotfiles/auto-fu.zsh ]; then
     source ~/dotfiles/auto-fu.zsh
     function zle-line-init () {
@@ -351,15 +351,10 @@ if [ -f ~/dotfiles/auto-fu.zsh ]; then
     }
     zle -N zle-line-init
     zstyle ':completion:*' completer _oldlist _complete
-#auto-fu.zshを使っていると「-azhu-」と表示されるのだが，邪魔なので表示しないようにした。
+    #auto-fu.zshを使っている時に表示されている「-azhu-」を非表示にする
     zstyle ':auto-fu:var' postdisplay $''
 fi
- 
-## ^PとかのHistory検索と相性が悪い
-## auto-fu.zshのためオリジナルが変更
-## URLをコピペしたときに自動でエスケープ
-#autoload -Uz url-quote-magic
-#zle -N self-insert url-quote-magic
+
 
 #z.sh：最近移動したディレクトリの補完ができる(cdコマンド履歴のjump)
 _Z_CMD=j
