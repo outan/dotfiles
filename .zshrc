@@ -43,6 +43,8 @@ setopt magic_equal_subst
 setopt auto_pushd
 #補完候補を詰めて表示する設定
 setopt list_packed
+#大文字の場合は小文字を補完しないように、小文字の場合は大文字を補完できるように
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # manの補完をセクション番号別に表示させる
 zstyle ':completion:*:manuals' separate-sections true
 # オブジェクトファイルとか中間ファイルとかはfileとして補完させない
