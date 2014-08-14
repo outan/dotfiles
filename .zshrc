@@ -159,10 +159,15 @@ if [ -f ~/.aliases ]; then
 	. ~/.aliases
 fi
 
-## ディレクトリ名だけでcurennt directory移動、移動後自動でlsalする
-#(先に.aliasesファイルをロードする必要がある)
+## ディレクトリ名だけでcd移動できる
 setopt auto_cd
-function chpwd() { lsal }
+
+#current directory移動後,自動的にlsalを実行し、current directoryをtitle barに動的に表示させる
+#lsalを実行できるために、先に.aliasesファイルをロードする必要がある。
+function chpwd() {
+lsal
+echo -n "\e]2;$(pwd)\a"
+}
 
 # cdとmkdirを一緒にする
 # <a href="http://d.hatena.ne.jp/yarb/20110126/p1" target="_blank" rel="noreferrer" style="cursor: wait;display:inline !important;">http://d.hatena.ne.jp/yarb/20110126/p1</a>
