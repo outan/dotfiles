@@ -216,3 +216,7 @@ function runjava () {
 }
 alias -s java='runjava'
 fi
+
+#vimで設定ファイルの編集と反映はまとめる実行
+alias vz='vim ~/.zshrc && exec $SHELL'
+alias va='vim ~/.aliases && exec $SHELL'
