@@ -383,3 +383,69 @@ if [ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ];t
 elif  [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
     source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
+
+
+#promt上でbindkeyモードを表示させるように
+#auto-fuとどうようにzle-line-initを使っているので、auto-fuにより自動補完はできなくなった？解決策はまだ不明
+function airchrome-bindmode-emacs () {
+bindkey -e
+EMACS_INSERT=`bindkey -lL main | cut -d ' ' -f 3`
+if echo $EMACS_INSERT | grep emacs > /dev/null 2>&1;then
+EMACS_INSERT="%K{black}%F{011}⮂%k%f%K{011}%F{034} % $EMACS_INSERT %k%f"
+VIM_NORMAL="%K{011}%F{125}⮂%k%f%K{125}%F{015} % NORMAL %k%f%K{125}%F{black}⮂%k%f"
+VIM_INSERT="%K{011}%F{075}⮂%k%f%K{075}%F{026} % INSERT %k%f%K{075}%F{black}⮂%k%f"
+else
+EMACS_INSERT="%K{black}%F{034}⮂%k%f%K{034}%F{011} % $EMACS_INSERT %k%f"
+VIM_NORMAL="%K{034}%F{125}⮂%k%f%K{125}%F{015} % NORMAL %k%f%K{125}%F{black}⮂%k%f"
+VIM_INSERT="%K{034}%F{075}⮂%k%f%K{075}%F{026} % INSERT %k%f%K{075}%F{black}⮂%k%f"
+fi
+RPS1="$EMACS_INSERT${${KEYMAP/vicmd/$VIM_NORMAL}/(main|viins)/$VIM_INSERT}"
+RPS2=$RPS1
+zle reset-prompt
+}
+zle -N airchrome-bindmode-emacs
+bindkey -v '^e' airchrome-bindmode-emacs
+bindkey -a '^e' airchrome-bindmode-emacs
+
+function airchrome-bindmode-vi () {
+bindkey -v
+EMACS_INSERT=`bindkey -lL main | cut -d ' ' -f 3`
+if echo $EMACS_INSERT | grep emacs > /dev/null 2>&1;then
+EMACS_INSERT="%K{black}%F{011}⮂%k%f%K{011}%F{034} % $EMACS_INSERT %k%f"
+VIM_NORMAL="%K{011}%F{125}⮂%k%f%K{125}%F{015} % NORMAL %k%f%K{125}%F{black}⮂%k%f"
+VIM_INSERT="%K{011}%F{075}⮂%k%f%K{075}%F{026} % INSERT %k%f%K{075}%F{black}⮂%k%f"
+else
+EMACS_INSERT="%K{black}%F{034}⮂%k%f%K{034}%F{011} % $EMACS_INSERT %k%f"
+VIM_NORMAL="%K{034}%F{125}⮂%k%f%K{125}%F{015} % NORMAL %k%f%K{125}%F{black}⮂%k%f"
+VIM_INSERT="%K{034}%F{075}⮂%k%f%K{075}%F{026} % INSERT %k%f%K{075}%F{black}⮂%k%f"
+fi
+RPS1="$EMACS_INSERT${${KEYMAP/vicmd/$VIM_NORMAL}/(main|viins)/$VIM_INSERT}"
+RPS2=$RPS1
+zle reset-prompt
+}
+zle -N airchrome-bindmode-vi
+bindkey -e '^v' airchrome-bindmode-vi
+
+bindkey -v
+
+
+# prompt {{{
+function zle-line-init zle-keymap-select {
+EMACS_INSERT=`bindkey -lL main | cut -d ' ' -f 3`
+if echo $EMACS_INSERT | grep emacs > /dev/null 2>&1;then
+EMACS_INSERT="%K{yellow}%F{011}⮂%k%f%K{011}%F{034} % $EMACS_INSERT %k%f"
+VIM_NORMAL="%K{011}%F{125}⮂%k%f%K{125}%F{015} % NORMAL %k%f%K{125}%F{green}⮂%k%f"
+VIM_INSERT="%K{011}%F{075}⮂%k%f%K{075}%F{026} % INSERT %k%f%K{075}%F{red}⮂%k%f"
+else
+EMACS_INSERT="%K{orange}%F{034}⮂%k%f%K{034}%F{011} % $EMACS_INSERT %k%f"
+VIM_NORMAL="%K{034}%F{125}⮂%k%f%K{125}%F{015} % NORMAL %k%f%K{125}%F{pink}⮂%k%f"
+VIM_INSERT="%K{034}%F{075}⮂%k%f%K{075}%F{026} % INSERT %k%f%K{075}%F{blue}⮂%k%f"
+fi
+RPS1="$EMACS_INSERT${${KEYMAP/vicmd/$VIM_NORMAL}/(main|viins)/$VIM_INSERT}"
+RPS2=$RPS1
+zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
+# prompt }}}
+
