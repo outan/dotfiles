@@ -18,21 +18,15 @@ export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46
 export ZLS_COLORS=$LS_COLORS
 export CLICOLOR=true
 
-# 補完結果の表示の色設定
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 ## 補完機能の強化
 autoload -U compinit
 compinit -u
 ## 補完候補一覧でファイルの種別をマーク表示
 setopt list_types
-## 補完候補を一覧表示
+## 補完実行時に補完候補リストを表示する。(デフォルトで有効) 
 setopt auto_list
-## TAB で順に補完候補を切り替える
+## TAB で順に補完候補を切り替える(デフォルトで有効)
 setopt auto_menu
-## 補完候補のカーソル選択を有効に
-zstyle ':completion:*:default' menu select=1
-## 補完候補の色づけ
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 ## カッコの対応などを自動的に補完
 setopt auto_param_keys
 ## ディレクトリ名の補完で末尾の / を自動的に付加し、次の補完に備える
@@ -43,6 +37,22 @@ setopt magic_equal_subst
 setopt auto_pushd
 #補完候補を詰めて表示する設定
 setopt list_packed
+## recognize exact matches even if they are ambiguous(曖昧さがあっても正確なマッチを認識する)
+setopt rec_exact
+#unsetopt list_beep
+## 補完候補のカーソル選択を有効に
+zstyle ':completion:*:default' menu select=2
+## 補完候補の色づけ
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+## 補完候補がグループ別にメニュー表示
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*' completer _expand _complete _match _prefix _approximate _list _history
+zstyle ':completion:*:messages' format '%F{blue}%d'$DEFAULT
+zstyle ':completion:*:warnings' format '%F{red}No matches found in:%B%b%f''%F{white}%d'$DEFAULT
+zstyle ':completion:*:options' description 'yes'
+zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b%f'$DEFAULT
+
 #大文字の場合は小文字を補完しないように、小文字の場合は大文字を補完できるように
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # manの補完をセクション番号別に表示させる
