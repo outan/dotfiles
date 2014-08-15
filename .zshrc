@@ -39,7 +39,6 @@ setopt auto_pushd
 setopt list_packed
 ## recognize exact matches even if they are ambiguous(曖昧さがあっても正確なマッチを認識する)
 setopt rec_exact
-#unsetopt list_beep
 ## 補完候補のカーソル選択を有効に
 zstyle ':completion:*:default' menu select=2
 ## 補完候補の色づけ
