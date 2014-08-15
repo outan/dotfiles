@@ -68,7 +68,7 @@ set laststatus=2
 set showcmd
 
 "ステータスラインに文字コードと改行文字を表示する"
-set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
+set statusline=%F%m%r%h%w\%=[TYPE=%Y]\[FORMAT=%{&ff}]\[ENC=%{&fileencoding}]\[LOW=%l/%L]
 
 "編集中の内容を保ったまま別の画面に切替えられるようにする(デフォルトだと一度保
 "存しないと切り替えられない)"
