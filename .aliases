@@ -196,7 +196,7 @@ alias -s html='google-chrome'
 alias -s rb='ruby'
 alias -s py='python'
 alias -s hs='runhaskell'
-alias -s php='php -f'
+#alias -s php='php -f'
 alias -s {gz,tar,zip,rar,7z}='unarchive' # preztoのarchiveモジュールのコマンド(https://github.com/sorin-ionescu/prezto/tree/master/modules)
 alias -s {gif,jpg,jpeg,png,bmp}='display'
 
