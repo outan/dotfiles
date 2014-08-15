@@ -248,6 +248,10 @@ if which pyenv > /dev/null; then
     eval "\$(pyenv init - zsh)";
 fi
 
+#nexlink1.0ローカル開発環境でどこでもcli.phpのコマンドを実行できるようにパスを追加
+if [ -d ~/system/nexlink-b/app/bin ]; then
+    export PATH=~/system/nexlink-b/app/bin:$PATH
+fi
 
 #~で終わる一時ファイルを削除する関数
 rm~() {
