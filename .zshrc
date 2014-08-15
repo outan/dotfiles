@@ -57,7 +57,8 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # manの補完をセクション番号別に表示させる
 zstyle ':completion:*:manuals' separate-sections true
 # オブジェクトファイルとか中間ファイルとかはfileとして補完させない
-zstyle ':completion:*:*files' ignored-patterns '*?.o' '*?~' '*\#' '*?.swp'
+#zstyle ':completion:*:*files' ignored-patterns '*?.o' '*?~' '*\#' '*?.swp'
+echo ""
 # セパレータを設定する
 zstyle ':completion:*' list-separator '-->'
 zstyle ':completion:*:manuals' separate-sections true
