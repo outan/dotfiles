@@ -41,7 +41,7 @@ setopt list_packed
 setopt rec_exact
 ## 補完候補のカーソル選択を有効に
 zstyle ':completion:*:default' menu select=2
-## 補完候補の色づけ
+## 補完候補として表示されるファイルやディレクトリにもlsと同じカラーを設定する
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 ## 補完候補がグループ別にメニュー表示
 zstyle ':completion:*' group-name ''
