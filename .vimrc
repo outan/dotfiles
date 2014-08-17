@@ -68,7 +68,7 @@ set laststatus=2
 set showcmd
 
 "ステータスラインに文字コードと改行文字を表示する"
-set statusline=%F%m%r%h%w\%=[TYPE=%Y]\[FORMAT=%{&ff}]\[ENC=%{&fileencoding}]\[LOW=%l/%L]
+"set statusline=%F%m%r%h%w\%=[TYPE=%Y]\[FORMAT=%{&ff}]\[ENC=%{&fileencoding}]\[LOW=%l/%L]
 
 "編集中の内容を保ったまま別の画面に切替えられるようにする(デフォルトだと一度保
 "存しないと切り替えられない)"
@@ -112,6 +112,19 @@ NeoBundle 'flazz/vim-colorschemes'
 
   " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
+
+NeoBundle 'bling/vim-airline'
+  let g:airline_enable_branch = 0
+  let g:airline_section_b = "%t %M"
+  let g:airline_section_c = ''
+  let s:sep = " %{get(g:, 'airline_right_alt_sep', '')} "
+  let g:airline_section_x =
+        \ "%{strlen(&fileformat)?&fileformat:''}".s:sep.
+        \ "%{strlen(&fenc)?&fenc:&enc}".s:sep.
+        \ "%{strlen(&filetype)?&filetype:'no ft'}"
+  let g:airline_section_y = '%3p%%'
+  let g:airline_section_z = get(g:, 'airline_linecolumn_prefix', '').'%3l:%-2v'
+  let g:airline#extensions#whitespace#enabled = 0
 
 " Required:
 call neobundle#end()
