@@ -219,6 +219,21 @@ bindkey '^X^B' backward-word
 bindkey '^R' history-incremental-pattern-search-backward
 bindkey '^S' history-incremental-pattern-search-forward
 
+bindkey "^A" beginning-of-line
+bindkey "^B" backward-char
+bindkey "^E" end-of-line
+bindkey "^F" forward-char
+bindkey "^G" send-break
+bindkey "^H" backward-delete-char
+bindkey "^I" expand-or-complete
+bindkey "^L" clear-screen
+bindkey "^M" accept-line
+bindkey "^N" down-line-or-history
+bindkey "^P" up-line-or-history
+bindkey "^R" history-incremental-search-backward
+bindkey "^U" kill-whole-line
+bindkey "^W" backward-kill-word
+
 # 3秒以上かかった処理は詳細表示
 REPORTTIME=3
  [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
