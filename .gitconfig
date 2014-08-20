@@ -114,3 +114,7 @@
 [pull]
     # from 1.7.9
     rebase = true
+    prune  = true
+
+[fetch]
+    prune = true
