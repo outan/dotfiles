@@ -193,7 +193,7 @@ alias jman='env LANG=ja_JP.UTF-8 man'
 if alias -s > /dev/null 2>&1; then
 alias -s txt='cat'
 alias -s html='google-chrome'
-alias -s rb='ruby'
+#alias -s rb='ruby'
 alias -s py='python'
 alias -s hs='runhaskell'
 #alias -s php='php -f'
