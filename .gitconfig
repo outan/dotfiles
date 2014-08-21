@@ -1,10 +1,13 @@
 [core]
     excludesfile = ~/.gitignore
     quotepath    = false
-    whitespace   =fix,trailing-space,space-before-tab,indent-with-non-tab,cr-at-eol
+    whitespace   = trailing-space,space-before-tab,indent-with-non-tab,cr-at-eol
     pager        = "lv -c -Au8"
     attributesfile = ~/dotfiles/.gitattributes_global
     autocrlf     = input #Windows にチェックアウトした時の CRLF への変換は行いますが、Mac や Linux へのチェックアウト時は LF のままにします。(.git-completion.bashには関連の設定があるようですが、念のため.gitconfigにも設定しておく。)
+
+[apply]
+    whitespace = fix #delete  whitespce in the end of line, but only during patch, not "always automatically"
 
 [user]
     name         = outan
@@ -124,4 +127,4 @@
 [fetch]
     prune = true
 [init]
-	templatedir = ~/dotfiles/git_template
+    templatedir = ~/dotfiles/git_template
