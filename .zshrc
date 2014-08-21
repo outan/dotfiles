@@ -254,16 +254,19 @@ if [ -d ~/system/nexlink-b/app/bin ]; then
     export PATH=~/system/nexlink-b/app/bin:$PATH
 fi
 
-#~で終わる一時ファイルを削除する関数
-rm~() {
+#vimの一時ファイルを削除する関数
+rmtemp() {
 if [ -f /usr/local/bin/trash ]
 then
     case "$1" in
         "--dry-run" | "-n")
-        find . -name "*~" \( -type f -or -type l \) -maxdepth 1
+        find . \( -name "*~" -o -name ".DS_Store" -o -name "*.swp" \( -type f -or -type l \) \) -maxdepth 1
         ;;
     "~" | "DS_Store" | "swp")
         find . -name "*$1" \( -type f -or -type l \) -maxdepth 1 -exec  /usr/local/bin/trash -fv -- {} +
+        ;;
+    "")
+        find . \( -name "*~" -o -name ".DS_Store" -o -name "*.swp" \( -type f -or -type l \) \) -maxdepth 1 -exec  /usr/local/bin/trash -fv -- {} +
         ;;
     *)
         echo "Unsupported option \`$1'.\nDid you mean --dry-run?(using command trash)"
@@ -273,10 +276,13 @@ elif [ -f /usr/local/bin/rmtrash ]
 then
     case "$1" in
     "--dry-run" | "-n")
-        find . -name "*~" \( -type f -or -type l \) -maxdepth 1
+        find . \( -name "*~" -o -name ".DS_Store" -o -name "*.swp" \( -type f -or -type l \) \) -maxdepth 1
         ;;
     "~" | "DS_Store" | "swp")
         find . -name "*$1" \( -type f -or -type l \) -maxdepth 1 -exec  /usr/local/bin/rmtrash -fv -- {} +
+        ;;
+    "")
+        find . \( -name "*~" -o -name ".DS_Store" -o -name "*.swp" \( -type f -or -type l \) \) -maxdepth 1 -exec  /usr/local/bin/trash  -- {} +
         ;;
     *)
         echo "Unsupported option \`$1'.\nDid you mean --dry-run? (using command rmtrash)"
@@ -285,10 +291,13 @@ then
 else
     case "$1" in
     "--dry-run" | "-n")
-        find . -name "*~" \( -type f -or -type l \) -maxdepth 1
+        find . \( -name "*~" -o -name ".DS_Store" -o -name "*.swp" \( -type f -or -type l \) \) -maxdepth 1
         ;;
     "~" | "DS_Store" | "swp")
         find . -name "*$1" \( -type f -or -type l \) -maxdepth 1 -exec /bin/rm  -fv -- {} +
+        ;;
+    "")
+        find . \( -name "*~" -o -name ".DS_Store" -o -name "*.swp" \( -type f -or -type l \) \) -maxdepth 1 -exec  /bin/rm   -- {} +
         ;;
     *)
         echo "Unsupported option \`$1'.\nDid you mean --dry-run? (using OS default command rm)"
@@ -298,15 +307,18 @@ fi
 }
 
 #子ディレクトリも削除しに行く。
-rma~() {
+rmtempall() {
 if [ -f /usr/local/bin/trash ]
 then
     case "$1" in
-    "--dry-run" | "-n")
-        find . -name "*~" \( -type f -or -type l \)
+        "--dry-run" | "-n")
+        find . \( -name "*~" -o -name ".DS_Store" -o -name "*.swp" \( -type f -or -type l \) \)
         ;;
     "~" | "DS_Store" | "swp")
         find . -name "*$1" \( -type f -or -type l \) -exec  /usr/local/bin/trash -fv -- {} +
+        ;;
+    "")
+        find . \( -name "*~" -o -name ".DS_Store" -o -name "*.swp" \( -type f -or -type l \) \) -exec  /usr/local/bin/trash -fv -- {} +
         ;;
     *)
         echo "Unsupported option \`$1'.\nDid you mean --dry-run?(using command trash)"
@@ -316,10 +328,12 @@ elif [ -f /usr/local/bin/rmtrash ]
 then
     case "$1" in
     "--dry-run" | "-n")
-        find . -name "*~" \( -type f -or -type l \)
-        ;;
+        find . \( -name "*~" -o -name ".DS_Store" -o -name "*.swp" \( -type f -or -type l \) \)         ;;
     "~" | "DS_Store" | "swp")
         find . -name "*$1" \( -type f -or -type l \) -exec  /usr/local/bin/rmtrash -fv -- {} +
+        ;;
+    "")
+        find . \( -name "*~" -o -name ".DS_Store" -o -name "*.swp" \( -type f -or -type l \) \) -exec  /usr/local/bin/trash  -- {} +
         ;;
     *)
         echo "Unsupported option \`$1'.\nDid you mean --dry-run? (using command rmtrash)"
@@ -328,10 +342,13 @@ then
 else
     case "$1" in
     "--dry-run" | "-n")
-        find . -name "*~" \( -type f -or -type l \)
+        find . \( -name "*~" -o -name ".DS_Store" -o -name "*.swp" \( -type f -or -type l \) \)
         ;;
     "~" | "DS_Store" | "swp")
         find . -name "*$1" \( -type f -or -type l \) -exec /bin/rm  -fv -- {} +
+        ;;
+    "")
+        find . \( -name "*~" -o -name ".DS_Store" -o -name "*.swp" \( -type f -or -type l \) \) -exec  /bin/rm   -- {} +
         ;;
     *)
         echo "Unsupported option \`$1'.\nDid you mean --dry-run? (using OS default command rm)"
