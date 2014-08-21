@@ -12,9 +12,9 @@ def prompt(prompt="> ")
 end  
 
 remote  = ARGV[0]
-dry_run = ARGV.include?("--dry-run")
+dry_run = ARGV.include?(/"--dry-run" | "-n"/) 
 
-if !remote || remote == "--dry-run"
+if !remote || remote == "--dry-run" || remote == "-n"
   puts "no remote specified, assuming 'origin'"
   remote = "origin"
 end
