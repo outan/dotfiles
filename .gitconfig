@@ -97,8 +97,7 @@
 	#autosetupmerge  = false   #git checkout やgit branchでtracking branchからローカルブランチを作成する時に、勝手に追跡しないようにする(.git/configに追跡情報を追記しない)ことにより、git pushでマッチがって他のブランチにpushしてしまうことを防ぐ
 
 [merge]
-    # from 1.7.6
-    ff = false
+    ff = false #「他のブランチで作業し、このブランチにマージした」という情報が失われることを防ぐために、fast-forwardマージを無効にする。同時にpull rebaseを常に有効しないとpullの時にfast-forwardマージができずに大量のマージコミットが作られてしまう。
     keepBackup = false
 	tool = p4merge
 
@@ -112,8 +111,7 @@
 #     external = p4diff
 
 [pull]
-    # from 1.7.9
-    rebase = true
+    rebase = true # merge ff = trueの設定と同時に設定したほうがいい。
     prune  = true
 
 [fetch]
