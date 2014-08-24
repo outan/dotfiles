@@ -154,7 +154,7 @@ alias lb="ssh develop_lb01"
 alias sshn1="ssh n1"
 
 #ag関連
-alias ag='ag  --stats --hidden -i'
+alias ag='ag  --stats --hidden -S' # Match case sensitively if there are any uppercase letters in PATTERN, or case insensitively otherwise
 alias ags='ag  --stats --hidden -s'
 alias agh='ag --hidden'
 
