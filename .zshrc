@@ -18,6 +18,10 @@ export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46
 export ZLS_COLORS=$LS_COLORS
 export CLICOLOR=true
 
+#zsh-completions (非標準コマンドを補完できるようになる素敵なプラグイン)に収納されている補完情報を有効にする
+#zsh非標準コマンド補完情報の一覧は、「ls /usr/local/share/zsh-completions」で確認することができる。
+fpath=(/usr/local/share/zsh-completions $fpath)
+
 ## 補完機能の強化
 autoload -U compinit
 compinit -u
