@@ -153,6 +153,12 @@ then
     alias diff='/usr/local/bin/colordiff'
 fi
 
+#MACデフォうとのtopコマンドの上位版
+if [ -f /usr/local/bin/htop ]
+then
+    alias top='/usr/local/bin/htop'
+fi
+
 alias bs="java -cp bsh-2.0b4.jar bsh.Interpreter"
 
 #ssh接続関連
