@@ -147,6 +147,12 @@ alias lgp='git log -p -g' # Generate patch(diffも一緒に出す)
 alias lgr='git log -g' #--walk-reflogsと同じ結果(reflogの情報も表示)
 alias gk="gitk"
 
+#色付きのdiff
+if [ -f /usr/local/bin/colordiff ]
+then
+    alias diff='/usr/local/bin/colordiff'
+fi
+
 alias bs="java -cp bsh-2.0b4.jar bsh.Interpreter"
 
 #ssh接続関連
