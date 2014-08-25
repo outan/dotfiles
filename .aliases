@@ -105,9 +105,9 @@ alias blog="cd ~/web/rails/blog"
 
 #git関連
 alias g="git"
-alias pull='git pull'
-alias push='git push'
-alias pushn='git push -n' #git push --dry-runと同様
+alias pull='git pull -v'
+alias push='git push -v'
+alias pushn='git push -n -v' #git push --dry-runと同様
 alias add='git add'
 alias unstage='git reset HEAD'
 alias status='git status'
@@ -123,9 +123,9 @@ alias fix='git commit --amend'
 alias tag='git tag'
 
 
-alias pl='git pull'
-alias ph='git push'
-alias pn='git push -n'
+alias pl='git pull -v'
+alias ph='git push -v'
+alias pn='git push -n -v'
 alias ad='git add'
 alias us='git reset HEAD'
 alias st="git status --ignore-submodules=dirty"
