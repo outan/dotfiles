@@ -97,7 +97,7 @@
     # default = upstream #旧名:tracking カレントブランチとリモートブランチの間に「追跡関係」があり、なおかつカレントブランチのみはpushの対象になる。
     default = simple #like upstream, but refuses to push if the upstream branch's name is different from the local one.
                      #This is the safest option and is well-suited for beginners. It will become the default in Git 2.0.
-    default = current #カレントブランチと同名のリモートブランチがあれば、カレントブランチをremoteにpush する。例えupstreamを設定していなくてもpushされるので、効率。
+    # default = current #カレントブランチと同名のリモートブランチがあれば、カレントブランチをremoteにpush する。例えupstreamを設定していなくてもpushされるので、効率。
 
 [branch]
     autosetuprebase = always
