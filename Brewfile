@@ -66,5 +66,19 @@ brew install rmtrash || true
 #perl,pythonインストール
 brew install pyenv plenv perl-build
 
+brew install nkf || true
+
+brew install colordiff || true
+
+brew install unison || true
+
+brew install z || true
+
+brew install readline || true
+
+brew install zsh-completions || true
+
+brew install zsh-syntax-highlighting || true
+
 # Remove outdated versions from the cellar
 #brew cleanup
