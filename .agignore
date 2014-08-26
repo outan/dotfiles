@@ -22,4 +22,3 @@ jquery-*.js
 node_modules
 *.egg
 *.egg-info
-*.sql
