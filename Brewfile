@@ -80,5 +80,6 @@ brew install zsh-completions || true
 
 brew install zsh-syntax-highlighting || true
 
+brew install ps-tree || true
 # Remove outdated versions from the cellar
 #brew cleanup
