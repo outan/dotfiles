@@ -437,3 +437,10 @@ if [ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ];t
 elif  [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
     source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
+
+# コマンドのmanを素早く見える
+alias run-help >/dev/null 2>&1 && unalias run-help
+autoload -Uz run-help
+autoload -Uz run-help-git
+autoload -Uz run-help-svn
+HELPDIR=/usr/local/share/zsh/helpfiles
