@@ -1,0 +1,56 @@
+# casks↲
+install caskroom/cask/brew-cask↲
+
+# web browsers
+cask install google-chrome
+cask install firefox
+
+# dev tools
+cask install iterm2
+cask install mysqlworkbench
+cask install virtualbox
+cask install vmware-fusion
+cask install github
+cask install sourcetree
+cask install rubymine
+cask install vagrant
+cask install xquartz
+cask install unity-web-player
+
+# editors
+cask install sublime-text
+cask install macvim-kaoriya
+cask install textwrangler
+cask install atom
+cask install textmate
+
+# additional apps
+ccask install dropbox
+cask install evernote
+ask install alfred
+cask install freemind
+cask install openoffice
+cask install skype
+
+cask install skitch
+cask install adobe-reader
+cask install clipmenu
+cask install gyazo
+cask install skim
+cask install xtrafinder
+cask install magican
+cask install google-japanese-ime
+cask install appcleaner
+
+# sns
+cask install wechat
+cask install qq
+
+# update
+cask update
+
+# Remove outdated versions
+cask cleanup --outdated
+
+# alfredにリンク
+cask alfred link
