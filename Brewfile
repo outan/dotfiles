@@ -1,85 +1,96 @@
 # make sure we’re using the latest Homebrew
-#brew update
+update
 
 # Upgrade any already-installed formulae
-#brew upgrade
+upgrade
 
 # Add repositories
-tap homebrew/versions || true
-tap caskroom/cask || true
-tap caskroom/versions || true
+# install multiple versions of existing packages.
+tap homebrew/versions
+tap caskroom/cask
+# can install alternate versions of Casks.
+tap caskroom/versions
 
 
 # Install GNU core utilities (those that come with OS X are outdated)
-brew  'coreutils'
+install 'coreutils'
 #echo "Don’t forget to add $(brew --prefix coreutils)/libexec/gnubin to \$PATH."
 
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
-brew  'findutils'
+install 'findutils'
 
 # Install Bash 4
-brew  'bash'
+install 'bash'
 
 # Install wget with IRI support
-brew  'wget --enable-iri'
+install 'wget'
 
-brew  'curl'
+install 'curl'
 
-brew  'tmux'
+install 'tmux'
 
-brew  'zsh'
+install 'zsh'
 
-brew  'rbenv'
+install 'rbenv'
 
-brew  'mysql'
+install 'mysql'
 
-brew  'tree'
+install 'tree'
 
 #make less command show color
-brew  'source-highlight'
+install 'source-highlight'
 
-brew  'git'
+install 'git'
 
 #.gitconfig設定後、git log -pでは文字化けという現象の対処
-brew  'lv'
+install 'lv'
 
 #gitのログを見やすくする
-brew  'tig'
+install 'tig'
 
 #git branch管理用のツール
-brew  'git-flow'
+install 'git-flow'
 
-brew  'openssl'
-brew  'curl-ca-bundle'
-brew 'ack'
-brew 'ag'
-brew 'hub'
+install 'openssl'
 
-brew 'terminal-notifier'
+#install 'curl-ca-bundle'
+#opensslで必要なものだが、homebrewから何かの原因でremoveされたので、
+#コメントしないとbrew bundle実行する時にエラーが発生する。
+#https://github.com/Homebrew/homebrew/pull/28658
 
-brew install lsyncd || true
+install 'ack'
+install 'ag'
+install 'hub'
 
-brew install redis || true
+install 'terminal-notifier'
 
-brew install rmtrash || true
+install lsyncd
 
-#perl,pythonインストール
-brew install pyenv plenv perl-build
+install redis
 
-brew install nkf || true
+install rmtrash
 
-brew install colordiff || true
+#pythonのバージョン管理ツール
+install pyenv
 
-brew install unison || true
+#perlのバージョン管理ツール
+install plenv perl-build
 
-brew install z || true
+install nkf
 
-brew install readline || true
+install colordiff
 
-brew install zsh-completions || true
+install unison
 
-brew install zsh-syntax-highlighting || true
+install z
 
-brew install ps-tree || true
+install readline
+
+install zsh-completions
+
+install zsh-syntax-highlighting
+
+install pstree
+
 # Remove outdated versions from the cellar
 #brew cleanup
