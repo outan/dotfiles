@@ -92,5 +92,5 @@ install zsh-syntax-highlighting
 
 install pstree
 
-# Remove outdated versions from the cellar
-#brew cleanup
+# uninstall unused and old versions of packages from the cellar
+brew cleanup
