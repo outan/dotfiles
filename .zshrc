@@ -256,16 +256,16 @@ alias git='noglob git'
 
 #perlの設定
 if which plenv > /dev/null; then
-    export PLENV_ROOT="\${HOME}/.plenv"
-    export PATH=\${PLENV_ROOT}/shims:\${PATH}
-    eval "\$(plenv init - zsh)";
+    export PLENV_ROOT="$HOME/.plenv"
+    export PATH=$PLENV_ROOT/shims:$PATH
+    eval "$(plenv init - zsh)";
 fi
 
 #pythonの設定
 if which pyenv > /dev/null; then
-    export PYENV_ROOT="\${HOME}/.pyenv"
-    export PATH=\${PYENV_ROOT}/shims:\${PATH}
-    eval "\$(pyenv init - zsh)";
+    export PYENV_ROOT="$HOME/.pyenv"
+    export PATH=$PYENV_ROOT/shims:$PATH
+    eval "$(pyenv init - zsh)";
 fi
 
 #nexlink1.0ローカル開発環境でどこでもcli.phpのコマンドを実行できるようにパスを追加
