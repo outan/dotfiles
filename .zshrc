@@ -444,3 +444,6 @@ autoload -Uz run-help
 autoload -Uz run-help-git
 autoload -Uz run-help-svn
 HELPDIR=/usr/local/share/zsh/helpfiles
+
+# brew caskのインストール先を変更する
+export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom"
