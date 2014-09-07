@@ -95,4 +95,4 @@ install pstree
 install htop
 
 # uninstall unused and old versions of packages from the cellar
-brew cleanup
+cleanup
