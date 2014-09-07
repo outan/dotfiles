@@ -91,6 +91,7 @@ install zsh-completions
 install zsh-syntax-highlighting
 
 install pstree
+install htop
 
 # uninstall unused and old versions of packages from the cellar
 brew cleanup
