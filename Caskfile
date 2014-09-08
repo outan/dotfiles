@@ -1,5 +1,5 @@
 # casks↲
-install caskroom/cask/brew-cask↲
+install brew-cask
 
 # web browsers
 cask install google-chrome
