@@ -10,7 +10,8 @@ tap homebrew/versions
 tap caskroom/cask
 # can install alternate versions of Casks.
 tap caskroom/versions
-
+# for apache(httpd)
+tap homebrew/apache
 
 # Install GNU core utilities (those that come with OS X are outdated)
 install 'coreutils'
