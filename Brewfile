@@ -102,5 +102,8 @@ install htop
 #javaScpritのサーバーサイド実行プラットフォームnode.js(package管理ツールnpmも一緒にインストールされる)
 install node
 
+#node version manager
+install nvm
+
 # uninstall unused and old versions of packages from the cellar
 cleanup
