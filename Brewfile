@@ -77,10 +77,13 @@ install pyenv
 #perlのバージョン管理ツール
 install plenv perl-build
 
+#guess of the input kanji encodings
 install nkf
 
+#色付きのdiffコマンド(MACのデフォルトdiffコマンドは色表示できない。)
 install colordiff
 
+#同期用ツール
 install unison
 
 install z
@@ -92,7 +95,12 @@ install zsh-completions
 install zsh-syntax-highlighting
 
 install pstree
+
+#topコマンドの高機能版
 install htop
+
+#javaScpritのサーバーサイド実行プラットフォームnode.js(package管理ツールnpmも一緒にインストールされる)
+install node
 
 # uninstall unused and old versions of packages from the cellar
 cleanup
