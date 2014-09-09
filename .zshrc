@@ -450,3 +450,9 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom
 
 # sublime textをコマンドラインから起動できるように設定
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
+
+# node.jsのバージョン管理ソフトウェアの導入に関する設定
+if [[ -s $(brew --prefix nvm)/nvm.sh ]];then
+    export NVM_DIR=~/.nvm #move install location to prevent that node installs will be lost upon upgrading nvm
+    source $(brew --prefix nvm)/nvm.sh
+fi
