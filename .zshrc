@@ -452,7 +452,10 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 
 # node.jsのバージョン管理ソフトウェアの導入に関する設定
-if [[ -s $(brew --prefix nvm)/nvm.sh ]];then
+if [ -s $(brew --prefix nvm)/nvm.sh ];then
+    if [ ! -d ~/.nvm ];then
+        mkdir ~/.nvm
+    fi
     export NVM_DIR=~/.nvm #move install location to prevent that node installs will be lost upon upgrading nvm
     source $(brew --prefix nvm)/nvm.sh
 fi
