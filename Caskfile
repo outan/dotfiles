@@ -40,6 +40,7 @@ cask install skim
 cask install xtrafinder
 cask install magican
 cask install google-japanese-ime
+cask install sogouinput #To complete the installation, you must also run the downloaded installer(/Applicationsには存在しないので、alfredでも検索できない。)
 cask install appcleaner
 
 # sns
