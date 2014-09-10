@@ -184,9 +184,9 @@ lsal
 echo -n "\e]2;$(pwd)\a"
 }
 
-# cdとmkdirを一緒にする(defaultのmkdirコマンドを再定義する)
+# cdとmkdirを一緒にする(defaultのmkdirコマンドを上書きすると他のスクリプトなどの中にmkdirを呼び出す時に予期せぬエラーが発生する可能性があるため、mkdir_cdという名前にしました。)
 # http://d.hatena.ne.jp/yarb/20110126/p1
-function mkdir() {
+function mkdir_cd() {
 if [[ -d $1 ]]; then
     echo "It already exsits! Cd to the directory."
     cd $1
