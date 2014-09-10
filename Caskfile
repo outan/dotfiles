@@ -16,6 +16,7 @@ cask install rubymine
 cask install vagrant
 cask install xquartz
 cask install unity-web-player
+cask install dash
 
 # editors
 cask install sublime-text
@@ -25,9 +26,9 @@ cask install atom
 cask install textmate
 
 # additional apps
-ccask install dropbox
+cask install dropbox
 cask install evernote
-ask install alfred
+cask install alfred
 cask install freemind
 cask install openoffice
 cask install skype
@@ -42,6 +43,9 @@ cask install magican
 cask install google-japanese-ime
 cask install sogouinput #To complete the installation, you must also run the downloaded installer(/Applicationsには存在しないので、alfredでも検索できない。)
 cask install appcleaner
+cask install ccleaner
+cask install cheatsheet
+cask install xtrafinder
 
 # sns
 cask install wechat
