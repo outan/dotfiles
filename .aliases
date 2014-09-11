@@ -241,3 +241,5 @@ alias bl='brew list'
 alias bout='brew outdated'
 alias bup='brew update'
 alias bupg='brew upgrade'
+
+alias path='echo $PATH'
