@@ -95,9 +95,6 @@ install pstree
 #topコマンドの高機能版
 install htop
 
-#javaScpritのサーバーサイド実行プラットフォームnode.js(package管理ツールnpmも一緒にインストールされる)
-install node
-
 #node version manager
 install nvm
 
