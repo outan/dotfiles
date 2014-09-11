@@ -10,40 +10,40 @@ cask install firefox
 
 # dev tools
 cask install iterm2
-cask install mysqlworkbench
-cask install virtualbox
-cask install vmware-fusion
+#cask install mysqlworkbench
+#cask install virtualbox
+#cask install vmware-fusion
 cask install github
 cask install sourcetree
-cask install rubymine
-cask install vagrant
-cask install xquartz
-cask install unity-web-player
-cask install dash
+#cask install rubymine
+#cask install vagrant
+#cask install xquartz
+#cask install unity-web-player
+#cask install dash
 
 # editors
 cask install sublime-text
 cask install macvim-kaoriya
-cask install textwrangler
-cask install atom
+#cask install textwrangler
+#cask install atom
 cask install textmate
 
 # additional apps
-cask install dropbox
+#cask install dropbox
 cask install evernote
 cask install alfred
 cask install freemind
-cask install openoffice
-cask install skype
+#cask install openoffice
+#cask install skype
 
-cask install skitch
+#cask install skitch
 cask install adobe-reader
 cask install clipmenu
 cask install licecap # gif animation capture
 cask install gyazo
 cask install skim
 cask install xtrafinder
-cask install magican
+#cask install magican
 cask install google-japanese-ime
 cask install sogouinput #To complete the installation, you must also run the downloaded installer(/Applicationsには存在しないので、alfredでも検索できない。)
 cask install appcleaner
