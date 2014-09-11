@@ -235,6 +235,7 @@ alias va='vim ~/.aliases && exec $SHELL'
 
 #Homebrew関連(bundleのエリアスと重複して、こちらのエリアスが優先になる。)
 alias b='brew'
+alias bb='brew bundle'
 alias bi='brew info'
 alias bl='brew list'
 alias bout='brew outdated'
