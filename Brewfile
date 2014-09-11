@@ -1,21 +1,17 @@
-# make sure we’re using the latest Homebrew
+# update the Homebrew tool and get the all formulaes (including casks)
 update
 
-# Upgrade any already-installed formulae
+# upgrade any already-installed formulae(including homebrew cask tool)
 upgrade
 
 # Add repositories
-# install multiple versions of existing packages.
-tap homebrew/versions
+tap homebrew/versions # install multiple versions of existing packages.
 tap caskroom/cask
-# can install alternate versions of Casks.
-tap caskroom/versions
-# for apache(httpd)
-tap homebrew/apache
+tap caskroom/versions # can install alternate versions of Casks.
+tap homebrew/apache # for apache(httpd)
 
-# Install GNU core utilities (those that come with OS X are outdated)
-install 'coreutils'
-#echo "Don’t forget to add $(brew --prefix coreutils)/libexec/gnubin to \$PATH."
+install brew-cask #pull down the latest Casks when use the regular Homebrew command brew update
+install 'coreutils' # Install GNU core utilities (those that come with OS X are outdated) to use these commands without a prefix g ,you shoud add $(brew --prefix coreutils)/libexec/gnubin to \$PATH."
 
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
 install 'findutils'
