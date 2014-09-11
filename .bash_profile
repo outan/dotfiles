@@ -12,12 +12,15 @@ export PATH=$PATH:/sbin
 export PATH=$PATH:/usr/sbin
 
 ## rbenv
-export RBENV_ROOT="/usr/local/bin/rbenv"
+export RBENV_ROOT="/usr/local/var/rbenv" #to use Homebrew's directories rather than ~/.rbenv
 if [ -d $RBENV_ROOT ]; then
     export PATH="$RBENV_ROOT/bin:$PATH"
-    if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
 fi
 
+# To enable shims and autocompletion
+if which rbenv > /dev/null; then
+    eval "$(rbenv init - zsh)";
+fi
 
 alias javac='javac -J-Dfile.encoding=UTF-8'
 alias java='java -Dfile.encoding=UTF-8'
