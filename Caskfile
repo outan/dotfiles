@@ -1,5 +1,8 @@
-# casks↲
+# install the homebrew-cask tool↲
 install brew-cask
+
+# a synonym for brew update(casksも一緒にupdateされる)
+cask update
 
 # web browsers
 cask install google-chrome
@@ -36,6 +39,7 @@ cask install skype
 cask install skitch
 cask install adobe-reader
 cask install clipmenu
+cask install licecap # gif animation capture
 cask install gyazo
 cask install skim
 cask install xtrafinder
@@ -50,9 +54,6 @@ cask install xtrafinder
 # sns
 cask install wechat
 cask install qq
-
-# update
-cask update
 
 # Remove outdated versions
 cask cleanup --outdated
