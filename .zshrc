@@ -199,10 +199,14 @@ fi
 }
 
 ## rbenv
-export RBENV_ROOT="/usr/local/bin/rbenv"
+export RBENV_ROOT="/usr/local/var/rbenv" #to use Homebrew's directories rather than ~/.rbenv
 if [ -d $RBENV_ROOT ]; then
     export PATH="$RBENV_ROOT/bin:$PATH"
-    if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
+fi
+
+# To enable shims and autocompletion
+if which rbenv > /dev/null; then
+    eval "$(rbenv init - zsh)";
 fi
 
 ## http://d.hatena.ne.jp/hiboma/20120315/1331821642
