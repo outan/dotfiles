@@ -20,7 +20,8 @@ export CLICOLOR=true
 
 #zsh-completions (非標準コマンドを補完できるようになる素敵なプラグイン)に収納されている補完情報を有効にする
 #zsh非標準コマンド補完情報の一覧は、「ls /usr/local/share/zsh-completions」で確認することができる。
-fpath=(/usr/local/share/zsh-completions $fpath)
+fpath=(/usr/local/share/zsh-completions $fpath) # for MAC Homebrew
+fpath=(/home/nexlink/.linuxbrew/share/zsh-completions $fpath) # for Linux linuxbrew
 
 ## 補完機能の強化
 autoload -U compinit
