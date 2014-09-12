@@ -1,7 +1,7 @@
 if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
-#.bashrc$BCf$G(B.aliases$B$N@_Dj$H=EJ#$N>l9g$K!"(B.bashrc$B$rM%@h$9$k$?$a$K!"@_Dj$r(B.aliases$B$N2<$K0\F0(B
+#.bashrc中で.aliasesの設定と重複の場合に、.bashrcを優先するために、設定を.aliasesの下に移動
 if [ -f ~/.bashrc ] ; then
     . ~/.bashrc
 fi
