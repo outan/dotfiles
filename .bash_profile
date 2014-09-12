@@ -30,3 +30,8 @@ alias java='java -Dfile.encoding=UTF-8'
 export REGRESSION_NEXLINK_HOME=$HOME/projects/regression_nexlink
 export REGRESSION_NEXLINK_DOWNLOAD_DIR=$HOME/Downloads
 
+# linuxbrew導入に関する設定
+if [ -d "$HOME/.linuxbrew" ];then
+    export PATH="$HOME/.linuxbrew/bin:$PATH"
+    export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
+fi
