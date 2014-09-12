@@ -194,15 +194,19 @@ if [[ -d $1 ]]; then
 elif [ -f /bin/mkdir ]; then
     echo "Created the directory and cd to it."
     /bin/mkdir -p $1 && cd $1
-else 
+else
     echo "There's no mkdir in this systerm."
 fi
 }
 
-## rbenv
-export RBENV_ROOT="/usr/local/var/rbenv" #to use Homebrew's directories rather than ~/.rbenv
-if [ -d $RBENV_ROOT ]; then
-    export PATH="$RBENV_ROOT/bin:$PATH"
+# rbenv
+if [ -d "$HOME/.rbenv/bin" ];then # for CentOS: rbenvは~/.rbenv/binにインストールされるので、rbenvのコマンドの場所をPATHに追加しないとrbenvのコマンドが使えない。
+    export PATH="$HOME/.rbenv/bin:$PATH"↲
+else
+    export RBENV_ROOT="/usr/local/var/rbenv" # for MAC: to use Homebrew's directories rather than ~/.rbenv
+    if [ -d $RBENV_ROOT ]; then
+        export PATH="$RBENV_ROOT/bin:$PATH"
+    fi
 fi
 
 # To enable shims and autocompletion
