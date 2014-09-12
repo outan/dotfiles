@@ -10,7 +10,7 @@ set fileformats=unix,dos,mac
 " □とか○の文字があってもカーソル位置がずれないようにする
 if exists('&ambiwidth')
   set ambiwidth=double
-  endif
+endif
 
 "色設定
 syntax on
@@ -24,7 +24,7 @@ set expandtab
 "新しい行のインデントを現在行と同じにする
 set autoindent
 
-" ペーストするときにインデントさせない
+" ペーストする時にインデントさせない
 imap <F5> <nop>
 set pastetoggle=<F5>
 
@@ -110,7 +110,7 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
 
-  " You can specify revision/branch/tag.
+" You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
 NeoBundle 'bling/vim-airline'
@@ -140,4 +140,3 @@ filetype plugin indent on
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 "End NeoBundle Scripts-------------------------
-
