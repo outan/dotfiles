@@ -243,3 +243,4 @@ alias bup='brew update'
 alias bupg='brew upgrade'
 
 alias path='echo $PATH'
+alias shell='echo $SHELL'
