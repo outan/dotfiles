@@ -1,16 +1,18 @@
 LANG=ja_JP.UTF-8
 export EDITOR=vim
 
-#historyに関する設定
+# historyに関する設定
 HISTFILE=$HOME/.zsh-history
 HISTSIZE=1000000
 SAVEHIST=1000000
-## 直前と同じコマンドをヒストリに追加しない
-setopt hist_ignore_dups
-## ヒストリを共有
-setopt share_history
-## zsh の開始, 終了時刻をヒストリファイルに書き込む
-setopt extended_history
+setopt hist_ignore_dups     # 直前と同じコマンドをヒストリに追加しない
+setopt hist_ignore_all_dups # ヒストリに追加されるコマンド行が古いものと同じなら古いものを削除
+setopt share_history        # historyを複数タブ間で共有
+setopt extended_history     # zshの開始, 終了時刻をhistoryファイルに書き込む
+setopt hist_ignore_space    # スペースで始まるコマンド行はヒストリリストから削除
+setopt hist_reduce_blanks   # 余分なスペースを削除してヒストリに保存する
+setopt hist_expand          # 補完時にヒストリを自動的に展開する。
+setopt hist_verify          # ヒストリを呼び出してから実行する間に一旦編集可能
 
 #ls色付け
 export LSCOLORS=exfxcxdxbxegedabagacad
@@ -18,34 +20,95 @@ export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46
 export ZLS_COLORS=$LS_COLORS
 export CLICOLOR=true
 
-#zsh-completions (非標準コマンドを補完できるようになる素敵なプラグイン)に収納されている補完情報を有効にする
-#zsh非標準コマンド補完情報の一覧は、「ls /usr/local/share/zsh-completions」で確認することができる。
+#zsh-completions (非標準コマンドを補完できる) 補完情報一覧:/usr/local/share/zsh-completions
 fpath=(/usr/local/share/zsh-completions $fpath) # for MAC Homebrew
 fpath=(/home/nexlink/.linuxbrew/share/zsh-completions $fpath) # for Linux linuxbrew
 
-## 補完機能の強化
-autoload -U compinit
-compinit -u
-## 補完候補一覧でファイルの種別をマーク表示
-setopt list_types
-## 補完実行時に補完候補リストを表示する。(デフォルトで有効) 
-setopt auto_list
-## TAB で順に補完候補を切り替える(デフォルトで有効)
-setopt auto_menu
-## カッコの対応などを自動的に補完
-setopt auto_param_keys
-## ディレクトリ名の補完で末尾の / を自動的に付加し、次の補完に備える
-setopt auto_param_slash
-## --prefix=/usr などの = 以降も補完
-setopt magic_equal_subst
-# ディレクトリ移動履歴保存,"cd -[タブ]"で、これまでに移動したディレクトリ一覧が表示
-setopt auto_pushd
-#補完候補を詰めて表示する設定
-setopt list_packed
-## recognize exact matches even if they are ambiguous(曖昧さがあっても正確なマッチを認識する)
-setopt rec_exact
+autoload -U compinit; compinit -u # 補完機能を有効にする
+
 ## 補完候補のカーソル選択を有効に
 zstyle ':completion:*:default' menu select=2
+
+#先方予測機能を有効に設定
+#autoload predict-on
+#predict-on
+
+# 補完侯補をhjklで動き回る
+zmodload zsh/complist
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+
+## 補完実行時に補完候補リストを表示する。(デフォルトで有効)
+setopt auto_list
+
+## TAB で順に補完候補を切り替える(デフォルトで有効)
+setopt auto_menu
+
+## 補完候補一覧でファイルの種別をマーク表示
+setopt list_types
+
+#補完候補を詰めて表示する設定
+setopt list_packed
+
+## recognize exact matches even if they are ambiguous(曖昧さがあっても正確なマッチを認識する)
+setopt rec_exact
+
+## カッコの対応などを自動的に補完
+setopt auto_param_keys
+
+## ディレクトリ名の補完で末尾の / を自動的に付加し、次の補完に備える
+setopt auto_param_slash
+
+## =以降も補完する(--prefix=/usrなど)
+setopt magic_equal_subst
+
+## ディレクトリ名だけでcd移動できる
+setopt auto_cd
+
+# cdの履歴保存,"cd -[タブ]"で、これまでに移動したディレクトリ一覧が表示
+setopt auto_pushd
+
+## 同じディレクトリを pushd しない
+setopt pushd_ignore_dups
+
+## コアダンプサイズを制限
+limit coredumpsize 102400
+
+## 出力の文字列末尾に改行コードが無い場合でも表示
+unsetopt promptcr
+
+## 色を使う
+setopt prompt_subst
+
+## ビープを鳴らさない
+setopt nobeep
+
+## 内部コマンド jobs の出力をデフォルトで jobs -l にする
+setopt long_list_jobs
+
+## サスペンド中のプロセスと同じコマンド名を実行した場合はリジューム
+setopt auto_resume
+
+## ファイル名で #, ~, ^ の 3 文字を正規表現として扱う
+setopt extended_glob
+
+## =command を command のパス名に展開する
+setopt equals
+
+# ファイル名の展開で辞書順ではなく数値的にソート
+setopt numeric_glob_sort
+
+## 出力時8ビットを通す
+setopt print_eight_bit
+
+## コマンドのスペルを訂正してくれる
+setopt correct
+
+# バックグラウンドジョブの状態変化を即時報告する
+setopt notify
+
 ## 補完候補として表示されるファイルやディレクトリにもlsと同じカラーを設定する
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 ## 補完候補がグループ別にメニュー表示
@@ -57,21 +120,18 @@ zstyle ':completion:*:warnings' format '%F{red}No matches found in:%B%b%f''%F{wh
 zstyle ':completion:*:options' description 'yes'
 zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b%f'$DEFAULT
 
-#大文字の場合は小文字を補完しないように、小文字の場合は大文字を補完できるように
+#大文字を入力する場合は小文字を補完せずに、小文字を入力する場合は大文字を補完できるように
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
 # manの補完をセクション番号別に表示させる
 zstyle ':completion:*:manuals' separate-sections true
-# オブジェクトファイルとか中間ファイルとかはfileとして補完させない
+
+# オブジェクトファイルや中間ファイルなどはfileとして補完させない
 #zstyle ':completion:*:*files' ignored-patterns '*?.o' '*?~' '*\#' '*?.swp'
-echo ""
-# セパレータを設定する
+
+# 自動補完時のseparatorを設定する
 zstyle ':completion:*' list-separator '-->'
 zstyle ':completion:*:manuals' separate-sections true
-
-
-#先方予測機能を有効に設定
-#autoload predict-on
-#predict-on
 
 ### prompt
 unsetopt promptcr
@@ -95,20 +155,19 @@ zstyle ':vcs_info:git:*' formats '[%b]%c%u'
 zstyle ':vcs_info:git:*' actionformats '[%b|%a]%c%u'
 
 function ruby_prompt {
-    if which rbenv > /dev/null
-    then
+    if which rbenv > /dev/null; then
         result=`rbenv version | sed -e 's/ .*//'`
-            if [ "$result" ] ; then
-                echo "[$result]"
-		    fi
+        if [ "$result" ] ; then
+            echo "ruby:[$result]"
+        fi
     fi
-    }
+}
 
 function git_stash_count {
-	result=`git stash list 2>/dev/null | wc -l | tr -d ' '`
-	if [ "$result" != 0 ] ; then
-		echo " stash:$result"
-	fi
+    result=`git stash list 2>/dev/null | wc -l | tr -d ' '`
+    if [ "$result" != 0 ] ; then
+        echo " stash:$result"
+    fi
 }
 
 
@@ -125,70 +184,23 @@ PROMPT=$'%{$fg[yellow]%}%n%{$fg[red]%}@$fg[green]%}%m %{$fg[cyan]%}%~ %1(v|%F{gr
 #RPROMPT=$GREEN'[%~]'$DEFAULT
 #setopt PROMPT_SUBST
 
-## コアダンプサイズを制限
-limit coredumpsize 102400
-
-## 出力の文字列末尾に改行コードが無い場合でも表示
-unsetopt promptcr
-
-## 色を使う
-setopt prompt_subst
-
-## ビープを鳴らさない
-setopt nobeep
-
-## 内部コマンド jobs の出力をデフォルトで jobs -l にする
-setopt long_list_jobs
-
-## サスペンド中のプロセスと同じコマンド名を実行した場合はリジューム
-setopt auto_resume
-
-## cd 時に自動で push
-setopt autopushd
-
-## 同じディレクトリを pushd しない
-setopt pushd_ignore_dups
-
-## ファイル名で #, ~, ^ の 3 文字を正規表現として扱う
-setopt extended_glob
-
-## =command を command のパス名に展開する
-setopt equals
-
-
-
-## ヒストリを呼び出してから実行する間に一旦編集
-setopt hist_verify
-
-# ファイル名の展開で辞書順ではなく数値的にソート
-setopt numeric_glob_sort
-
-## 出力時8ビットを通す
-setopt print_eight_bit
-
-## スペルチェック
-setopt correct
-
-# alias
+# aliasesファイルを有効にする
 #source ~/.aliases
 if [ -f ~/.aliases ]; then
-	. ~/.aliases
+    . ~/.aliases
 fi
 
-## ディレクトリ名だけでcd移動できる
-setopt auto_cd
-
-#current directory移動後,自動的にlsalを実行し、current directoryをtitle barに動的に表示させる
+#cdの時に,自動的にlsalを実行し、current directoryをtitle barに動的に表示させる
 #lsalを実行できるために、先に.aliasesファイルをロードする必要がある。
 function chpwd() {
-lsal
-echo -n "\e]2;$(pwd)\a"
+    lsal
+    echo -n "\e]2;$(pwd)\a"
 }
 
 # cdとmkdirを一緒にする(defaultのmkdirコマンドを上書きすると他のスクリプトなどの中にmkdirを呼び出す時に予期せぬエラーが発生する可能性があるため、mkdir_cdという名前にしました。)
 # http://d.hatena.ne.jp/yarb/20110126/p1
 function mkdir_cd() {
-if [[ -d $1 ]]; then
+if [ -d $1 ]; then
     echo "It already exsits! Cd to the directory."
     cd $1
 elif [ -f /bin/mkdir ]; then
@@ -200,7 +212,7 @@ fi
 }
 
 # rbenv
-if [ -d "$HOME/.rbenv/bin" ];then # for CentOS: rbenvは~/.rbenv/binにインストールされるので、rbenvのコマンドの場所をPATHに追加しないとrbenvのコマンドが使えない。
+if [ -d "$HOME/.rbenv/bin" ]; then # for CentOS: rbenvは~/.rbenv/binにインストールされるので、rbenvのコマンドの場所をPATHに追加しないとrbenvのコマンドが使えない。
     export PATH="$HOME/.rbenv/bin:$PATH"↲
 else
     export RBENV_ROOT="/usr/local/var/rbenv" # for MAC: to use Homebrew's directories rather than ~/.rbenv
@@ -216,11 +228,10 @@ fi
 
 ## http://d.hatena.ne.jp/hiboma/20120315/1331821642
 ## Ctrl + X Crtl + Pでコマンドラインをクリップボードに登録
-pbcopy-buffer(){
-	print -rn $BUFFER | pbcopy
-	zle -M "pbcopy: ${BUFFER}"
-	}
-		
+pbcopy-buffer() {
+    print -rn $BUFFER | pbcopy
+    zle -M "pbcopy: ${BUFFER}"
+}
 zle -N pbcopy-buffer
 bindkey '^x^p' pbcopy-buffer
 
@@ -247,21 +258,20 @@ bindkey "^R" history-incremental-search-backward
 bindkey "^U" kill-whole-line
 bindkey "^W" backward-kill-word
 
-# 3秒以上かかった処理は詳細表示
+# コマンド実行に3秒以上かかった時にtimeコマンドと同じように処理時間を出してくれる
 REPORTTIME=3
- [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 #use vm to show less command
 alias less='/usr/share/vim/vim73/macros/less.sh'
 # less のステータス行にファイル名と行数、いま何%かを表示
 export LESS='-X -i -P ?f%f:(stdin). ?lb%lb?L/%L.. [?eEOF:?pb%pb\%..]'
 
-#git command it conflicts with the zsh globbing問題を解決するため　https://blog.afoolishmanifesto.com/posts/git-aliases-for-your-life/
+#conflicts with the zsh globbing問題を解決する。 https://blog.afoolishmanifesto.com/posts/git-aliases-for-your-life/
 alias git='noglob git'
 
 # REGRESSION_NEXLINK
-    export REGRESSION_NEXLINK_HOME=$HOME/projects/regression_nexlink
-    export REGRESSION_NEXLINK_DOWNLOAD_DIR=$HOME/Downloads
+export REGRESSION_NEXLINK_HOME=$HOME/projects/regression_nexlink
+export REGRESSION_NEXLINK_DOWNLOAD_DIR=$HOME/Downloads
 
 #perlの設定
 if which plenv > /dev/null; then
@@ -386,10 +396,10 @@ fi
 }
 
 # Show/hide hidden files in Finder
- alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
- alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
-# iTerm2のタブ名を変更する関数を追加
+# terminalのタブ名を変更する関数
 function title {
     echo -ne "\033]0;"$*"\007"
 }
@@ -410,22 +420,19 @@ function title {
 if [ -f ~/dotfiles/auto-fu.zsh ]; then
     source ~/dotfiles/auto-fu.zsh
     function zle-line-init () {
-    auto-fu-init
+        auto-fu-init
     }
     zle -N zle-line-init
     zstyle ':completion:*' completer _oldlist _complete
-    #auto-fu.zshを使っている時に表示されている「-azhu-」を非表示にする
-    zstyle ':auto-fu:var' postdisplay $''
+    zstyle ':auto-fu:var' postdisplay $'' #「-azhu-」を非表示にする
 fi
 
 
 #z.sh：最近移動したディレクトリの補完ができる(cdコマンド履歴のjump)
 _Z_CMD=j
-if which brew > /dev/null  && [ -f `brew --prefix`/etc/profile.d/z.sh ]
-then
+if which brew > /dev/null && [ -f `brew --prefix`/etc/profile.d/z.sh ]; then
     . `brew --prefix`/etc/profile.d/z.sh
-elif [ -f ~/dotfiles/z.sh ]
-then
+elif [ -f ~/dotfiles/z.sh ]; then
     source ~/dotfiles/z.sh
 fi
 
@@ -438,10 +445,8 @@ function precmd () {
 }
 
 # http://blog.glidenote.com/blog/2012/12/15/zsh-syntax-highlighting/
-#=============================
 #source zsh-syntax-highlighting
-#=============================
-if [ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ];then
+if [ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
     source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 elif  [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
     source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -461,8 +466,8 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 
 # node.jsのバージョン管理ソフトウェアの導入に関する設定
-if which brew > /dev/null && [ -s $(brew --prefix nvm)/nvm.sh ];then
-    if [ ! -d ~/.nvm ];then
+if which brew > /dev/null && [ -s $(brew --prefix nvm)/nvm.sh ]; then
+    if [ ! -d ~/.nvm ]; then
         mkdir ~/.nvm
     fi
     export NVM_DIR=~/.nvm #move install location to prevent that node installs will be lost upon upgrading nvm
@@ -470,12 +475,12 @@ if which brew > /dev/null && [ -s $(brew --prefix nvm)/nvm.sh ];then
 fi
 
 # linuxbrew導入に関する設定
-if [ -d "$HOME/.linuxbrew" ];then
+if [ -d "$HOME/.linuxbrew" ]; then
     export PATH="$HOME/.linuxbrew/bin:$PATH"
     export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
 fi
 
 # CentOSでdevtoolset導入に関する設定(新gccなどのツールをインストール)
-if [ -f /opt/centos/devtoolset-1.1/enable ];then
+if [ -f /opt/centos/devtoolset-1.1/enable ]; then
     source /opt/centos/devtoolset-1.1/enable
 fi
