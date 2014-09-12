@@ -95,7 +95,7 @@ zstyle ':vcs_info:git:*' formats '[%b]%c%u'
 zstyle ':vcs_info:git:*' actionformats '[%b|%a]%c%u'
 
 function ruby_prompt {
-    if [ -f /usr/local/bin/rbenv ] 
+    if which rbenv > /dev/null
     then
         result=`rbenv version | sed -e 's/ .*//'`
             if [ "$result" ] ; then
@@ -417,7 +417,7 @@ fi
 
 #z.sh：最近移動したディレクトリの補完ができる(cdコマンド履歴のjump)
 _Z_CMD=j
-if [ -f /usr/local/bin/brew ] && [ -f `brew --prefix`/etc/profile.d/z.sh ]
+if which brew > /dev/null  && [ -f `brew --prefix`/etc/profile.d/z.sh ]
 then
     . `brew --prefix`/etc/profile.d/z.sh
 elif [ -f ~/dotfiles/z.sh ]
@@ -457,7 +457,7 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 
 # node.jsのバージョン管理ソフトウェアの導入に関する設定
-if [ -s $(brew --prefix nvm)/nvm.sh ];then
+if which brew > /dev/null && [ -s $(brew --prefix nvm)/nvm.sh ];then
     if [ ! -d ~/.nvm ];then
         mkdir ~/.nvm
     fi
