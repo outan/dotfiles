@@ -464,3 +464,9 @@ if which brew > /dev/null && [ -s $(brew --prefix nvm)/nvm.sh ];then
     export NVM_DIR=~/.nvm #move install location to prevent that node installs will be lost upon upgrading nvm
     source $(brew --prefix nvm)/nvm.sh
 fi
+
+# linuxbrew導入に関する設定
+if [ -d "$HOME/.linuxbrew" ];then
+    export PATH="$HOME/.linuxbrew/bin:$PATH"
+    export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
+fi
