@@ -1,6 +1,3 @@
-# install the homebrew-cask tool↲
-install brew-cask
-
 # a synonym for brew update(casksも一緒にupdateされる)
 cask update
 
@@ -22,7 +19,7 @@ cask install sourcetree
 #cask install dash
 
 # editors
-cask install sublime-text
+cask install sublime-text3
 cask install macvim-kaoriya
 #cask install textwrangler
 #cask install atom
