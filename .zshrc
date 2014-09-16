@@ -213,7 +213,7 @@ fi
 
 # rbenv
 if [ -d "$HOME/.rbenv/bin" ]; then # for CentOS: rbenvは~/.rbenv/binにインストールされるので、rbenvのコマンドの場所をPATHに追加しないとrbenvのコマンドが使えない。
-    export PATH="$HOME/.rbenv/bin:$PATH"↲
+    export PATH="$HOME/.rbenv/bin:$PATH"
 else
     export RBENV_ROOT="/usr/local/var/rbenv" # for MAC: to use Homebrew's directories rather than ~/.rbenv
     if [ -d $RBENV_ROOT ]; then
