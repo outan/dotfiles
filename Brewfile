@@ -32,6 +32,8 @@ install 'rbenv'
 
 install 'mysql'
 
+install 'httpd24' #httpd 2.4.10
+
 install 'tree'
 
 #make less command show color
