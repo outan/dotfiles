@@ -12,12 +12,11 @@ export PATH=$PATH:/sbin
 export PATH=$PATH:/usr/sbin
 
 ## rbenv
-export RBENV_ROOT="/usr/local/var/rbenv" #to use Homebrew's directories rather than ~/.rbenv
-if [ -d $RBENV_ROOT ]; then
-    export PATH="$RBENV_ROOT/bin:$PATH"
+if [ -d "$HOME/.rbenv/bin" ]; then # for CentOS: rbenvは~/.rbenv/binにインストールされるので、rbenvのコマンドの場所をPATHに追加しないとrbenvのコマンドが使えない。
+    export PATH="$HOME/.rbenv/bin:$PATH"
 fi
 
-# To enable shims and autocompletion
+# To enable shims(rbenv rehash) , autocompletion, add the path of shims to PATH
 if which rbenv > /dev/null; then
     eval "$(rbenv init - zsh)";
 fi
