@@ -214,14 +214,14 @@ fi
 # rbenv
 if [ -d "$HOME/.rbenv/bin" ]; then # for CentOS: rbenvは~/.rbenv/binにインストールされるので、rbenvのコマンドの場所をPATHに追加しないとrbenvのコマンドが使えない。
     export PATH="$HOME/.rbenv/bin:$PATH"
-else
-    export RBENV_ROOT="/usr/local/var/rbenv" # for MAC: to use Homebrew's directories rather than ~/.rbenv
-    if [ -d $RBENV_ROOT ]; then
-        export PATH="$RBENV_ROOT/bin:$PATH"
-    fi
+#else
+#    export RBENV_ROOT="/usr/local/var/rbenv" # for MAC: to use Homebrew's directories rather than ~/.rbenv
+#    if [ -d $RBENV_ROOT ]; then
+#        export PATH="$RBENV_ROOT/bin:$PATH"
+#    fi
 fi
 
-# To enable shims and autocompletion
+# To enable shims(rbenv rehash) , autocompletion, add the path of shims to PATH
 if which rbenv > /dev/null; then
     eval "$(rbenv init - zsh)";
 fi
