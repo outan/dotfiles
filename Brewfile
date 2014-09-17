@@ -28,7 +28,7 @@ install 'tmux'
 
 install 'zsh'
 
-install 'rbenv'
+install rbenv ruby-build #ruby-buildをインストールすることにより、rbenv installが利用できるようになる。rbenv自体はrubyをインストールできないから。
 
 install 'mysql'
 
