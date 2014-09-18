@@ -536,3 +536,8 @@ elif type compctl &>/dev/null; then
   compctl -K _npm_completion npm
 fi
 ###-end-npm-completion-###
+
+#速度測定(zshenvでzprofモジュールを読み込んでおく必要がある。)
+if (which zprof > /dev/null) ;then
+      zprof | less
+fi
