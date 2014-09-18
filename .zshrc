@@ -24,7 +24,9 @@ export CLICOLOR=true
 fpath=(/usr/local/share/zsh-completions $fpath) # for MAC Homebrew
 fpath=(/home/nexlink/.linuxbrew/share/zsh-completions $fpath) # for Linux linuxbrew
 
-autoload -U compinit; compinit -u # 補完機能を有効にする
+## 補完機能を有効にする
+autoload -U compinit #compinitのシェル関数を読み込む。-U:展開される関数の内部でaliasの展開をしない
+compinit -C #補完機能を起動する。-C:security checkを飛ばして,zshの起速度をupする
 
 ## 補完候補のカーソル選択を有効に
 zstyle ':completion:*:default' menu select=2
