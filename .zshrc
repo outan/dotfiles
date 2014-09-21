@@ -540,3 +540,13 @@ fi
 if (which zprof > /dev/null) ;then
       zprof | less
 fi
+
+#コマンドラインスタック(buffer stack)はControl+qでも実行できるようにする
+show_buffer_stack() {
+  POSTDISPLAY="
+stack: $LBUFFER"
+  zle push-line-or-edit
+}
+zle -N show_buffer_stack
+setopt noflowcontrol
+bindkey '^Q' show_buffer_stack
