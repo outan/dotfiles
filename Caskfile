@@ -31,6 +31,7 @@ cask install evernote
 cask install alfred
 cask install freemind
 #cask install openoffice
+cask install libreoffice
 #cask install skype
 
 #cask install skitch
