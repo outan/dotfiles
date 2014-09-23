@@ -105,8 +105,8 @@ setopt numeric_glob_sort
 ## 出力時8ビットを通す
 setopt print_eight_bit
 
-## コマンドのスペルを訂正してくれる
-setopt correct
+setopt correct     # コマンドのスペルを訂正してくれる
+setopt correct_all # コマンドだけではなく、対象となるファイルのスペルも訂正してくれる
 
 # バックグラウンドジョブの状態変化を即時報告する
 setopt notify
