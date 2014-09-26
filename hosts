@@ -53,6 +53,9 @@
 #検証環境(回帰テスト用)
 202.222.94.190  test-ope-chk2.nlk.jp
 202.222.94.190  test-ope-chk2-stage.nlk.jp
+202.222.94.190  test-ope-chk.nlk.jp        #ユーザー管理部分
+202.222.94.190  test-ope-chk-stage.nlk.jp  #ユーザー管理部分
+
 
 # 本番リリース待ち環境
 54.248.97.123	SQLDB801	
