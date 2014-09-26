@@ -7,7 +7,7 @@ cask install firefox
 
 # dev tools
 cask install iterm2
-#cask install mysqlworkbench
+cask install mysqlworkbench
 #cask install virtualbox
 #cask install vmware-fusion
 cask install github
@@ -53,7 +53,7 @@ cask install xtrafinder
 cask install wechat
 cask install qq
 
-# Remove outdated versions
+# Remove outdated cached downloads (older than 10 days old) and tracker symlinks(同じツールの古いバージョンはどうやって削除するのかまだわかりません。)
 cask cleanup --outdated
 
 # alfredにリンク
