@@ -36,7 +36,14 @@ fi
 alias m='man'
 alias disk='du -h -x -d 1'
 alias hosts='vi /etc/hosts'
-alias log='cd ~/system/nexlink-b/var/log/'
+
+if [ -d /home/piece/system/var/log ]
+then
+    alias log='cd /home/piece/system/var/log'
+else
+    alias log='cd ~/system/nexlink-b/var/log/'
+fi
+
 alias jobs='jobs -l'
 
 #rmを実施する時に、Trashに移動する
