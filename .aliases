@@ -26,7 +26,13 @@ alias lsalt="lsal -t"
 alias cp='cp -iv'
 alias h='history -i'
 alias a='alias'
-alias w='where'
+
+if where > /dev/null 2>&1; then
+    alias w='where'
+else
+    alias w='which'
+fi
+
 alias m='man'
 alias disk='du -h -x -d 1'
 alias hosts='vi /etc/hosts'
