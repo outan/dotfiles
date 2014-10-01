@@ -37,11 +37,18 @@ alias m='man'
 alias disk='du -h -x -d 1'
 alias hosts='vi /etc/hosts'
 
+# logへのalias
 if [ -d /home/piece/system/var/log ]
 then
     alias log='cd /home/piece/system/var/log'
-else
+elif [ -d /var/log/nexlink ]
+then
+    alias log='cd /var/log/nexlink'
+elif [ -d ~/system/nexlink-b/var/log ]
+then
     alias log='cd ~/system/nexlink-b/var/log/'
+else
+    alias log='cd /var/log'
 fi
 
 alias jobs='jobs -l'
