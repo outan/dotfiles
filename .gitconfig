@@ -2,7 +2,7 @@
     excludesfile = ~/.gitignore
     quotepath    = false
     whitespace   = trailing-space,space-before-tab,cr-at-eol
-    pager        = "lv -c -Au8"
+    pager        = "lv"
     attributesfile = ~/dotfiles/.gitattributes_global
     autocrlf     = input #Windows にチェックアウトした時の CRLF への変換は行いますが、Mac や Linux へのチェックアウト時は LF のままにします。(.git-completion.bashには関連の設定があるようですが、念のため.gitconfigにも設定しておく。)
 
