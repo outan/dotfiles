@@ -24,7 +24,7 @@ cask install macvim-kaoriya
 #cask install textwrangler
 #cask install atom
 cask install textmate
-
+cask install mou
 # additional apps
 #cask install dropbox
 cask install evernote
