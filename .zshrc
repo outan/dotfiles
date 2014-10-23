@@ -536,11 +536,6 @@ elif type compctl &>/dev/null; then
 fi
 ###-end-npm-completion-###
 
-#速度測定(zshenvでzprofモジュールを読み込んでおく必要がある。)
-if (which zprof > /dev/null) ;then
-      zprof | less
-fi
-
 #コマンドラインスタック(buffer stack)はControl+qでも実行できるようにする
 show_buffer_stack() {
   POSTDISPLAY="
@@ -550,3 +545,8 @@ stack: $LBUFFER"
 zle -N show_buffer_stack
 setopt noflowcontrol
 bindkey '^Q' show_buffer_stack
+
+#速度測定(zshenvでzprofモジュールを読み込んでおく必要がある。)
+if (which zprof > /dev/null) ;then
+    zprof | less
+fi
