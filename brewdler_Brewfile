@@ -1,0 +1,115 @@
+# update the Homebrew tool and get the all formulaes (including casks)
+#brew update
+
+# upgrade any already-installed formulae(including homebrew cask tool)
+#brew upgrade
+
+# Add repositories
+# install multiple versions of existing packages.
+tap 'homebrew/versions'
+
+tap 'caskroom/cask'
+
+# can install alternate versions of Casks.
+tap 'caskroom/versions'
+
+tap 'homebrew/apache'
+#pull down the latest Casks when use the regular Homebrew command brew update
+brew 'brew-cask'
+
+# Install GNU core utilities (those that come with OS X are outdated) to use these commands without a prefix g ,you shoud add $(brew --prefix coreutils)/libexec/gnubin to \$PATH."
+brew 'coreutils'
+
+# Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
+brew 'findutils'
+
+# Install Bash 4
+brew 'bash'
+
+# Install wget with IRI support
+brew 'wget'
+
+brew 'curl'
+
+brew 'tmux'
+
+brew 'zsh'
+
+#ruby-buildをインストールすることにより、rbenv installが利用できるようになる。rbenv自体はrubyをインストールできないから。
+brew 'rbenv'
+brew 'ruby-build'
+
+brew 'mysql'
+
+#httpd 2.4.10
+brew 'httpd24'
+
+brew 'tree'
+
+#make less command show color
+brew 'source-highlight'
+
+brew 'git'
+
+#.gitconfig設定後、git log -pでは文字化けという現象の対処
+brew 'lv'
+
+#gitのログを見やすくする
+brew 'tig'
+
+#git branch管理用のツール
+brew 'git-flow'
+
+brew 'openssl'
+
+#install 'curl-ca-bundle'
+#opensslで必要なものだが、homebrewから何かの原因でremoveされたので、
+#コメントしないとbrew bundle実行する時にエラーが発生する。
+#https://github.com/Homebrew/homebrew/pull/28658
+
+brew 'ack'
+brew 'ag'
+brew 'hub'
+
+brew 'terminal-notifier'
+
+brew 'lsyncd'
+
+brew 'redis'
+
+brew 'rmtrash'
+
+#pythonのバージョン管理ツール
+brew 'pyenv'
+
+#perlのバージョン管理ツール
+brew 'plenv'
+brew 'perl-build'
+
+#guess of the input kanji encodings
+brew 'nkf'
+
+#色付きのdiffコマンド(MACのデフォルトdiffコマンドは色表示できない。)
+brew 'colordiff'
+
+#同期用ツール
+brew 'unison'
+
+brew 'z'
+
+brew 'readline'
+
+brew 'zsh-completions'
+
+brew 'zsh-syntax-highlighting'
+
+brew 'pstree'
+
+#topコマンドの高機能版
+brew 'htop'
+
+#node version manager
+brew 'nvm'
+
+# uninstall unused and old versions of packages from the cellar
+#brew cleanup
