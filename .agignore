@@ -1,5 +1,5 @@
-log
-logs
+*.log
+*.log.*
 tmp
 vendor
 .vim/bundle
@@ -18,7 +18,6 @@ jquery-*.js
 *.old
 *.pdf
 *.md
-*.log
 node_modules
 *.egg
 *.egg-info
