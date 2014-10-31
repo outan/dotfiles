@@ -118,6 +118,11 @@ then
     alias n1="cd ~/tmp.nexlink-b"
 fi
 
+if [ -d ~/projects/outbound_1.62.1 ]
+then
+    alias ob="cd ~/projects/outbound_1.62.1"
+fi
+
 alias n2="cd ~/projects/nexlink2"
 alias web="cd ~/Dropbox/web"
 alias de="cd ~/web/rails/demo"
