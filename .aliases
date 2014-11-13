@@ -278,3 +278,7 @@ elif which xsel >/dev/null 2>&1 ; then
 elif which putclip >/dev/null 2>&1 ; then
     alias -g C='| putclip' # Cygwin
 fi
+
+#ディレクトリ内のファイル数をcountする
+alias filecount='ls -U1 | wc -l'
+#-Uオプションを用いるとソートを実施しないので、find . -type f | wc -l よりも早い。
