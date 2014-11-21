@@ -1,0 +1,65 @@
+package jp.nexway.nexlink.batch.OB9010020;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import jp.terasoluna.fw.batch.openapi.BLogicResult;
+import jp.terasoluna.fw.batch.openapi.ReturnCode;
+import jp.terasoluna.fw.batch.openapi.SupportLogic;
+import jp.terasoluna.fw.dao.UpdateDAO;
+
+/***********************************************************************************
+ * 課金ファイル出力
+ * ジョブ前処理
+ * @author Kakizoe(Takt)
+ * #6423          2013/07/04       kakizoe_sadayoshi           v1.39.0対応
+ ***********************************************************************************/
+public class OB9010020PreLogic implements SupportLogic<OB9010020JobContext> {
+
+    /** ログクラス */
+    private static Log log = LogFactory.getLog(OB9010020PreLogic.class);
+
+    /** 更新DAO */
+    private UpdateDAO updateDAO = null;
+
+    @Override
+    /**
+     * ユーザーFAX配信履歴課金,課金(FAX通数), 課金(オン便通数), 課金(メール通数)のデータをフォーマットする
+     * @param data
+     * @return BLogicResult
+     */
+    public BLogicResult execute(OB9010020JobContext data) {
+        // Startログ
+        if (log.isDebugEnabled()) {
+            log.debug("OB9010020PreLogic execute START");
+        }
+
+        // ユーザーFAX配信履歴課金をフォーマットする
+        updateDAO.execute("OB9010020.truncateChargesHisFaxWork", null);
+        // 課金(FAX通数)をフォーマットする
+        updateDAO.execute("OB9010020.truncateChargesFax", null);
+        // 課金(オン便通数)をフォーマットする
+        updateDAO.execute("OB9010020.truncateChargesPost", null);
+        // 課金(メール通数)をフォーマットする
+        updateDAO.execute("OB9010020.truncateChargesMail", null);
+//        // 課金(データ容量)をフォーマットする
+//        updateDAO.execute("OB9010020.truncateChargesData", null);
+    /** ↓ここから v1.39.0 #6423 20130704 kakizoe_sadayoshi 【課金（OB)】ON便の料金改定に伴う課金ロジックの変更 */
+        // 課金(オン便A4ハガキ・ハガキ通数)をフォーマットする
+        updateDAO.execute("OB9010020.truncateChargesPostCard", null);
+    /** ↑ここまで v1.39.0 #6423 */
+
+        // Endログ
+        if (log.isDebugEnabled()) {
+            log.debug("OB9010020PreLogic execute END");
+        }
+        return new BLogicResult(ReturnCode.NORMAL_CONTINUE);
+    }
+    /**
+     * @param updateDAO
+     *            セットする updateDAO
+     */
+    public void setUpdateDAO(UpdateDAO updateDAO) {
+        this.updateDAO = updateDAO;
+    }
+}
