@@ -357,13 +357,13 @@ if [ -f /usr/local/bin/trash ]
 then
     case "$1" in
         "--dry-run" | "-n")
-        find . -type d -name ".Trash" -prune -o \( -name "*~" -o -name ".DS_Store" -o -name "*.swp" -o -name "*.bak" -o -name "*の競合コ*" \( -type f -or -type l \) \)
+        find . -type d -name ".Trash" -prune -o \( -name "*~" -o -name ".DS_Store" -o -name "*.swp" -o -name "*.bak" \( -type f -or -type l \) \)
         ;;
     "~" | "DS_Store" | "swp" | "bak")
         find . -type d -name ".Trash" -prune -o -name "*$1" \( -type f -or -type l \) -exec  /usr/local/bin/trash -fv -- {} +
         ;;
     "")
-        find . -type d -name ".Trash" -prune -o \( -name "*~" -o -name ".DS_Store" -o -name "*.swp" -o -name "*.bak" -o -name "*の競合コ*" \( -type f -or -type l \) \) -exec  /usr/local/bin/trash -fv -- {} +
+        find . -type d -name ".Trash" -prune -o \( -name "*~" -o -name ".DS_Store" -o -name "*.swp" -o -name "*.bak" \( -type f -or -type l \) \) -exec  /usr/local/bin/trash -fv -- {} +
         ;;
     *)
         echo "Unsupported option \`$1'.\nDid you mean --dry-run?(using command trash)"
@@ -373,13 +373,12 @@ elif [ -f /usr/local/bin/rmtrash ]
 then
     case "$1" in
     "--dry-run" | "-n")
-        find . -type d -name ".Trash" -prune -o \( -name "*~" -o -name ".DS_Store" -o -name "*.swp" -o -name "*.bak" -o -name "*の競合コ*" \( -type f -or -type l \) \)
-        ;;
+        find . -type d -name ".Trash" -prune -o \( -name "*~" -o -name ".DS_Store" -o -name "*.swp" -o -name "*.bak" \( -type f -or -type l \) \)         ;;
     "~" | "DS_Store" | "swp" | "bak")
         find . -type d -name ".Trash" -prune -o -name "*$1" \( -type f -or -type l \) -exec  /usr/local/bin/rmtrash -fv -- {} +
         ;;
     "")
-        find . -type d -name ".Trash" -prune -o \( -name "*~" -o -name ".DS_Store" -o -name "*.swp" -o -name "*.bak" -o -name "*の競合コ*" \( -type f -or -type l \) \) -exec  /usr/local/bin/trash  -- {} +
+        find . -type d -name ".Trash" -prune -o \( -name "*~" -o -name ".DS_Store" -o -name "*.swp" -o -name "*.bak" \( -type f -or -type l \) \) -exec  /usr/local/bin/trash  -- {} +
         ;;
     *)
         echo "Unsupported option \`$1'.\nDid you mean --dry-run? (using command rmtrash)"
@@ -388,13 +387,13 @@ then
 else
     case "$1" in
     "--dry-run" | "-n")
-        find . -type d -name ".Trash" -prune -o \( -name "*~" -o -name ".DS_Store" -o -name "*.swp" -o -name "*.bak" -o -name "*の競合コ*" \( -type f -or -type l \) \)
+        find . -type d -name ".Trash" -prune -o \( -name "*~" -o -name ".DS_Store" -o -name "*.swp" -o -name "*.bak" \( -type f -or -type l \) \)
         ;;
     "~" | "DS_Store" | "swp" | "bak")
         find . -type d -name ".Trash" -prune -o -name "*$1" \( -type f -or -type l \) -exec /bin/rm  -fv -- {} +
         ;;
     "")
-        find . -type d -name ".Trash" -prune -o \( -name "*~" -o -name ".DS_Store" -o -name "*.swp" -o -name "*bak" -o -name "*の競合コ*" \( -type f -or -type l \) \) -exec  /bin/rm   -- {} +
+        find . -type d -name ".Trash" -prune -o \( -name "*~" -o -name ".DS_Store" -o -name "*.swp" -o -name "*bak" \( -type f -or -type l \) \) -exec  /bin/rm   -- {} +
         ;;
     *)
         echo "Unsupported option \`$1'.\nDid you mean --dry-run? (using OS default command rm)"
