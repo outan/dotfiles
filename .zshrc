@@ -287,11 +287,11 @@ if which pyenv > /dev/null; then
 fi
 
 #phpの設定
-#if which phpenv > /dev/null; then
+if [ -d ~/.phpenv/bin ]; then
     export PHPENV_ROOT="$HOME/.phpenv"
     export PATH=$PHPENV_ROOT/bin:$PATH
     eval "$(phpenv init - zsh)";
-#fi
+fi
 
 
 #nexlink1.0ローカル開発環境でどこでもcli.phpのコマンドを実行できるようにパスを追加
