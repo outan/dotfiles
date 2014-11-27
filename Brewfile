@@ -100,5 +100,8 @@ install htop
 #node version manager
 install nvm
 
+#phpパッケージ管理ツール
+install composer
+
 # uninstall unused and old versions of packages from the cellar
 cleanup
