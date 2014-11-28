@@ -9,6 +9,7 @@ tap homebrew/versions # install multiple versions of existing packages.
 tap caskroom/cask
 tap caskroom/versions # can install alternate versions of Casks.
 tap homebrew/apache # for apache(httpd)
+tap homebrew/php #phpenvなどphp関連
 
 install brew-cask #pull down the latest Casks when use the regular Homebrew command brew update
 install 'coreutils' # Install GNU core utilities (those that come with OS X are outdated) to use these commands without a prefix g ,you shoud add $(brew --prefix coreutils)/libexec/gnubin to \$PATH."
@@ -99,6 +100,16 @@ install htop
 
 #node version manager
 install nvm
+
+#php version manager
+install phpenv
+install php-build #phpソースコードをコンパイルするツール
+install bison #手動で実行:brew link bison --force
+#php-buildで必要なライブラリ
+instal re2c
+install libjpeg
+install libpng
+reinstall libmcrypt
 
 #phpパッケージ管理ツール
 install composer
