@@ -25,6 +25,7 @@ cask install macvim-kaoriya
 #cask install atom
 cask install textmate
 cask install mou
+
 # additional apps
 #cask install dropbox
 cask install evernote
@@ -38,7 +39,7 @@ cask install libreoffice
 cask install adobe-reader
 cask install clipmenu
 cask install licecap # gif animation capture
-cask install gyazo
+cask install gyazo #gyazo gifも自動的にインストールされる。
 cask install skim
 cask install xtrafinder
 #cask install magican
@@ -50,7 +51,7 @@ cask install cheatsheet
 cask install xtrafinder
 
 # sns
-cask install wechat
+#cask install wechat #App Storeで管理
 cask install qq
 
 # Remove outdated cached downloads (older than 10 days old) and tracker symlinks(同じツールの古いバージョンはどうやって削除するのかまだわかりません。)
