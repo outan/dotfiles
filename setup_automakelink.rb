@@ -2,12 +2,10 @@
 #-*- encoding:utf-8 -*-
 =begin
 カレントディレクトリにある .から始まるdotfile(ディレクトリも可)をHOME以下にシンボリックリンクします。
-Dropboxにdotfile用のdirectoryを作りその中にこのスクリプトを入れておけば、OS(のユーザー)のセットアップ時に実行すればリンクを作ってくれます。
-
 Ruby1.9用 (JRuby --1.9 でも動作可能)
 =end
 
-puts "このスクリプトはDropbox/DotFilesの中で実行してください。"
+puts "このスクリプトはdotfilesの中で実行してください。"
 print "実行しますか？[y/n]:"
 a = STDIN.gets().chomp
 unless a == "y" or a == "yes" then
