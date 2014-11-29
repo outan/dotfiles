@@ -106,7 +106,8 @@ setopt numeric_glob_sort
 setopt print_eight_bit
 
 setopt correct     # コマンドのスペルを訂正してくれる
-setopt correct_all # コマンドだけではなく、対象となるファイルのスペルも訂正してくれる
+#setopt correct_all # コマンドだけではなく、対象となるファイルのスペルも訂正してくれる
+#correct_all considered harmful http://bewatermyfriend.org/p/2012/00c/
 
 # バックグラウンドジョブの状態変化を即時報告する
 setopt notify
