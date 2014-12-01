@@ -29,8 +29,6 @@ install 'tmux'
 
 install 'zsh'
 
-install rbenv ruby-build #ruby-buildをインストールすることにより、rbenv installが利用できるようになる。rbenv自体はrubyをインストールできないから。
-
 install 'mysql'
 
 install 'httpd24' #httpd 2.4.10
@@ -71,10 +69,36 @@ install redis
 install rmtrash
 
 #pythonのバージョン管理ツール
-install pyenv
+#install pyenv
 
 #perlのバージョン管理ツール
-install plenv perl-build
+#install plenv perl-build
+
+#node version manager
+#install nvm
+
+#php version manager
+#install phpenv
+#install php-build #phpソースコードをコンパイルするツール
+#install bison #手動で実行:brew link bison --force
+
+#php-buildで必要なライブラリ
+#instal re2c
+#install libjpeg
+#install libpng
+#reinstall libmcrypt
+
+#phpライブラリ管理ツール
+install composer
+
+#ruby version manager
+#install rbenv ruby-build #ruby-buildをインストールすることにより、rbenv installが利用できるようになる。rbenv自体はrubyをインストールできないから。
+
+#node version manager
+#install nvm
+
+#anyenv(phpenv,rbenv,plenv,pyenvなどのwrapper)
+install anyenv
 
 #guess of the input kanji encodings
 install nkf
@@ -97,22 +121,6 @@ install pstree
 
 #topコマンドの高機能版
 install htop
-
-#node version manager
-install nvm
-
-#php version manager
-install phpenv
-install php-build #phpソースコードをコンパイルするツール
-install bison #手動で実行:brew link bison --force
-#php-buildで必要なライブラリ
-instal re2c
-install libjpeg
-install libpng
-reinstall libmcrypt
-
-#phpパッケージ管理ツール
-install composer
 
 # uninstall unused and old versions of packages from the cellar
 cleanup
