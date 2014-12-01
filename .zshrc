@@ -294,6 +294,12 @@ if [ -d ~/.phpenv/bin ]; then
     eval "$(phpenv init - zsh)";
 fi
 
+#anyenv(phpenv,rbenv,plenv,pyenvなどのwrapper)
+if [ -d ~/.anyenv/bin ]; then
+    export PATH="$HOME/.anyenv/bin:$PATH"
+    eval "$(anyenv init - zsh)"
+fi
+
 
 #nexlink1.0ローカル開発環境でどこでもcli.phpのコマンドを実行できるようにパスを追加
 if [ -d ~/system/nexlink-b/app/bin ]; then
