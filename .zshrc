@@ -561,6 +561,13 @@ zle -N show_buffer_stack
 setopt noflowcontrol
 bindkey '^Q' show_buffer_stack
 
+#dockerに関する環境変数
+if which docker > /dev/null; then
+    export DOCKER_HOST=tcp://192.168.59.103:2376
+    export DOCKER_CERT_PATH=~/.boot2docker/certs/boot2docker-vm/
+    export DOCKER_TLS_VERIFY=1
+fi
+
 #速度測定(zshenvでzprofモジュールを読み込んでおく必要がある。)
 if (which zprof > /dev/null) ;then
     zprof | less
