@@ -122,5 +122,11 @@ install pstree
 #topコマンドの高機能版
 install htop
 
+#dockerコンテナ型仮想化ツール
+install docker
+
+#MAC用軽量仮想マシンを操作するためのコマンド
+install boot2docker
+
 # uninstall unused and old versions of packages from the cellar
 cleanup
