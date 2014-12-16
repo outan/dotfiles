@@ -568,6 +568,15 @@ if which docker > /dev/null; then
     export DOCKER_TLS_VERIFY=1
 fi
 
+#composerに関連する設定
+if which composer > /dev/null; then
+    export DOCKER_HOST=tcp://$(boot2docker ip 2>/dev/null):2376
+     export COMPOSER_ROOT="$HOME/.composer"
+     export PATH=$COMPOSER_ROOT/vendor/bin:$PATH
+
+fi
+
+
 #速度測定(zshenvでzprofモジュールを読み込んでおく必要がある。)
 if (which zprof > /dev/null) ;then
     zprof | less
