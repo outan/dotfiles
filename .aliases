@@ -282,3 +282,7 @@ fi
 #ディレクトリ内のファイル数をcountする
 alias filecount='ls -U1 | wc -l'
 #-Uオプションを用いるとソートを実施しないので、find . -type f | wc -l よりも早い。
+
+#php codesniffer関連
+alias phpcbf='phpcbf --standard=PSR2 --encoding=utf-8 -n'
+alias phpcs='phpcs --standard=PSR2 --encoding=utf-8 -n -p -v'
