@@ -172,6 +172,8 @@ alias lgp='git log -p -g' # Generate patch(diffも一緒に出す)
 alias lgr='git log -g' #--walk-reflogsと同じ結果(reflogの情報も表示)
 alias gk="gitk"
 
+alias t='tig'
+
 #色付きのdiff
 if [ -f /usr/local/bin/colordiff ]
 then
