@@ -128,3 +128,7 @@
     prune = true
 [init]
     templatedir = ~/dotfiles/git_template
+
+[tig "bind"]
+    generic = g move-first-line
+    generic = G move-last-line

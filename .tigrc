@@ -1,0 +1,6 @@
+# main viewの左端にコミットIDを表示する
+set main-view = line-number:yes,interval=10 id:width=12 date:display=local author commit-title:graph=yes,refs=yes 
+# デフォルト
+# set main-view = date author commit-title:graph=yes,refs=yes
+
+
