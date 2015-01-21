@@ -577,9 +577,9 @@ if which composer > /dev/null; then
 fi
 
 # antigenを導入
-if [ -f ~/.zshrc.antigen ]; then
-    source ~/.zshrc.antigen
-fi
+#if [ -f ~/.zshrc.antigen ]; then
+#    source ~/.zshrc.antigen
+#fi
 
 #速度測定(zshenvでzprofモジュールを読み込んでおく必要がある。)
 if (which zprof > /dev/null) ;then
