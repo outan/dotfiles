@@ -478,7 +478,7 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom
 
 # sublime textをコマンドラインから起動できるように設定
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
-
+export PATH="/usr/local/Caskroom/sublime-text3/Build 3065/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 # node.jsのバージョン管理ソフトウェアの導入に関する設定
 #if which brew > /dev/null && [ -s $(brew --prefix nvm)/nvm.sh ]; then
 #    if [ ! -d ~/.nvm ]; then
