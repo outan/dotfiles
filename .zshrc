@@ -334,7 +334,7 @@ then
         find . -name "*$1" \( -type f -or -type l \) -maxdepth 1 -exec  /usr/local/bin/rmtrash -fv -- {} +
         ;;
     "")
-        find . \( -name "*~" -o -name ".DS_Store" -o -name "*.swp" -o -name "*.bak" \( -type f -or -type l \) \) -maxdepth 1 -exec  /usr/local/bin/trash  -- {} +
+        find . \( -name "*~" -o -name ".DS_Store" -o -name "*.swp" -o -name "*.bak" \( -type f -or -type l \) \) -maxdepth 1 -exec  /usr/local/bin/rmtrash  -- {} +
         ;;
     *)
         echo "Unsupported option \`$1'.\nDid you mean --dry-run? (using command rmtrash)"
