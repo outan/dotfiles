@@ -111,5 +111,9 @@ brew 'htop'
 #node version manager
 brew 'nvm'
 
+#trash
+tap 'rcmdnk/rcmdnkpac'
+brew 'rcmdnk-trash'
+
 # uninstall unused and old versions of packages from the cellar
 #brew cleanup

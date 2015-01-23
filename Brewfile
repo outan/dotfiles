@@ -128,5 +128,9 @@ install docker
 #MAC用軽量仮想マシンを操作するためのコマンド
 install boot2docker
 
+#trash
+#tap rcmdnk/rcmdnkpac
+#install rcmdnk-trash
+
 # uninstall unused and old versions of packages from the cellar
 cleanup
