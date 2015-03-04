@@ -1,5 +1,5 @@
 # update the Homebrew tool and get the all formulaes (including casks)
-#brew update
+#brew update #brew brewdleで正しく実行できないようなので、コメントアウトする。
 
 # upgrade any already-installed formulae(including homebrew cask tool)
 #brew upgrade
@@ -117,3 +117,69 @@ brew 'rcmdnk-trash'
 
 # uninstall unused and old versions of packages from the cellar
 #brew cleanup
+# a synonym for brew update(casksも一緒にupdateされる)
+#cask update
+
+# web browsers
+cask 'google-chrome'
+cask 'firefox'
+
+# dev tools
+cask 'iterm2'
+cask 'mysqlworkbench'
+cask 'virtualbox'
+#cask 'vmware-fusion'
+cask 'github'
+cask 'sourcetree'
+#cask 'rubymine'
+#cask 'vagrant'
+#cask 'xquartz'
+#cask 'unity-web-player'
+#cask 'dash'
+
+# editors
+cask 'sublime-text3'
+cask 'macvim-kaoriya'
+#cask 'textwrangler'
+#cask 'atom'
+#cask 'textmate'
+#cask 'mou'
+
+# additional apps
+#cask 'dropbox'
+#cask 'evernote'
+#cask 'alfred'
+#cask 'freemind'
+#cask 'openoffice'
+cask 'libreoffice'
+#cask 'skype'
+
+#cask 'skitch'
+cask 'adobe-reader'
+cask 'clipmenu'
+cask 'licecap' # gif animation capture
+cask 'gyazo' #gyazo gifも自動的にインストールされる。
+cask 'skim'
+cask 'xtrafinder'
+cask 'magican'
+cask 'google-japanese-ime'
+#cask 'sogouinput' #To complete the installation, you must also run the downloaded installer(/Applicationsには存在しないので、alfredでも検索できない。)
+cask 'appcleaner'
+cask 'ccleaner'
+cask 'cheatsheet'
+cask 'xtrafinder'
+
+# sns
+#cask 'wechat' #App Storeで管理
+#cask 'qq'
+
+# mac quick look plugin
+cask 'qlstephen'
+cask 'qlmarkdown'
+cask 'quicklook-json'
+cask 'quicklook-csv'
+cask 'betterzipql'
+cask 'suspicious-package'
+
+# Remove outdated cached downloads (older than 10 days old) and tracker symlinks(同じツールの古いバージョンはどうやって削除するのかまだわかりません。)
+#cask cleanup --outdated
