@@ -191,6 +191,7 @@ alias bs="java -cp bsh-2.0b4.jar bsh.Interpreter"
 #ssh接続関連
 alias lb="ssh develop_lb01"
 alias sshn1="ssh n1"
+alias honban_wait="ssh honban_wait"
 
 #ag関連
 alias ag='ag  --stats --hidden -S' # Match case sensitively if there are any uppercase letters in PATTERN, or case insensitively otherwise
