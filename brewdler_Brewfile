@@ -115,6 +115,9 @@ brew 'nvm'
 tap 'rcmdnk/rcmdnkpac'
 brew 'rcmdnk-trash'
 
+# 公開鍵をサーバーに登録する
+brew 'ssh-copy-id'
+
 # uninstall unused and old versions of packages from the cellar
 #brew cleanup
 # a synonym for brew update(casksも一緒にupdateされる)
