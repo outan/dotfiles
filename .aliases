@@ -41,12 +41,12 @@ alias tf='tail -f'
 if [ -d /home/piece/system/var/log ]
 then
     alias log='cd /home/piece/system/var/log'
-elif [ -d /var/log/nexlink ]
-then
-    alias log='cd /var/log/nexlink'
 elif [ -d ~/system/nexlink-b/var/log ]
 then
-    alias log='cd ~/system/nexlink-b/var/log/'
+    alias log='cd ~/system/nexlink-b/var/log'
+elif [ -d ~/var/log/nexlink ]
+then
+    alias log='cd /var/log/nexlink'
 else
     alias log='cd /var/log'
 fi
