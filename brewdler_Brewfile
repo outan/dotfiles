@@ -187,5 +187,8 @@ cask 'suspicious-package'
 # Command+Qの誤爆によるアプリ終了を防止
 cask 'karabiner'
 
+# astah community
+cask 'astah-community'
+
 # Remove outdated cached downloads (older than 10 days old) and tracker symlinks(同じツールの古いバージョンはどうやって削除するのかまだわかりません。)
 #cask cleanup --outdated
