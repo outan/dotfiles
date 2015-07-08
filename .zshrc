@@ -570,7 +570,6 @@ fi
 
 #composerに関連する設定
 if which composer > /dev/null; then
-    export DOCKER_HOST=tcp://$(boot2docker ip 2>/dev/null):2376
      export COMPOSER_ROOT="$HOME/.composer"
      export PATH=$COMPOSER_ROOT/vendor/bin:$PATH
 
