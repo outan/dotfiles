@@ -568,7 +568,7 @@ if which docker > /dev/null; then
     export DOCKER_TLS_VERIFY=1
 fi
 
-#composerに関連する設定
+# php composerに関連する設定
 if which composer > /dev/null; then
      export COMPOSER_ROOT="$HOME/.composer"
      export PATH=$COMPOSER_ROOT/vendor/bin:$PATH
