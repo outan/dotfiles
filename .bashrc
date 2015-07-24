@@ -30,7 +30,7 @@ alias less='/usr/share/vim/vim73/macros/less.sh'
 export LESS='-X -i -P ?f%f:(stdin). ?lb%lb?L/%L.. [?eEOF:?pb%pb\%..]'
 
 # node.jsのバージョン管理ソフトウェアの導入に関する設定
-if [[ -s $(brew --prefix nvm)/nvm.sh ]];then
+if which brew > /dev/null && [[ -s $(brew --prefix nvm)/nvm.sh ]];then
     export NVM_DIR=~/.nvm #move install location to prevent that node installs will be lost upon upgrading nvm
     source $(brew --prefix nvm)/nvm.sh
 fi
