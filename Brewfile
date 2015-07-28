@@ -132,5 +132,8 @@ install boot2docker
 #tap rcmdnk/rcmdnkpac
 #install rcmdnk-trash
 
+# AWS Elastic Beanstalk EB Command Line Interface
+install awsebcli
+
 # uninstall unused and old versions of packages from the cellar
 cleanup
