@@ -295,3 +295,8 @@ alias phpcs='phpcs --standard=PSR2 --encoding=utf-8 -n -p -v'
 
 #crontab強制的に-iオプション(確認)を付けて、-rを指定しても直接設定内容を消せないようにする(iオプションはLinuxのみ,BSD/Solarisには無い)
 alias crontab='crontab -i'
+
+# docker関連
+alias lc='docker ps -l -q' # show latest created container' id
+alias ac='docker ps -a -q' # show all container's ids
+alias rmcontainerall='docker rm $(docker ps -a -q)' # 起動していない過去のコンテナを一発で削除
