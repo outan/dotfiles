@@ -56,7 +56,7 @@ alias jobs='jobs -l'
 #rmを実施する時に、Trashに移動する
 if [ -f /usr/local/bin/trash ]
 then
-    alias rm='trash -r'
+    alias trash='trash -r' #他のプログラムでtrを呼び出す時にtrashを読んでしまうという不具合を回避する
 elif [ -f /usr/local/bin/rmtrash ]
 then
     alias rm='rmtrash'
