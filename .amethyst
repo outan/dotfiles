@@ -1,0 +1,17 @@
+"mod2": [
+    "option",
+    "command"
+  ],
+
+"layouts": [
+    "tall",
+    "wide",
+    "fullscreen",
+    "column"
+    "row"
+"floating"
+"widescreen-tall"
+],
+
+"mouse-follows-focus": true,
+"focus-follows-mouse": true,
