@@ -300,3 +300,4 @@ alias crontab='crontab -i'
 alias lc='docker ps -l -q' # show latest created container' id
 alias ac='docker ps -a -q' # show all container's ids
 alias rmcontainerall='docker rm $(docker ps -a -q)' # 起動していない過去のコンテナを一発で削除
+alias dm='docker-machine'
