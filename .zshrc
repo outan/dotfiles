@@ -1,6 +1,12 @@
 LANG=ja_JP.UTF-8
 export EDITOR=vim
 
+# antigenを導入
+if [ -f ~/.antigen/antigen.zsh ] && [ -f ~/.zshrc.antigen ]; then
+    source ~/.zshrc.antigen
+fi
+
+
 # historyに関する設定
 HISTFILE=$HOME/.zsh-history
 HISTSIZE=1000000
@@ -574,11 +580,6 @@ if which composer > /dev/null; then
      export PATH=$COMPOSER_ROOT/vendor/bin:$PATH
 
 fi
-
-# antigenを導入
-#if [ -f ~/.zshrc.antigen ]; then
-#    source ~/.zshrc.antigen
-#fi
 
 #速度測定(zshenvでzprofモジュールを読み込んでおく必要がある。)
 if (which zprof > /dev/null) ;then
