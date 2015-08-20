@@ -437,8 +437,8 @@ function title {
 
 #auto-fu.zsh
 #http://blog.glidenote.com/blog/2012/04/07/auto-fu.zsh/
-if [ -f ~/dotfiles/auto-fu.zsh ]; then
-    source ~/dotfiles/auto-fu.zsh
+if [ -f ~/dotfiles/auto-fu.pu.zsh ]; then
+    source ~/dotfiles/auto-fu.pu.zsh
     function zle-line-init () {
         auto-fu-init
     }
