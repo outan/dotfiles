@@ -44,7 +44,6 @@ fi
 
 # install OS specific plugins
 if [[ $CURRENT_OS == 'OS X' ]]; then
-
     antigen bundle brew
     antigen bundle brew-cask
     antigen bundle gem
@@ -54,6 +53,15 @@ if [[ $CURRENT_OS == 'OS X' ]]; then
     antigen bundle vi-mode
     antigen bundle aws
     antigen bundle ruby
+    antigen bundle node
+    antigen bundle nvm
+    antigen bundle npm
+    antigen bundle npm
+    antigen bundle vagrant
+
+    antigen bundle unixorn/git-extra-commands
+    antigen bundle unixorn/autoupdate-antigen.zshplugin #ターミナル起動時に前回のupdate時間をチェック
+    antigen bundle b4b4r07/enhancd #次世代のcdコマンド
 elif [[ $CURRENT_OS == 'Linux' ]]; then
     # None so far...
 
