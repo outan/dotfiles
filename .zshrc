@@ -437,15 +437,15 @@ function title {
 
 #auto-fu.zsh
 #http://blog.glidenote.com/blog/2012/04/07/auto-fu.zsh/
-if [ -f ~/dotfiles/auto-fu.zsh ]; then
-    source ~/dotfiles/auto-fu.zsh
-    function zle-line-init () {
-        auto-fu-init
-    }
-    zle -N zle-line-init
-    zstyle ':completion:*' completer _oldlist _complete
-    zstyle ':auto-fu:var' postdisplay $'' #「-azhu-」を非表示にする
-fi
+#if [ -f ~/dotfiles/auto-fu.zsh ]; then
+#    source ~/dotfiles/auto-fu.zsh
+#    function zle-line-init () {
+#        auto-fu-init
+#    }
+#    zle -N zle-line-init
+#    zstyle ':completion:*' completer _oldlist _complete
+#    zstyle ':auto-fu:var' postdisplay $'' #「-azhu-」を非表示にする
+#fi
 
 
 #z.sh：最近移動したディレクトリの補完ができる(cdコマンド履歴のjump)
