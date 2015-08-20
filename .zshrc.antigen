@@ -1,6 +1,6 @@
-source ~/.antigen/antigen.zsh
+source ~/.antigen/antigen.zsh #antigen本体(ただの単独ファイル)
 
-# Load the oh-my-zsh's library.
+# Load the oh-my-zsh's library.(oh-my-zshのpluginsやthemesの中にはこのlib以下にあるスクリプトに依存しているやつがあるから)
 antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
@@ -10,11 +10,17 @@ antigen bundle pip
 antigen bundle lein
 antigen bundle command-not-found
 
-# auto-fu
-#antigen bundle hchbaw/auto-fu.zsh
-# エラーが発生したので、断念。
+# Fish-like bundles
+antigen bundle zsh-users/fizsh
+#antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-history-substring-search
+antigen bundle tarruda/zsh-autosuggestions
 
-# Load the theme.
+
+# auto-fu(Cannot rebindキーのエラーが発生,解決方法不明、導入を断念)
+# antigen bundle hchbaw/auto-fu.zsh
+
+# Load the theme from oh-my-zsh
 antigen theme funky
 
 ### OS Detection
@@ -36,10 +42,9 @@ else
     fi
 fi
 
-
-
-# OS specific plugins
+# install OS specific plugins
 if [[ $CURRENT_OS == 'OS X' ]]; then
+
     antigen bundle brew
     antigen bundle brew-cask
     antigen bundle gem
@@ -58,12 +63,6 @@ elif [[ $CURRENT_OS == 'Linux' ]]; then
 elif [[ $CURRENT_OS == 'Cygwin' ]]; then
     antigen bundle cygwin
 fi
-
-# Fish-like bundles
-antigen bundle zsh-users/fizsh
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-history-substring-search
-antigen bundle tarruda/zsh-autosuggestions
 
 # Tell antigen that you're done.
 antigen apply
