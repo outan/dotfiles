@@ -584,3 +584,8 @@ fi
 if (which zprof > /dev/null) ;then
     zprof | less
 fi
+
+# enhancd
+if [ -f "~/.enhancd/zsh/enhancd.zsh" ]; then
+    source "~/.enhancd/zsh/enhancd.zsh"
+fi
