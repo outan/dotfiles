@@ -5,23 +5,23 @@ antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
-antigen bundle heroku
-antigen bundle pip
-antigen bundle lein
-antigen bundle command-not-found
+#antigen bundle heroku
+#antigen bundle pip
+#antigen bundle lein
+#antigen bundle command-not-found
 
 # Fish-like bundles
-antigen bundle zsh-users/fizsh
+#antigen bundle zsh-users/fizsh
 #antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-history-substring-search
-antigen bundle tarruda/zsh-autosuggestions
+#antigen bundle zsh-users/zsh-history-substring-search
+#antigen bundle tarruda/zsh-autosuggestions
 
 
 # auto-fu(Cannot rebindキーのエラーが発生,解決方法不明、導入を断念)
 # antigen bundle hchbaw/auto-fu.zsh
 
 # Load the theme from oh-my-zsh
-antigen theme funky
+#antigen theme agnoster
 
 ### OS Detection
 UNAME=`uname`
@@ -46,21 +46,21 @@ fi
 if [[ $CURRENT_OS == 'OS X' ]]; then
     antigen bundle brew
     antigen bundle brew-cask
-    antigen bundle gem
-    antigen bundle osx
+    #antigen bundle gem
+    #antigen bundle osx
     antigen bundle sudo
-    antigen bundle rails
+    #antigen bundle rails
     antigen bundle vi-mode
-    antigen bundle aws
-    antigen bundle ruby
-    antigen bundle node
-    antigen bundle nvm
-    antigen bundle npm
-    antigen bundle npm
-    antigen bundle vagrant
+    #antigen bundle aws
+    #antigen bundle ruby
+    #antigen bundle node
+    #antigen bundle nvm
+    #antigen bundle npm
+    #antigen bundle npm
+    #antigen bundle vagrant
 
-    antigen bundle unixorn/git-extra-commands
-    antigen bundle unixorn/autoupdate-antigen.zshplugin #ターミナル起動時に前回のupdate時間をチェック
+    #antigen bundle unixorn/git-extra-commands
+    #antigen bundle unixorn/autoupdate-antigen.zshplugin #ターミナル起動時に前回のupdate時間をチェック
     antigen bundle b4b4r07/enhancd #次世代のcdコマンド
 elif [[ $CURRENT_OS == 'Linux' ]]; then
     # None so far...
