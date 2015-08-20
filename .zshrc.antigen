@@ -19,6 +19,13 @@ antigen bundle git
 
 # auto-fu(Cannot rebindキーのエラーが発生,解決方法不明、導入を断念)
 # antigen bundle hchbaw/auto-fu.zsh
+#zle-line-init() {
+#    auto-fu-init
+#}
+#zle -N zle-line-init
+#zstyle ':completion:*' completer _oldlist _complete
+#zstyle ':auto-fu:var' postdisplay $'' #「-azhu-」を非表示にする
+#zle -N zle-keymap-select auto-fu-zle-keymap-select
 
 # Load the theme from oh-my-zsh
 #antigen theme agnoster
