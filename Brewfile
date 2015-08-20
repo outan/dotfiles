@@ -135,5 +135,8 @@ install boot2docker
 # AWS Elastic Beanstalk EB Command Line Interface
 install awsebcli
 
+# thefuck(corrects previous console command)
+install thefuck
+
 # uninstall unused and old versions of packages from the cellar
 cleanup
