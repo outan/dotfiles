@@ -1,13 +1,13 @@
+# readline用設定ファイル(CUIアプリケーションにおいてユーザが行を入力する際に便利な「行頭・行末移動」「コマンド履歴検索」などを提供するライブラリである。)
 $if mysql
     "\C-xd": "show databases;"
     "\C-xt": "show tables;"
     "\C-xu": "select user,host,password from mysql.user order by user,host;"
     "\C-xb": "select user,host,db       from mysql.db   order by user,host;"
-    "\C-xc": "show create table TN\\G"
+    "\C-xc": "show create table ;"
     "\C-xn": "select count(*) from ;"
     "\C-xv": "show variables like '%%';"
-    "\C-xs": "show slave status\\G"
-    "\C-xm": "show master status\\G"
+    "\C-xs": "show status like '%%';"
     "\C-xp": "show full processlist;"
-    "\C-xa": "show table status like 'TN'\\G"
+    "\C-xa": "show table status like '%%';"
 $endif
