@@ -41,6 +41,9 @@ brew 'ruby-build'
 
 brew 'mysql'
 
+# MySQL等に関する便利なコマンドラインツールの集まり
+brew  percona-toolkit↲
+
 #httpd 2.4.10
 brew 'httpd24'
 
