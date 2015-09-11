@@ -304,3 +304,12 @@ alias dm='docker-machine'
 
 # https://github.com/nvbn/thefuck
 alias fuck='$(thefuck $(fc -ln -1))'
+
+# print full path of the current directory
+alias fullpath='lsal -d $PWD/*'
+
+# print full path recursively for the current directory
+alias fullpath_r='lsal $(find$pwd -type f)'
+
+# print full path of the current directory (hidden files included)
+ alias fullpath_d='lsal -d $PWD/{*,.*}'
