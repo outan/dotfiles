@@ -162,7 +162,7 @@ alias mg='git merge'
 alias cm='git commit -m'
 alias rf='git reflog'
 alias ss='git stash save'
-alias df='git diff'
+alias di='git diff'
 alias dc='git diff --cached'
 alias lg='git log'
 alias lgg="git log --graph --all --decorate --date=short --pretty=format:'%Cgreen%h %C(yellow)%cd %C(Magenta)%ar %Cblue%cn %Creset%s %C(Red)%d'"
