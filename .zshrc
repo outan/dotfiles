@@ -580,7 +580,7 @@ if which composer > /dev/null; then
      export PATH=$COMPOSER_ROOT/vendor/bin:$PATH
 fi
 
-# enable aswcli zsh completionw
+# enable awscli zsh completionw
 source /usr/local/share/zsh/site-functions/_aws
 
 # java home 設定
