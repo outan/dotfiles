@@ -583,6 +583,19 @@ fi
 # enable aswcli zsh completionw
 source /usr/local/share/zsh/site-functions/_aws
 
+# java home 設定
+export JAVA_HOME="$(/usr/libexec/java_home)"
+
+# ec2 api toolsとec2 ami toolsの導入設定
+export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.7.4.0"
+export PATH=$PATH:$EC2_HOME/bin
+
+export EC2_AMITOOL_HOME="/usr/local/Cellar/ec2-ami-tools/1.5.7"
+export PATH=$PATH:$EC2_AMITOOL_HOME/bin
+
+export EC2_URL="ec2.ap-northeast-1.amazonaws.com" #tokyo reginのendpointを設定
+
+
 #速度測定(zshenvでzprofモジュールを読み込んでおく必要がある。)
 if (which zprof > /dev/null) ;then
     zprof | less
