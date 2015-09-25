@@ -137,8 +137,12 @@ install awsebcli
 
 # thefuck(corrects previous console command)
 install thefuck
+
 # MySQL等に関する便利なコマンドラインツールの集まり
 install percona-toolkit
+
+# awscli
+install awscli
 
 # uninstall unused and old versions of packages from the cellar
 cleanup

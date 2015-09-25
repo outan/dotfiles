@@ -578,8 +578,10 @@ fi
 if which composer > /dev/null; then
      export COMPOSER_ROOT="$HOME/.composer"
      export PATH=$COMPOSER_ROOT/vendor/bin:$PATH
-
 fi
+
+# enable aswcli zsh completionw
+source /usr/local/share/zsh/site-functions/_aws
 
 #速度測定(zshenvでzprofモジュールを読み込んでおく必要がある。)
 if (which zprof > /dev/null) ;then

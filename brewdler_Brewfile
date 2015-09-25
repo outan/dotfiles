@@ -124,6 +124,9 @@ brew 'ssh-copy-id'
 # AWS Elastic Beanstalk EB Command Line Interface
 brew 'awsebcli'
 
+# AWS cli
+brew 'awscli'
+
 # thefuck(corrects previous console command)
 brew 'thefuck'
 
