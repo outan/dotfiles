@@ -581,7 +581,9 @@ if which composer > /dev/null; then
 fi
 
 # enable awscli zsh completionw
-source /usr/local/share/zsh/site-functions/_aws
+if [ -f "/usr/local/share/zsh/site-functions/_aws" ]; then
+    source /usr/local/share/zsh/site-functions/_aws
+fi
 
 # java home 設定
 export JAVA_HOME="$(/usr/libexec/java_home)"
