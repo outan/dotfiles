@@ -1,0 +1,59 @@
+[mysql]
+prompt="\u@\h[\d]\ \v\ \R:\m:\\s \c> "
+auto-rehash # talbe名やカラム名などの自動補完(tabで自動補完)
+show-warnings # warningsをデフォルトで表示させる
+safe-updates # update/delete時に、キーをしていないと実行できないように制御(全件更新ができようされてしまう災害を防ぐため)
+local-infile=1 # load data local INFILEをclient側に許可する。
+
+[mysqld]
+# HomebrewでMySQLをインストールした場合、MySQLのmy.cnfにsql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLESと設定されているため、collationやmigrat時に失敗するため、以下の内容を追加
+# sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
+# sql_mode=""
+
+
+# InnoDB トランザクションがロール バックされる前に、ロックを待つ秒数でのタイムアウト。
+# InnoDB は自動的にそれ自体のロック テーブル内でトランザクション デッドロックを検出し、
+# トランザクションをロールバックします。InnoDB は LOCK TABLES ステートメントを利用してロック
+# セットを通知します。デフォルトは50秒です。
+innodb_lock_wait_timeout = 120
+
+# slow query logとgeneral-logをファイルとtable両方に出力される
+log-output = TABLE,FILE
+
+# query log(実行したすべてのクエリを記録するlog)
+general-log = ON
+
+# slow query log
+slow_query_log = ON
+long_query_time = 0.5
+
+# バイナリログ有効化
+log-bin = mysql-bin # 明示的にバイナリログファイルの接頭辞をmysql-binに指定(指定しない場合はホスト名が利用される)
+binlog_format = MIXED # binlog_fomatをRBRとSBRをmixするフォマットを指定
+sync_binlog = 0 # commitする度にdisk上のバイナリログファイルにflushしないように
+expire_logs_days = 5 #バイナリログローテーション時に５日間前のバイナリログを自動削除し、バイナリログのindexファイルも更新してくれるように
+
+# replication用設定slave側
+server_id = 1000
+report_host = slave1000
+innodb_support_xa = 0
+innodb_flush_log_at_trx_commit = 0
+
+# gtid利用設定transaction-based replication
+gtid_mode = ON
+log-slave-updates = on
+enforce-gtid-consistency = on
+
+# MyISAMのfulltext検索できる最短の文字数(InnoDBではinnodb_ft_min_token_sizeがあり、デフォルト値=3)
+ft_min_word_len=3
+
+# ssl connetion設定
+ssl-ca   =  ca-cert.pem
+ssl-cert =  server-cert.pem
+ssl-key  =  server-key.pem
+
+# binarylogにchecksumを追加し、master側でbinarylogを読む時にchecksum値を使うようにする
+binlog_checksum = CRC32
+master_verify_checksum
+
+[mysqld_safe]
