@@ -56,4 +56,7 @@ ssl-key  =  server-key.pem
 binlog_checksum = CRC32
 master_verify_checksum
 
+# Semisynchronous Replication system variables set up for slave
+rpl_semi_sync_slave_enabled=1
+
 [mysqld_safe]
