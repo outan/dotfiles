@@ -597,6 +597,8 @@ export PATH=$PATH:$EC2_AMITOOL_HOME/bin
 
 export EC2_URL="ec2.ap-northeast-1.amazonaws.com" #tokyo reginのendpointを設定
 
+# docker-machine env設定
+eval "$(docker-machine env b2d)" 2> /dev/null
 
 #速度測定(zshenvでzprofモジュールを読み込んでおく必要がある。)
 if (which zprof > /dev/null) ;then
