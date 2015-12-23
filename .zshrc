@@ -415,6 +415,11 @@ else
 fi
 }
 
+# vimの一時ファイル保存ディレクトリを指定
+if [ ! -d ~/.vim/tmp ]; then
+    mkdir -p ~/.vim/tmp
+fi
+
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
