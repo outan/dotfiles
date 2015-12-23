@@ -163,7 +163,7 @@ alias cm='git commit -m'
 alias rf='git reflog'
 alias ss='git stash save'
 alias di='git diff'
-alias dc='git diff --cached'
+#alias dc='git diff --cached'
 alias lg='git log'
 alias lgg="git log --graph --all --decorate --date=short --pretty=format:'%Cgreen%h %C(yellow)%cd %C(Magenta)%ar %Cblue%cn %Creset%s %C(Red)%d'"
 alias lgg2="git log --graph --all --format=format:'%C(bold blue)%h%C(reset) %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset)  %C(bold white)--%an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative"
@@ -297,10 +297,13 @@ alias phpcs='phpcs --standard=PSR2 --encoding=utf-8 -n -p -v'
 alias crontab='crontab -i'
 
 # docker関連
-alias lc='docker ps -l -q' # show latest created container' id
-alias ac='docker ps -a -q' # show all container's ids
-alias rmcontainerall='docker rm $(docker ps -a -q)' # 起動していない過去のコンテナを一発で削除
+alias dlc='docker ps -l -q' # show latest created container' id
+alias dac='docker ps -a -q' # show all container's ids
+alias drmcontainerall='docker rm $(docker ps -a -q)' # 起動していない過去のコンテナを一発で削除
 alias dm='docker-machine'
+alias dc='docker-compose'
+alias ds='docker-swarm'
+alias doc='docker'
 
 # https://github.com/nvbn/thefuck
 alias fuck='$(thefuck $(fc -ln -1))'
