@@ -144,5 +144,8 @@ install percona-toolkit
 # awscli
 install awscli
 
+# .gitignore自動生成
+install gibo
+
 # uninstall unused and old versions of packages from the cellar
 cleanup
