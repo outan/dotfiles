@@ -292,6 +292,9 @@ if which pyenv > /dev/null; then
     export PATH=$PYENV_ROOT/shims:$PATH
     eval "$(pyenv init - zsh)";
 fi
+export PYTHONPATH="$HOME/Dropbox/Library/pepper/pynaoqi-python2.7-2.4.2.26-mac64"
+export DYLD_LIBRARY_PATH="${DYLD_LIBRARY_PATH}:$HOME/Dropbox/Library/pepper/pynaoqi-python2.7-2.4.2.26-mac64"
+export PATH="$HOME/.rbenv/bin:$PATH"
 
 #phpの設定
 if [ -d ~/.phpenv/bin ]; then
