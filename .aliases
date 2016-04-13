@@ -107,7 +107,7 @@ alias dp="cd ~/Dropbox"
 alias c="cd /c/Users/034180_427007"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias p="cd ~/projects"
+alias p="cd ~/workspace/projects"
 alias d="cd ~/dotfiles"
 
 if [ -d ~/projects/nexlink_cms ]
