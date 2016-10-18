@@ -16,13 +16,14 @@ endif
 syntax on
 
 "タブの設定
-set softtabstop=4
-set shiftwidth=4
-set tabstop=4
-set expandtab
+set softtabstop=2 "連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
+set shiftwidth=2  "自動インデントでずれる幅
+set tabstop=2  "画面上でタブ文字が占める幅
+set expandtab  ""タブ入力を複数の空白入力に置き換える"
 
 "新しい行のインデントを現在行と同じにする
 set autoindent
+set smartindent "改行時に入力された行の末尾に合わせて次の行のインデントを増減する
 
 " ペーストする時にインデントさせない
 imap <F5> <nop>
