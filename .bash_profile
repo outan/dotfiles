@@ -34,8 +34,3 @@ if [ -d "$HOME/.linuxbrew" ];then
     export PATH="$HOME/.linuxbrew/bin:$PATH"
     export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
 fi
-
-# CentOSでdevtoolset導入に関する設定(新gccなどのツールをインストール)
-if [ /opt/centos/devtoolset-1.1/enable ];then
-    source /opt/centos/devtoolset-1.1/enable
-fi
