@@ -94,60 +94,6 @@ endif
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
-
-"NeoBundle Scripts-----------------------------
-if has('vim_starting')
-  set nocompatible               " Be iMproved
-
-  " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-
-" Required:
-call neobundle#begin(expand('~/.vim/bundle'))
-
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-" My Bundles here:
-NeoBundle 'Shougo/neosnippet.vim'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'flazz/vim-colorschemes'
-
-" You can specify revision/branch/tag.
-NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
-
-NeoBundle 'bling/vim-airline'
-  let g:airline_enable_branch = 0
-  let g:airline_section_b = "%t %M"
-  let g:airline_section_c = ''
-  let s:sep = " %{get(g:, 'airline_right_alt_sep', '')} "
-  let g:airline_section_x =
-        \ "%{strlen(&fileformat)?&fileformat:''}".s:sep.
-        \ "%{strlen(&fenc)?&fenc:&enc}".s:sep.
-        \ "%{strlen(&filetype)?&filetype:'no ft'}"
-  let g:airline_section_y = '%3p%%'
-  let g:airline_section_z = get(g:, 'airline_linecolumn_prefix', '').'%3l:%-2v'
-  let g:airline#extensions#whitespace#enabled = 0
-
-  let g:airline#extensions#tabline#enabled = 1
-  let g:airline#extensions#tabline#left_sep = ' '
-  let g:airline#extensions#tabline#left_alt_sep = '|'
-
-" Required:
-call neobundle#end()
-
-" Required:
-filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
-"End NeoBundle Scripts-------------------------
-
 " change the directory for temp file
 set directory=~/.vim/tmp
 set backupdir=~/.vim/tmp
