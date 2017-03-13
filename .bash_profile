@@ -34,3 +34,7 @@ if [ -d "$HOME/.linuxbrew" ];then
     export PATH="$HOME/.linuxbrew/bin:$PATH"
     export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
 fi
+
+# virtualenv and virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
