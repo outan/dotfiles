@@ -10,3 +10,6 @@ export PATH="/usr/bin:$PATH:/usr/sbin"
 export PATH=$PATH:~/bin
 export PATH=$PATH:/sbin
 export PATH=$PATH:/bin
+
+export PATH="$HOME/.ndenv/bin:$PATH"
+eval "$(ndenv init -)"
