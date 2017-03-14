@@ -1,5 +1,7 @@
 " 文字コードとかの設定
 set encoding=utf-8
+set fileencodings=utf-8,euc-jp,sjis,cp932,iso-2022-jp
+set fileformats=unix,dos,mac
 
 "タブ、空白、改行の可視化"
 set list
