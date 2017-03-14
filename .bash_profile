@@ -13,3 +13,7 @@ export PATH=$PATH:/bin
 
 export PATH="$HOME/.ndenv/bin:$PATH"
 eval "$(ndenv init -)"
+
+# mongodb
+export PATH=$HOME/bin/mongodb-linux-i686-3.2.4/bin:$PATH
+alias mongod='mongod --storageEngine=mmapv1 --dbpath /data/db/'
