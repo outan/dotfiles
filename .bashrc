@@ -1,5 +1,6 @@
 #promt設定
 PS1="\[\e[1;32m\][\u@\h:\w]\$\[\e[00m\] "
+HISTSIZE=10000
 
 # カラー設定
 export CLICOLOR=1
@@ -22,6 +23,8 @@ GIT_PS1_UNTRACKEDFILES=true
 #PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 
 export LESS='-R'
+export LESSCHARSET=utf-8
+
 
 #use vm to show less command
 #が、git logやgit diffなどはデフォルトでlessをpagerとして利用しているが、日本語がうまく表示できなくなったため、.gitconfig中でpagerをlvに変更済み。
