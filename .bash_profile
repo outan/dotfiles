@@ -10,6 +10,7 @@ export PATH="/usr/local/bin:$PATH:/usr/local/sbin"
 export PATH=$PATH:~/bin
 export PATH=$PATH:/sbin
 export PATH=$PATH:/usr/sbin
+export PATH=~/.local/bin:$PATH
 
 ## rbenv
 if [ -d "$HOME/.rbenv/bin" ]; then # for CentOS: rbenvは~/.rbenv/binにインストールされるので、rbenvのコマンドの場所をPATHに追加しないとrbenvのコマンドが使えない。
