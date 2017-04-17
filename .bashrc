@@ -99,6 +99,11 @@ if [ -d "$HOME/.rbenv/bin" ]; then # for CentOS: rbenvは~/.rbenv/binにイン�
 #    fi
 fi
 
+# make ./vim/tmp directory
+if [ ! -e "~/.vim/tmp" ]; then
+  mkdir ~/.vim/tmp
+fi
+
 # To enable shims(rbenv rehash) , autocompletion, add the path of shims to PATH
 if which rbenv > /dev/null; then
     eval "$(rbenv init - zsh)";
