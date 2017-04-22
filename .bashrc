@@ -25,7 +25,8 @@ export LESS='-R'
 
 #use vm to show less command
 #が、git logやgit diffなどはデフォルトでlessをpagerとして利用しているが、日本語がうまく表示できなくなったため、.gitconfig中でpagerをlvに変更済み。
-alias less='/usr/share/vim/vim73/macros/less.sh'
+# alias less='/usr/share/vim/vim73/macros/less.sh'
+alias less = "less -N"
 # less のステータス行にファイル名と行数、いま何%かを表示
 export LESS='-X -i -P ?f%f:(stdin). ?lb%lb?L/%L.. [?eEOF:?pb%pb\%..]'
 

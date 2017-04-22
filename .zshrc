@@ -269,6 +269,10 @@ REPORTTIME=3
 
 #use vm to show less command
 #alias less='/usr/share/vim/vim73/macros/less.sh'
+
+# less行番号を表示させる
+alias less="less -N"
+
 # less のステータス行にファイル名と行数、いま何%かを表示
 export LESS='-X -i -P ?f%f:(stdin). ?lb%lb?L/%L.. [?eEOF:?pb%pb\%..]'
 
