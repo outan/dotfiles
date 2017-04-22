@@ -11,3 +11,9 @@ app/models/pdf/
 .rbenv-version
 mysql-connector*
 dotfiles_back/
+
+.my.cnf.extra
+hosts.aws.honban
+hosts.aws.kennsyou
+hosts.back
+hosts.kennsyou
