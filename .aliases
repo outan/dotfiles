@@ -78,7 +78,7 @@ fi
 
 #alias sl= "ls -al | grep -- '->'"
 #grepの色設定
-alias grep='grep -E --color=auto'
+alias grep='grep -E'
 alias zgrep='zgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias coteditor='open -a Coteditor'
