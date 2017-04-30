@@ -28,7 +28,8 @@ export LESSCHARSET=utf-8
 
 #use vm to show less command
 #が、git logやgit diffなどはデフォルトでlessをpagerとして利用しているが、日本語がうまく表示できなくなったため、.gitconfig中でpagerをlvに変更済み。
-alias less='/usr/share/vim/vim73/macros/less.sh'
+# alias less='/usr/share/vim/vim73/macros/less.sh'
+
 # less のステータス行にファイル名と行数、いま何%かを表示
 export LESS='-X -i -P ?f%f:(stdin). ?lb%lb?L/%L.. [?eEOF:?pb%pb\%..]'
 
@@ -99,6 +100,11 @@ if [ -d "$HOME/.rbenv/bin" ]; then # for CentOS: rbenvは~/.rbenv/binにイン�
 #    if [ -d $RBENV_ROOT ]; then
 #        export PATH="$RBENV_ROOT/bin:$PATH"
 #    fi
+fi
+
+# make ./vim/tmp directory
+if [ ! -e "~/.vim/tmp" ]; then
+  mkdir ~/.vim/tmp
 fi
 
 # To enable shims(rbenv rehash) , autocompletion, add the path of shims to PATH
