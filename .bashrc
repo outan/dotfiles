@@ -104,7 +104,7 @@ fi
 
 # make ./vim/tmp directory
 if [ ! -e "~/.vim/tmp" ]; then
-  mkdir ~/.vim/tmp
+  mkdir -p ~/.vim/tmp
 fi
 
 # To enable shims(rbenv rehash) , autocompletion, add the path of shims to PATH

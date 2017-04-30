@@ -26,8 +26,10 @@ fi
 alias javac='javac -J-Dfile.encoding=UTF-8'
 alias java='java -Dfile.encoding=UTF-8'
 
-export PATH="$HOME/.ndenv/bin:$PATH"
-eval "$(ndenv init -)"
+if [ -d "$HOME/.ndenv/bin" ];then
+  export PATH="$HOME/.ndenv/bin:$PATH"
+  eval "$(ndenv init -)"
+fi
 
 # mongodb
 export PATH=$HOME/bin/mongodb-linux-i686-3.2.4/bin:$PATH
