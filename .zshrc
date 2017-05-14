@@ -621,3 +621,4 @@ fi
 if [ -f "~/.enhancd/zsh/enhancd.zsh" ]; then
     source "~/.enhancd/zsh/enhancd.zsh"
 fi
+export NODE_PATH=/Users/outanwang/.nvm/versions/node/v6.2.0/lib/node_modules
