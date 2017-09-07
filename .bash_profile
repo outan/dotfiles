@@ -36,6 +36,6 @@ if [ -d "$HOME/.linuxbrew" ];then
 fi
 
 # CentOSでdevtoolset導入に関する設定(新gccなどのツールをインストール)
-if [ /opt/centos/devtoolset-1.1/enable ];then
+if [ -d /opt/centos/devtoolset-1.1/enable ];then
     source /opt/centos/devtoolset-1.1/enable
 fi
