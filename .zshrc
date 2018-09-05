@@ -433,7 +433,13 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && kil
 
 # terminalのタブ名を変更する関数
 function title {
-    echo -ne "\033]0;"$*"\007"
+    # カレントディレクトリを $HOME を ~ として表示
+    local wname=`pwd | sed -e "s|$HOME|~|"`
+    # カレントディレクトリ名
+    local tname=`pwd | sed -e 's|^.*/||'`
+
+    echo -ne "\033]2;$wname\007" # window title
+    echo -ne "\033]1;$tname\007" # tab title
 }
 
 #ログイン時に自動的にtmuxを起動、セッションがある場合はアタッチするようになります。
