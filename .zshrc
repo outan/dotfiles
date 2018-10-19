@@ -498,7 +498,7 @@ autoload -Uz run-help-svn
 HELPDIR=/usr/local/share/zsh/helpfiles
 
 # brew caskのインストール先を変更する
-export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom"
+#export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom"
 
 # sublime textをコマンドラインから起動できるように設定
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
