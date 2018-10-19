@@ -126,8 +126,11 @@ brew 'zlib'
 tap 'rcmdnk/rcmdnkpac'
 brew 'sentaku'
 
+brew "vim", args: ["with-lua"]
+
+brew 'mas' #command line for the Mac App Store. Designed for scripting and automation
 # web browsers
-#cask 'google-chrome'
+cask 'google-chrome'
 cask 'firefox'
 
 # dev tools
@@ -154,13 +157,13 @@ cask 'atom'
 # additional apps
 cask 'dropbox'
 #cask 'evernote'
-#cask 'alfred'
+cask 'alfred'
 #cask 'freemind'
 #cask 'openoffice'
 cask 'libreoffice'
 #cask 'skype'
 
-#cask 'skitch'
+cask 'skitch'
 cask 'adobe-acrobat-reader'
 cask 'licecap' # gif animation capture
 cask 'gyazo' #gyazo gifも自動的にインストールされる。
@@ -168,7 +171,7 @@ cask 'skim'
 #cask 'xtrafinder' #System Integrity Protection needs be disabled to install XtraFinder
 #cask 'magican'
 cask 'google-japanese-ime'
-#cask 'sogouinput' #To complete the installation, you must also run the downloaded installer(/Applicationsには存在しないので、alfredでも検索できない。)
+cask 'sogouinput' #To complete the installation, you must also run the downloaded installer(/usr/local/Caskroom/sogouinput/)
 cask 'appcleaner'
 cask 'ccleaner'
 cask 'cheatsheet'
@@ -193,4 +196,11 @@ cask 'karabiner'
 
 # dockertoolbox(docker engine, docker-compose, docker-machine)
 #cask 'dockertoolbox'  #Legacy desktop solution. Docker Toolbox is for older Mac and Windows systems that do not meet the requirements
+
+cask 'cakebrew' #The GUI Mac App for Homebrew.
+cask "onyx" #Mac 定番メンテナンスツール
+cask "vlc"
+cask 'messenger' #facebook メッセンジャー
+cask 'microsoft-office'
+cask 'pycharm-ce' #python 用 IDE(統合開発環境)
 
