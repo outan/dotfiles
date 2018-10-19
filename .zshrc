@@ -641,3 +641,7 @@ export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+
+export MOS_PORT=/dev/cu.usbserial-DN02BDAN
+PATH=$PATH:$HOME/.mos/bin
+PATH=$PATH:$HOME/bin
