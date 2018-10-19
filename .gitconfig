@@ -5,13 +5,14 @@
     pager        = "lv -c -Au8"
     attributesfile = ~/dotfiles/.gitattributes_global
     autocrlf     = input #Windows にチェックアウトした時の CRLF への変換は行いますが、Mac や Linux へのチェックアウト時は LF のままにします。(.git-completion.bashには関連の設定があるようですが、念のため.gitconfigにも設定しておく。)
+	sshCommand = ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
 
 [apply]
     whitespace = fix #delete  whitespce in the end of line, but only during patch, not "always automatically"
 
 [user]
     name         = outan
-    email        = outannexway@gmail.com
+    email        = outanwang@gmail.com
 
 [color]
     interactive  = auto
@@ -133,3 +134,7 @@
     generic = g move-first-line
     generic = G move-last-line
     generic = B view-refs      # Show branch view,view-branch has been renamed to view-refs
+[credential]
+	interactive = never
+	authority = Basic
+	helper = osxkeychain
