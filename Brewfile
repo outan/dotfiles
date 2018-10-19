@@ -129,6 +129,9 @@ brew 'sentaku'
 brew "vim", args: ["with-lua"]
 
 brew 'mas' #command line for the Mac App Store. Designed for scripting and automation
+
+brew 'mackup'
+
 # web browsers
 cask 'google-chrome'
 cask 'firefox'
