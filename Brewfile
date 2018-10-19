@@ -1,151 +1,196 @@
-# update the Homebrew tool and get the all formulaes (including casks)
-update
-
-# upgrade any already-installed formulae(including homebrew cask tool)
-upgrade
-
 # Add repositories
-tap homebrew/versions # install multiple versions of existing packages.
-tap caskroom/cask
-tap caskroom/versions # can install alternate versions of Casks.
-tap homebrew/apache # for apache(httpd)
-tap homebrew/php #phpenvなどphp関連
+# install multiple versions of existing packages.
+tap 'homebrew/cask-versions'
 
-install brew-cask #pull down the latest Casks when use the regular Homebrew command brew update
-install 'coreutils' # Install GNU core utilities (those that come with OS X are outdated) to use these commands without a prefix g ,you shoud add $(brew --prefix coreutils)/libexec/gnubin to \$PATH."
+tap 'Homebrew/cask-fonts'
+
+# Install GNU core utilities (those that come with OS X are outdated) to use these commands without a prefix g ,you shoud add $(brew --prefix coreutils)/libexec/gnubin to \$PATH."
+brew 'coreutils'
 
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
-install 'findutils'
+brew 'findutils'
 
 # Install Bash 4
-install 'bash'
+brew 'bash'
 
 # Install wget with IRI support
-install 'wget'
+brew 'wget'
 
-install 'curl'
+brew 'curl'
 
-install 'tmux'
+brew 'tmux'
 
-install 'zsh'
+brew 'zsh'
 
-install 'mysql'
+#ruby-buildをインストールすることにより、rbenv installが利用できるようになる。rbenv自体はrubyをインストールできないから。
+brew 'rbenv'
+brew 'ruby-build'
 
-install 'httpd24' #httpd 2.4.10
+brew 'mysql'
 
-install 'tree'
+# MySQL等に関する便利なコマンドラインツールの集まり
+#brew  percona-toolkit↲
+
+#httpd 2.4.10
+brew 'httpd24'
+
+brew 'tree'
 
 #make less command show color
-install 'source-highlight'
+brew 'source-highlight'
 
-install 'git'
+brew 'git'
 
 #.gitconfig設定後、git log -pでは文字化けという現象の対処
-install 'lv'
+brew 'lv'
 
 #gitのログを見やすくする
-install 'tig'
+brew 'tig'
 
 #git branch管理用のツール
-install 'git-flow'
+brew 'git-flow'
 
-install 'openssl'
+brew 'openssl'
 
 #install 'curl-ca-bundle'
 #opensslで必要なものだが、homebrewから何かの原因でremoveされたので、
 #コメントしないとbrew bundle実行する時にエラーが発生する。
 #https://github.com/Homebrew/homebrew/pull/28658
 
-install 'ack'
-install 'ag'
-install 'hub'
+brew 'ack'
+brew 'ag'
+brew 'hub'
 
-install 'terminal-notifier'
+brew 'terminal-notifier'
 
-install lsyncd
+brew 'lsyncd'
 
-install redis
+brew 'redis'
 
-install rmtrash
+brew 'rmtrash'
 
 #pythonのバージョン管理ツール
-#install pyenv
+brew 'pyenv'
 
 #perlのバージョン管理ツール
-#install plenv perl-build
-
-#node version manager
-#install nvm
-
-#php version manager
-#install phpenv
-#install php-build #phpソースコードをコンパイルするツール
-#install bison #手動で実行:brew link bison --force
-
-#php-buildで必要なライブラリ
-#instal re2c
-#install libjpeg
-#install libpng
-#reinstall libmcrypt
-
-#phpライブラリ管理ツール
-install composer
-
-#ruby version manager
-#install rbenv ruby-build #ruby-buildをインストールすることにより、rbenv installが利用できるようになる。rbenv自体はrubyをインストールできないから。
-
-#node version manager
-#install nvm
-
-#anyenv(phpenv,rbenv,plenv,pyenvなどのwrapper)
-install anyenv
+#brew 'plenv'
+#brew 'perl-build'
 
 #guess of the input kanji encodings
-install nkf
+brew 'nkf'
 
 #色付きのdiffコマンド(MACのデフォルトdiffコマンドは色表示できない。)
-install colordiff
+brew 'colordiff'
 
 #同期用ツール
-install unison
+#brew 'unison'
 
-install z
+brew 'z'
 
-install readline
+brew 'readline'
 
-install zsh-completions
+brew 'zsh-completions'
 
-install zsh-syntax-highlighting
+brew 'zsh-syntax-highlighting'
 
-install pstree
+brew 'pstree'
 
 #topコマンドの高機能版
-install htop
+brew 'htop'
 
-#dockerコンテナ型仮想化ツール
-install docker
-
-#MAC用軽量仮想マシンを操作するためのコマンド
-install boot2docker
+#node version manager
+brew 'nvm'
 
 #trash
-#tap rcmdnk/rcmdnkpac
-#install rcmdnk-trash
+tap 'rcmdnk/rcmdnkpac'
+brew 'rcmdnk-trash'
+
+# 公開鍵をサーバーに登録する
+brew 'ssh-copy-id'
 
 # AWS Elastic Beanstalk EB Command Line Interface
-install awsebcli
+brew 'awsebcli'
+
+# AWS cli
+brew 'awscli'
 
 # thefuck(corrects previous console command)
-install thefuck
-
-# MySQL等に関する便利なコマンドラインツールの集まり
-install percona-toolkit
-
-# awscli
-install awscli
+brew 'thefuck'
 
 # .gitignore自動生成
-install gibo
+brew 'gibo'
 
-# uninstall unused and old versions of packages from the cellar
-cleanup
+brew 'zlib'
+
+#Utility to make sentaku (selection, 選択(sentaku)) window with shell command.
+tap 'rcmdnk/rcmdnkpac'
+brew 'sentaku'
+
+# web browsers
+#cask 'google-chrome'
+cask 'firefox'
+
+# dev tools
+cask 'iterm2'
+cask 'mysqlworkbench'
+#cask 'virtualbox'
+#cask 'vmware-fusion'
+cask 'github'
+#cask 'sourcetree'
+#cask 'rubymine'
+#cask 'vagrant'
+#cask 'xquartz'
+#cask 'unity-web-player'
+#cask 'dash'
+
+# editors
+#cask 'sublime-text3'
+#cask 'macvim-kaoriya'
+#cask 'textwrangler'
+cask 'atom'
+#cask 'textmate'
+#cask 'mou'
+
+# additional apps
+cask 'dropbox'
+#cask 'evernote'
+#cask 'alfred'
+#cask 'freemind'
+#cask 'openoffice'
+cask 'libreoffice'
+#cask 'skype'
+
+#cask 'skitch'
+cask 'adobe-acrobat-reader'
+cask 'licecap' # gif animation capture
+cask 'gyazo' #gyazo gifも自動的にインストールされる。
+cask 'skim'
+#cask 'xtrafinder' #System Integrity Protection needs be disabled to install XtraFinder
+#cask 'magican'
+cask 'google-japanese-ime'
+#cask 'sogouinput' #To complete the installation, you must also run the downloaded installer(/Applicationsには存在しないので、alfredでも検索できない。)
+cask 'appcleaner'
+cask 'ccleaner'
+cask 'cheatsheet'
+
+# SNS
+#cask 'wechat' #App Storeで管理
+#cask 'qq'
+
+# mac quick look plugin
+#cask 'qlstephen'
+#cask 'qlmarkdown'
+#cask 'quicklook-json'
+#cask 'quicklook-csv'
+#cask 'betterzipql'
+#cask 'suspicious-package'
+
+# Command+Qの誤爆によるアプリ終了を防止
+cask 'karabiner'
+
+# astah community
+#cask 'astah-community'
+
+# dockertoolbox(docker engine, docker-compose, docker-machine)
+#cask 'dockertoolbox'  #Legacy desktop solution. Docker Toolbox is for older Mac and Windows systems that do not meet the requirements
+
