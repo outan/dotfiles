@@ -645,3 +645,12 @@ export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export MOS_PORT=/dev/cu.usbserial-DN02BDAN
 PATH=$PATH:$HOME/.mos/bin
 PATH=$PATH:$HOME/bin
+
+# copy file to clipboard (cat filenem C)
+if which pbcopy >/dev/null 2>&1 ; then
+    alias -g C='| pbcopy' # Mac
+elif which xsel >/dev/null 2>&1 ; then
+    alias -g C='| xsel --input --clipboard' # Linux
+elif which putclip >/dev/null 2>&1 ; then
+    alias -g C='| putclip' # Cygwin
+fi
