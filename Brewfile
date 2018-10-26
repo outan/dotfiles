@@ -206,7 +206,6 @@ cask 'cakebrew' #The GUI Mac App for Homebrew.
 cask "onyx" #Mac 定番メンテナンスツール
 cask "vlc"
 cask 'messenger' #facebook メッセンジャー
-cask 'microsoft-office'
 cask 'pycharm-ce' #python 用 IDE(統合開発環境)
 cask 'google-backup-and-sync' #google drive
 cask 'timemachineeditor'
