@@ -4,6 +4,8 @@ tap 'homebrew/cask-versions'
 
 tap 'Homebrew/cask-fonts'
 
+tap 'buo/cask-upgrade' #brew-cask-upgrade is an external command to replace the native upgrade
+
 # Install GNU core utilities (those that come with OS X are outdated) to use these commands without a prefix g ,you shoud add $(brew --prefix coreutils)/libexec/gnubin to \$PATH."
 brew 'coreutils'
 
@@ -207,3 +209,4 @@ cask 'messenger' #facebook メッセンジャー
 cask 'microsoft-office'
 cask 'pycharm-ce' #python 用 IDE(統合開発環境)
 cask 'google-backup-and-sync' #google drive
+cask 'timemachineeditor'
