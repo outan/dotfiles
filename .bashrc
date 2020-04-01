@@ -5,7 +5,7 @@ HISTSIZE=10000
 # カラー設定
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
-export GREP_OPTIONS='--color=auto'
+alias grep='grep --color=auto'
 export GREP_COLOR='1;37;41'
 
 if [ -f $HOME/.git-completion.bash ];then
